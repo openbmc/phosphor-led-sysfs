@@ -6,7 +6,9 @@ phosphor_ledcontroller_LDADD = libcontroller.la
 
 noinst_LTLIBRARIES = libcontroller.la
 libcontroller_la_SOURCES = \
-	argument.cpp
+	argument.cpp		   \
+	physical.cpp		   \
+	xyz.openbmc_project.Led.Physical.cpp
 
 phosphor_ledcontroller_LDFLAGS = $(SYSTEMD_LIBS)
 phosphor_ledcontroller_CFLAGS = $(SYSTEMD_CFLAGS)
