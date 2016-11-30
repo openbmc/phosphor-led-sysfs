@@ -34,11 +34,58 @@ auto Physical::state(Action value) -> Action
                            Physical::state(driveLED());
 }
 
-/** @brief Run through the map and apply action on the LEDs */
+/** @brief apply action on the LED */
 Physical::Action Physical::driveLED()
 {
-    // Replace with actual code.
-    std::cout << " Drive LED STUB :: " << std::endl;
+    if (iv_action == Action::On ||
+        iv_action == Action::Off)
+    {
+        return stableStateOperation();
+    }
+    else if (iv_action == Action::Blink)
+    {
+        return blinkOperation();
+    }
+    else
+    {
+        throw std::runtime_error("Invalid LED operation requested");
+    }
+}
+
+/** @brief Either TurnON -or- TurnOFF */
+Physical::Action Physical::stableStateOperation()
+{
+    auto value = (iv_action == Action::On) ? "255" : "0";
+    auto brightFile = iv_path + iv_name + BRIGHTNESS;
+    auto blinkFile = iv_path + iv_name + BLINKCTRL;
+
+    // Write "none" to trigger to clear any previous action
+    write(blinkFile, "none");
+
+    // And write the current command
+    write(brightFile, value);
+    return iv_action;
+}
+
+/** @brief BLINK the LED */
+Physical::Action Physical::blinkOperation()
+{
+    auto blinkFile = iv_path + iv_name + BLINKCTRL;
+    auto dutyOnFile = iv_path + iv_name + DELAYON;
+    auto dutyOffFile = iv_path + iv_name + DELAYOFF;
+
+    // Get the latest dutyOn that the user requested
+    auto dutyOn = sdbusplus::xyz::openbmc_project::Led::server
+                                ::Physical::dutyOn();
+    // Write "timer" to "trigger" file
+    write(blinkFile, "timer");
+
+    // Write DutyON. Value in percentage 1_millisecond.
+    // so 50% input becomes 500. Driver wants string input
+    write(dutyOnFile, std::to_string(dutyOn * 10));
+
+    // Write DutyOFF. Value in milli seconds so 50% input becomes 500.
+    write(dutyOffFile, std::to_string((100 - dutyOn) * 10));
     return iv_action;
 }
 
@@ -52,7 +99,7 @@ Physical::Physical(
 
     sdbusplus::server::object::object<
     sdbusplus::xyz::openbmc_project::Led::server::Physical>(
-            bus, objPath),
+        bus, objPath),
     iv_bus(std::move(bus)),
     iv_ObjManager(sdbusplus::server::manager::manager(iv_bus, objPath)),
 
