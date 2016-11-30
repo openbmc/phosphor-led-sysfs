@@ -31,11 +31,58 @@ auto Physical::state(Action value) -> Action
                          ::Physical::state(driveLED());
 }
 
-/** @brief Run through the map and apply action on the LEDs */
+/** @brief apply action on the LED */
 auto Physical::driveLED() -> Action
 {
-    // Replace with actual code.
-    std::cout << " Drive LED STUB :: " << std::endl;
+    if (action == Action::On ||
+        action == Action::Off)
+    {
+        return stableStateOperation();
+    }
+    else if (action == Action::Blink)
+    {
+        return blinkOperation();
+    }
+    else
+    {
+        throw std::runtime_error("Invalid LED operation requested");
+    }
+}
+
+/** @brief Either TurnON -or- TurnOFF */
+auto Physical::stableStateOperation() -> Action
+{
+    auto value = (action == Action::On) ? ASSERT : DEASSERT;
+    auto brightFile = path + name + BRIGHTNESS;
+    auto blinkFile =  path + name + BLINKCTRL;
+
+    // Write "none" to trigger to clear any previous action
+    write(blinkFile, "none");
+
+    // And write the current command
+    write(brightFile, value);
+    return action;
+}
+
+/** @brief BLINK the LED */
+auto Physical::blinkOperation() -> Action
+{
+    auto blinkFile = path + name + BLINKCTRL;
+    auto dutyOnFile = path + name + DELAYON;
+    auto dutyOffFile = path + name + DELAYOFF;
+
+    // Get the latest dutyOn that the user requested
+    uint8_t dutyOn = this->dutyOn();
+
+    // Write "timer" to "trigger" file
+    write(blinkFile, "timer");
+
+    // Write DutyON. Value in percentage 1_millisecond.
+    // so 50% input becomes 500. Driver wants string input
+    write(dutyOnFile, std::to_string(dutyOn * 10));
+
+    // Write DutyOFF. Value in milli seconds so 50% input becomes 500.
+    write(dutyOffFile, std::to_string((100 - dutyOn) * 10));
     return action;
 }
 
@@ -52,7 +99,7 @@ Physical::Physical(
     name(ledName),
     path(ledPath),
     action(sdbusplus::xyz::openbmc_project::Led::server
-           ::Physical::state())
+                         ::Physical::state())
 {
     // Nothing to do here
 }
