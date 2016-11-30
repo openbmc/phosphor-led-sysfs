@@ -28,10 +28,9 @@ namespace led
 const std::string ArgumentParser::true_string = "true";
 const std::string ArgumentParser::empty_string = "";
 
-const char* ArgumentParser::optionstr = "n:p:?h";
+const char* ArgumentParser::optionstr = "p:?h";
 const option ArgumentParser::options[] =
 {
-    { "name",   required_argument,  nullptr,   'n' },
     { "path",   required_argument,  nullptr,   'p' },
     { "help",   no_argument,        nullptr,   'h' },
     { 0, 0, 0, 0},
@@ -74,8 +73,6 @@ void ArgumentParser::usage(char** argv)
     std::cerr << "Usage: " << argv[0] << " [options]" << std::endl;
     std::cerr << "Options:" << std::endl;
     std::cerr << "    --help               Print this menu" << std::endl;
-    std::cerr << "    --name=<name>        Name of the LED"
-              << std::endl;
     std::cerr << "    --path=<path>        sysfs path like /sys/class/leds"
               << std::endl;
 }

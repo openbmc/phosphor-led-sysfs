@@ -20,8 +20,8 @@ class Physical : public sdbusplus::server::object::object<
         ~Physical() = default;
         Physical(const Physical&) = delete;
         Physical& operator=(const Physical&) = delete;
-        Physical(Physical&&) = delete;
-        Physical& operator=(Physical&&) = delete;
+        Physical(Physical&&) = default;
+        Physical& operator=(Physical&&) = default;
 
         /** @brief Constructs LED object
          *
@@ -38,15 +38,37 @@ class Physical : public sdbusplus::server::object::object<
                         bus, objPath.c_str()),
             path(ledPath)
         {
-                // Nothing to do here
+            // Suppose this is getting launched as part of BMC reboot, then we
+            // need to save what the micro-controller currently has.
+            setInitialState();
         }
+
+        /** @brief Overloaded State Property Setter function
+         *
+         *  @param[in] value   -  One of OFF / ON / BLINK
+         *  @return            -  Success or exception thrown
+         */
+        Action state(Action value) override;
 
     private:
         /** @brief File system location where this LED is exposed
          *   Typically /sys/class/leds/<Led-Name>
          */
         std::string path;
+
+        /** @brief Applies the user triggered action on the LED
+         *   by writing to sysfs
+         *
+         *  @return Status or exception thrown
+         */
+        void driveLED(void);
+
+        /** @brief reads sysfs and then setsup the parameteres accordingly
+         *
+         *  @return Status or exception thrown
+         */
+        void setInitialState(void);
 };
 
 } // namespace led
-} // namespace phosphor
+}
