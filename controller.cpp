@@ -16,7 +16,6 @@
 
 #include <iostream>
 #include <string>
-#include <string>
 #include "argument.hpp"
 #include "physical.hpp"
 #include "config.h"
@@ -31,9 +30,6 @@ static void ExitWithError(const char* err, char** argv)
 
 int main(int argc, char** argv)
 {
-    // For creating a bus name
-    using namespace std::string_literals;
-
     // Read arguments.
     auto options = phosphor::led::ArgumentParser(argc, argv);
 
@@ -55,8 +51,8 @@ int main(int argc, char** argv)
     auto name = path.substr(index + 1);
 
     // Unique bus name representing a single LED.
-    auto busName =  BUSNAME + "."s + name;
-    auto objPath =  OBJPATH + "/"s + name;
+    auto busName =  std::string(BUSNAME) + '.' + name;
+    auto objPath =  std::string(OBJPATH) + '/' + name;
 
     // Get a handle to system dbus.
     auto bus = std::move(sdbusplus::bus::new_default());
