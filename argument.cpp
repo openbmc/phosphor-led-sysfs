@@ -73,7 +73,8 @@ void ArgumentParser::usage(char** argv)
     std::cerr << "Usage: " << argv[0] << " [options]" << std::endl;
     std::cerr << "Options:" << std::endl;
     std::cerr << "    --help               Print this menu" << std::endl;
-    std::cerr << "    --path=<path>        sysfs path like /sys/class/leds"
+    std::cerr << "    --path=<path>        absolute path of LED in sysfs; like";
+    std::cerr <<                           " /sys/class/leds/<name>"
               << std::endl;
 }
 } // namespace led
