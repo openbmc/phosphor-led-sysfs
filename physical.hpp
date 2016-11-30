@@ -20,8 +20,8 @@ class Physical : public sdbusplus::server::object::object<
         ~Physical() = default;
         Physical(const Physical&) = delete;
         Physical& operator=(const Physical&) = delete;
-        Physical(Physical&&) = delete;
-        Physical& operator=(Physical&&) = delete;
+        Physical(Physical&&) = default;
+        Physical& operator=(Physical&&) = default;
 
         /** @brief Constructs LED object
          *
@@ -36,16 +36,36 @@ class Physical : public sdbusplus::server::object::object<
             sdbusplus::server::object::object<
                 sdbusplus::xyz::openbmc_project::Led::server::Physical>(
                         bus, objPath.c_str()),
-            path(ledPath)
+            path(ledPath),
+            action(sdbusplus::xyz::openbmc_project::Led::server
+                                 ::Physical::state())
         {
-                // Nothing to do here
+            // Set the LED to default state.
+            driveLED();
         }
+
+        /** @brief Overloaded State Property Setter function
+         *
+         *  @param[in] value   -  One of OFF / ON / BLINK
+         *  @return            -  Success or exception thrown
+         */
+        Action state(Action value) override;
 
     private:
         /** @brief File system location where this LED is exposed
          *   Typically /sys/class/leds/<Led-Name>
          */
         std::string path;
+
+        /** @brief User intended action */
+        Action action;
+
+        /** @brief Applies the user triggered action on the LED
+         *   by writing to sysfs
+         *
+         *  @return Status or exception thrown
+         */
+        Action driveLED(void);
 };
 
 } // namespace led
