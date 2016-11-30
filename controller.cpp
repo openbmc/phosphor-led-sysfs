@@ -17,6 +17,8 @@
 #include <iostream>
 #include <memory>
 #include "argument.hpp"
+#include "physical.hpp"
+#include "config.h"
 
 static void ExitWithError(const char* err, char** argv)
 {
@@ -48,5 +50,12 @@ int main(int argc, char** argv)
     // Finished getting options out, so release the parser.
     options.release();
 
+    // Unique bus name representing a single LED.
+    auto busName = BUSNAME + std::string(".") + name;
+    auto objPath = OBJPATH + std::string("/") + name;
+
+    phosphor::led::Physical(sdbusplus::bus::new_system(),
+                            busName.c_str(), objPath.c_str(),
+                            name, path);
     return 0;
 }
