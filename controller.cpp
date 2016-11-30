@@ -15,7 +15,6 @@
  */
 
 #include <iostream>
-#include <memory>
 #include "argument.hpp"
 
 static void ExitWithError(const char* err, char** argv)
