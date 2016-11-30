@@ -17,6 +17,8 @@
 #include <iostream>
 #include <memory>
 #include "argument.hpp"
+#include "physical.hpp"
+#include "config.h"
 
 static void ExitWithError(const char* err, char** argv)
 {
@@ -45,5 +47,33 @@ int main(int argc, char** argv)
         ExitWithError("Path not specified.", argv);
     }
 
+    // Unique bus name representing a single LED.
+    auto busName = BUSNAME + std::string(".") + name;
+    auto objPath = OBJPATH + std::string("/") + name;
+
+    // Get a handle to system dbus.
+    auto bus = sdbusplus::bus::new_system();
+
+    // Add systemd object manager.
+    sdbusplus::server::manager::manager(bus, objPath.c_str());
+
+    // Create the Physical LED objects for directing actions.
+    phosphor::led::Physical(bus, busName.c_str(),
+                            objPath.c_str(), name, path);
+
+    /** @brief Wait for client requests */
+    while(true)
+    {
+        try
+        {
+            // Handle dbus message / signals discarding unhandled
+            bus.process_discard();
+            bus.wait();
+        }
+        catch (std::exception &e)
+        {
+            std::cerr << e.what() << std::endl;
+        }
+    }
     return 0;
 }
