@@ -35,8 +35,59 @@ auto Physical::state(Action value) -> Action
 /** @brief apply action on the LED */
 auto Physical::driveLED() -> Action
 {
-    // Replace with actual code.
-    std::cout << " Drive LED  STUB :: \n";
+    if (action == Action::On ||
+        action == Action::Off)
+    {
+        return stableStateOperation();
+    }
+    else if (action == Action::Blink)
+    {
+        return blinkOperation();
+    }
+    else
+    {
+        throw std::runtime_error("Invalid LED operation requested");
+    }
+}
+
+/** @brief Either TurnON -or- TurnOFF */
+auto Physical::stableStateOperation() -> Action
+{
+    using namespace std::string_literals;
+
+    auto value = (action == Action::On) ? ASSERT : DEASSERT;
+    auto brightFile = path + "/"s + BRIGHTNESS;
+    auto blinkFile =  path + "/"s + BLINKCTRL;
+
+    // Write "none" to trigger to clear any previous action
+    write(blinkFile, "none");
+
+    // And write the current command
+    write(brightFile, value);
+    return action;
+}
+
+/** @brief BLINK the LED */
+auto Physical::blinkOperation() -> Action
+{
+    using namespace std::string_literals;
+
+    auto blinkFile = path + "/"s + BLINKCTRL;
+    auto dutyOnFile = path + "/"s + DELAYON;
+    auto dutyOffFile = path + "/"s + DELAYOFF;
+
+    // Get the latest dutyOn that the user requested
+    auto dutyOn = this->dutyOn();
+
+    // Write "timer" to "trigger" file
+    write(blinkFile, "timer");
+
+    // Write DutyON. Value in percentage 1_millisecond.
+    // so 50% input becomes 500. Driver wants string input
+    write(dutyOnFile, std::to_string(dutyOn * 10));
+
+    // Write DutyOFF. Value in milli seconds so 50% input becomes 500.
+    write(dutyOffFile, std::to_string((100 - dutyOn) * 10));
     return action;
 }
 
