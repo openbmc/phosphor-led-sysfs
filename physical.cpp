@@ -15,9 +15,6 @@
  */
 
 #include <iostream>
-#include <cstring>
-#include <unistd.h>
-#include <algorithm>
 #include <sdbusplus/message.hpp>
 #include "physical.hpp"
 #include "config.h"
@@ -26,19 +23,39 @@ namespace phosphor
 namespace led
 {
 
+/** @brief Overloaded State Property Setter function */
+auto Physical::state(Action value) -> Action
+{
+    action = value;
+    // Set the base class's state to actuals since the getter
+    // operation is handled there.
+    return sdbusplus::xyz::openbmc_project::Led::server
+                         ::Physical::state(driveLED());
+}
+
+/** @brief Run through the map and apply action on the LEDs */
+auto Physical::driveLED() -> Action
+{
+    // Replace with actual code.
+    std::cout << " Drive LED STUB :: " << std::endl;
+    return action;
+}
+
 /** @brief Initialize the bus and announce services */
 Physical::Physical(
     sdbusplus::bus::bus& bus,
-    const char* busName,
-    const char* objPath,
+    const std::string& busName,
+    const std::string& objPath,
     const std::string& ledName,
     const std::string& ledPath) :
 
     sdbusplus::server::object::object<
     sdbusplus::xyz::openbmc_project::Led::server::Physical>(
-        bus, objPath),
+        bus, objPath.c_str()),
     name(ledName),
-    path(ledPath)
+    path(ledPath),
+    action(sdbusplus::xyz::openbmc_project::Led::server
+                         ::Physical::state())
 {
     // Nothing to do here
 }
