@@ -27,11 +27,11 @@ AX_PTHREAD([GTEST_CPPFLAGS="-DGTEST_HAS_PTHREAD=1"],[GTEST_CPPFLAGS="-DGTEST_HAS
 AC_SUBST(GTEST_CPPFLAGS)
 
 AC_ARG_VAR(BUSNAME, [The Dbus busname to own])
-AS_IF([test "x$BUSNAME" == "x"], [BUSNAME="xyz.openbmc_project.led.controller"])
+AS_IF([test "x$BUSNAME" == "x"], [BUSNAME="xyz.openbmc_project.Led.Controller"])
 AC_DEFINE_UNQUOTED([BUSNAME], ["$BUSNAME"], [The Dbus busname to own])
-AC_ARG_VAR(OBJPATH, [The Ledmanager Dbus root])
-AS_IF([test "x$OBJPATH" == "x"], [OBJPATH="/xyz/openbmc_project/led/controller"])
-AC_DEFINE_UNQUOTED([OBJPATH], ["$OBJPATH"], [The Led controller Dbus root])
+AC_ARG_VAR(OBJPATH, [The physical Led controller Dbus root])
+AS_IF([test "x$OBJPATH" == "x"], [OBJPATH="/xyz/openbmc_project/led/physical"])
+AC_DEFINE_UNQUOTED([OBJPATH], ["$OBJPATH"], [The physical Led controller Dbus root])
 
 # Create configured output
 AC_CONFIG_FILES([Makefile])
