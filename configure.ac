@@ -18,6 +18,9 @@ PKG_CHECK_MODULES([SYSTEMD], [libsystemd >= 221])
 AX_CXX_COMPILE_STDCXX_14([noext])
 AX_APPEND_COMPILE_FLAGS([-Wall -Werror], [CXXFLAGS])
 
+# For libtools
+LT_INIT
+
 # Checks for header files.
 AC_CHECK_HEADER(systemd/sd-bus.h, ,[AC_MSG_ERROR([Could not find systemd/sd-bus.h...systemd developement package required])])
 AC_CHECK_HEADER(sdbusplus/server.hpp, ,[AC_MSG_ERROR([Could not find server.hpp...openbmc/sdbusplus package required])])
