@@ -4,7 +4,7 @@
 #include <fstream>
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/object.hpp>
-#include "xyz/openbmc_project/Led/Physical/server.hpp"
+#include <xyz/openbmc_project/Led/Physical/server.hpp>
 namespace phosphor
 {
 namespace led
@@ -57,8 +57,8 @@ class Physical : public sdbusplus::server::object::object<
         ~Physical() = default;
         Physical(const Physical&) = delete;
         Physical& operator=(const Physical&) = delete;
-        Physical(Physical&&) = default;
-        Physical& operator=(Physical&&) = default;
+        Physical(Physical&&) = delete;
+        Physical& operator=(Physical&&) = delete;
 
         /** @brief Constructs LED object. Argument 'true' says that we hold off
          *   from sending the signals since we need to do some house keeping and

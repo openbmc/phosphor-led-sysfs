@@ -62,7 +62,7 @@ int main(int argc, char** argv)
 
     // Create the Physical LED objects for directing actions.
     // Need to save this else sdbusplus destructor will wipe this off.
-    auto obj = phosphor::led::Physical(bus, objPath, path);
+    phosphor::led::Physical led(bus, objPath, path);
 
     /** @brief Claim the bus */
     bus.request_name(busName.c_str());
