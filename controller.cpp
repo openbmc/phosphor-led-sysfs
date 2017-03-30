@@ -16,6 +16,7 @@
 
 #include <iostream>
 #include <string>
+#include <algorithm>
 #include "argument.hpp"
 #include "physical.hpp"
 #include "config.h"
@@ -49,6 +50,14 @@ int main(int argc, char** argv)
 
     // Remove the leading "/"
     auto name = path.substr(index + 1);
+
+    // Convert to lowercase just in case some are not and that
+    // we follow lowercase all over
+    std::transform(name.begin(), name.end(), name.begin(), ::tolower);
+
+    // LED names may have hyphen and that would be an issue for
+    // dbus paths and hence need to convert them to underscores.
+    std::replace(name.begin(), name.end(), '-', '_');
 
     // Unique bus name representing a single LED.
     auto busName =  std::string(BUSNAME) + '.' + name;
