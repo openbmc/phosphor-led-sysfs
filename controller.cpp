@@ -41,15 +41,23 @@ int main(int argc, char** argv)
         ExitWithError("Path not specified.", argv);
     }
 
-    // Extract the name of LED from path.
-    auto index = path.rfind("/");
-    if (index == std::string::npos)
-    {
-        throw std::runtime_error("No Led in " + path);
-    }
+    // If the LED has a hyphen in the name like: "one-two", then it gets passed
+    // as /one/two/ as opposed to /one-two to the service file. There is a
+    // change needed in systemd to solve this issue and hence putting this
+    // work-around.
 
-    // Remove the leading "/"
-    auto name = path.substr(index + 1);
+    // Since this application always gets invoked as part of a udev rule,
+    // it is always guaranteed to get /sys/devices/platform/leds/leds/one/two
+    // and we can go beyond leds/leds/ to get the actual led name.
+    // https://github.com/systemd/systemd/issues/5072
+
+    // On an error, this throws exception and terminates.
+    auto name = path.substr(strlen(DEVPATH));
+
+    // LED names may have a hyphen and that would be an issue for
+    // dbus paths and hence need to convert them to underscores.
+    std::replace(name.begin(), name.end(), '/', '-');
+    path = std::move(DEVPATH + name);
 
     // Convert to lowercase just in case some are not and that
     // we follow lowercase all over
@@ -68,6 +76,8 @@ int main(int argc, char** argv)
 
     // Add systemd object manager.
     sdbusplus::server::manager::manager(bus, objPath.c_str());
+
+    std::cout << "PATH EDITED = " << path << std::endl;
 
     // Create the Physical LED objects for directing actions.
     // Need to save this else sdbusplus destructor will wipe this off.
