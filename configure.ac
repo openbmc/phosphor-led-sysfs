@@ -36,6 +36,11 @@ AC_ARG_VAR(OBJPATH, [The physical LED controller Dbus root])
 AS_IF([test "x$OBJPATH" == "x"], [OBJPATH="/xyz/openbmc_project/led/physical"])
 AC_DEFINE_UNQUOTED([OBJPATH], ["$OBJPATH"], [The physical LED controller Dbus root])
 
+# Platform device path for led subsystem.
+AC_ARG_VAR(DEVPATH, [Physical led device path])
+AS_IF([test "x$DEVPATH" == "x"], [DEVPATH="/sys/devices/platform/leds/leds/"])
+AC_DEFINE_UNQUOTED([DEVPATH], ["$DEVPATH"], [Physical led device path])
+
 # Create configured output
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
