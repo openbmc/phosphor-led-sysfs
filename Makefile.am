@@ -15,6 +15,8 @@ phosphor_ledcontroller_CFLAGS =  $(SDBUSPLUS_CFLAGS) \
 check_PROGRAMS =
 XFAIL_TESTS =
 
+include test/Makefile.am.include
+
 TESTS = $(check_PROGRAMS)
 
 clean-local: code-coverage-clean
