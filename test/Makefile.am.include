@@ -21,7 +21,7 @@ AM_LDFLAGS = \
 	-lgtest -lgtest_main -lgmock $(PTHREAD_CFLAGS) $(OESDK_TESTCASE_FLAGS)
 
 test_physical_SOURCES = %reldir%/physical.cpp
-test_physical_LDADD = physical.o
+test_physical_LDADD = physical.o sysfs.o
 
 test_sysfs_SOURCES = %reldir%/sysfs.cpp
 test_sysfs_LDADD = sysfs.cpp

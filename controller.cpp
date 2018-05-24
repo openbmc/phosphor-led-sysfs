@@ -18,6 +18,7 @@
 
 #include "argument.hpp"
 #include "physical.hpp"
+#include "sysfs.hpp"
 
 #include <algorithm>
 #include <iostream>
@@ -33,6 +34,8 @@ static void ExitWithError(const char* err, char** argv)
 
 int main(int argc, char** argv)
 {
+    namespace fs = std::experimental::filesystem;
+
     // Read arguments.
     auto options = phosphor::led::ArgumentParser(argc, argv);
 
@@ -81,7 +84,8 @@ int main(int argc, char** argv)
 
     // Create the Physical LED objects for directing actions.
     // Need to save this else sdbusplus destructor will wipe this off.
-    phosphor::led::Physical led(bus, objPath, path);
+    phosphor::led::SysfsLed sled = phosphor::led::SysfsLed(fs::path(path));
+    phosphor::led::Physical led(bus, objPath, sled);
 
     /** @brief Claim the bus */
     bus.request_name(busName.c_str());
