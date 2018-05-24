@@ -25,26 +25,19 @@ namespace led
 /** @brief Populates key parameters */
 void Physical::setInitialState()
 {
-    // Control files in /sys/class/leds/<led-name>
-    brightCtrl = path + BRIGHTNESS;
-    blinkCtrl = path + BLINKCTRL;
-
-    delayOnCtrl = path + DELAYON;
-    delayOffCtrl = path + DELAYOFF;
-
     // 1. read /sys/class/leds/name/trigger
     // 2. If its 'timer', then its blinking.
     //    2.1: On blink, use delay_on and delay_off into dutyOn
     // 3. If its 'none', then read brightness. 255 means, its ON, else OFF.
 
-    auto trigger = read<std::string>(blinkCtrl);
+    auto trigger = led.getTrigger();
     if (trigger == "timer")
     {
         // LED is blinking. Get the delay_on and delay_off and compute
         // DutyCycle. sfsfs values are in strings. Need to convert 'em over to
         // integer.
-        auto delayOn = std::stoi(read<std::string>(delayOnCtrl));
-        auto delayOff = std::stoi(read<std::string>(delayOffCtrl));
+        auto delayOn = led.getDelayOn();
+        auto delayOff = led.getDelayOff();
 
         // Calculate frequency and then percentage ON
         frequency = delayOn + delayOff;
@@ -62,8 +55,8 @@ void Physical::setInitialState()
         frequency = 1000;
 
         // LED is either ON or OFF
-        auto brightness = read<std::string>(brightCtrl);
-        if (brightness == std::string(ASSERT))
+        auto brightness = led.getBrightness();
+        if (brightness == ASSERT)
         {
             // LED is in Solid ON
             sdbusplus::xyz::openbmc_project::Led::server ::Physical::state(
@@ -125,10 +118,10 @@ void Physical::stableStateOperation(Action action)
     auto value = (action == Action::On) ? ASSERT : DEASSERT;
 
     // Write "none" to trigger to clear any previous action
-    write(blinkCtrl, "none");
+    led.setTrigger("none");
 
     // And write the current command
-    write(brightCtrl, value);
+    led.setBrightness(value);
     return;
 }
 
@@ -139,15 +132,15 @@ void Physical::blinkOperation()
     auto dutyOn = this->dutyOn();
 
     // Write "timer" to "trigger" file
-    write(blinkCtrl, "timer");
+    led.setTrigger("timer");
 
     // Write DutyON. Value in percentage 1_millisecond.
     // so 50% input becomes 500. Driver wants string input
     auto percentage = frequency / 100;
-    write(delayOnCtrl, std::to_string(dutyOn * percentage));
+    led.setDelayOn(dutyOn * percentage);
 
     // Write DutyOFF. Value in milli seconds so 50% input becomes 500.
-    write(delayOffCtrl, std::to_string((100 - dutyOn) * percentage));
+    led.setDelayOff((100 - dutyOn) * percentage);
     return;
 }
 
