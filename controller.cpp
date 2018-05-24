@@ -57,7 +57,7 @@ int main(int argc, char** argv)
     // LED names may have a hyphen and that would be an issue for
     // dbus paths and hence need to convert them to underscores.
     std::replace(name.begin(), name.end(), '/', '-');
-    path = std::move(DEVPATH + name);
+    path = DEVPATH + name;
 
     // Convert to lowercase just in case some are not and that
     // we follow lowercase all over
@@ -72,7 +72,7 @@ int main(int argc, char** argv)
     auto objPath = std::string(OBJPATH) + '/' + name;
 
     // Get a handle to system dbus.
-    auto bus = std::move(sdbusplus::bus::new_default());
+    auto bus = sdbusplus::bus::new_default();
 
     // Add systemd object manager.
     sdbusplus::server::manager::manager(bus, objPath.c_str());
