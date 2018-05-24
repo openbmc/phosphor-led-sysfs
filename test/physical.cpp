@@ -7,30 +7,35 @@ constexpr auto LED_OBJ = "/foo/bar/led";
 constexpr auto LED_SYSFS = "/sys/class/leds/test";
 
 using Action = sdbusplus::xyz::openbmc_project::Led::server::Physical::Action;
+namespace fs = std::experimental::filesystem;
 
 TEST(Physical, ctor)
 {
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
-    phosphor::led::Physical led(bus, LED_OBJ, LED_SYSFS);
+    phosphor::led::SysfsLed led = phosphor::led::SysfsLed(fs::path(LED_SYSFS));
+    phosphor::led::Physical phy(bus, LED_OBJ, led);
 }
 
 TEST(Physical, off)
 {
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
-    phosphor::led::Physical led(bus, LED_OBJ, LED_SYSFS);
-    led.state(Action::Off);
+    phosphor::led::SysfsLed led = phosphor::led::SysfsLed(fs::path(LED_SYSFS));
+    phosphor::led::Physical phy(bus, LED_OBJ, led);
+    phy.state(Action::Off);
 }
 
 TEST(Physical, on)
 {
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
-    phosphor::led::Physical led(bus, LED_OBJ, LED_SYSFS);
-    led.state(Action::On);
+    phosphor::led::SysfsLed led = phosphor::led::SysfsLed(fs::path(LED_SYSFS));
+    phosphor::led::Physical phy(bus, LED_OBJ, led);
+    phy.state(Action::On);
 }
 
 TEST(Physical, blink)
 {
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
-    phosphor::led::Physical led(bus, LED_OBJ, LED_SYSFS);
-    led.state(Action::Blink);
+    phosphor::led::SysfsLed led = phosphor::led::SysfsLed(fs::path(LED_SYSFS));
+    phosphor::led::Physical phy(bus, LED_OBJ, led);
+    phy.state(Action::Blink);
 }
