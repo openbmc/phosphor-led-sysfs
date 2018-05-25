@@ -13,10 +13,10 @@ namespace phosphor
 namespace led
 {
 /** @brief Assert LED by writing 255 */
-constexpr auto ASSERT = 255;
+constexpr unsigned long ASSERT = 255;
 
 /** @brief De-assert by writing "0" */
-constexpr auto DEASSERT = 0;
+constexpr unsigned long DEASSERT = 0;
 
 /** @class Physical
  *  @brief Responsible for applying actions on a particular physical LED
