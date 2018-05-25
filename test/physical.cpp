@@ -94,7 +94,10 @@ TEST(Physical, off)
 {
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
-    ON_CALL(led, getTrigger()).WillByDefault(Return("none"));
+    ON_CALL(led, getMaxBrightness()).WillByDefault(Return(127));
+    EXPECT_CALL(led, getTrigger()).WillOnce(Return("none"));
+    EXPECT_CALL(led, getBrightness()).WillOnce(Return(phosphor::led::DEASSERT));
+    EXPECT_CALL(led, setBrightness(phosphor::led::DEASSERT)).Times(0);
     phosphor::led::Physical phy(bus, LED_OBJ, led);
     phy.state(Action::Off);
 }
@@ -103,7 +106,9 @@ TEST(Physical, on)
 {
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
-    ON_CALL(led, getTrigger()).WillByDefault(Return("none"));
+    EXPECT_CALL(led, getTrigger()).WillOnce(Return("none"));
+    EXPECT_CALL(led, setTrigger("none"));
+    EXPECT_CALL(led, setBrightness(phosphor::led::ASSERT));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
     phy.state(Action::On);
 }
