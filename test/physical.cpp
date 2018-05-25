@@ -115,3 +115,13 @@ TEST(Physical, blink)
     phosphor::led::Physical phy(bus, LED_OBJ, led);
     phy.state(Action::Blink);
 }
+
+TEST(Physical, ctor_none_trigger_asserted_brightness)
+{
+    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    NiceMock<MockLed> led;
+    EXPECT_CALL(led, getTrigger()).WillRepeatedly(Return("none"));
+    constexpr auto val = phosphor::led::ASSERT;
+    EXPECT_CALL(led, getBrightness()).WillRepeatedly(Return(val));
+    phosphor::led::Physical phy(bus, LED_OBJ, led);
+}
