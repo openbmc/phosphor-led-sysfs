@@ -70,12 +70,22 @@ using ::testing::NiceMock;
 using ::testing::Return;
 using ::testing::Throw;
 
-TEST(Physical, ctor)
+TEST(Physical, ctor_none_trigger)
 {
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
     /* NiceMock ignores calls to methods with no expectations defined */
     NiceMock<MockLed> led;
     ON_CALL(led, getTrigger()).WillByDefault(Return("none"));
+    phosphor::led::Physical phy(bus, LED_OBJ, led);
+}
+
+TEST(Physical, ctor_timer_trigger)
+{
+    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    NiceMock<MockLed> led;
+    EXPECT_CALL(led, getTrigger()).WillOnce(Return("timer"));
+    EXPECT_CALL(led, getDelayOn()).WillOnce(Return(500));
+    EXPECT_CALL(led, getDelayOff()).WillOnce(Return(500));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
 }
 
