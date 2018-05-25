@@ -112,7 +112,10 @@ TEST(Physical, blink)
 {
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
-    ON_CALL(led, getTrigger()).WillByDefault(Return("none"));
+    EXPECT_CALL(led, getTrigger()).WillOnce(Return("none"));
+    EXPECT_CALL(led, setTrigger("timer"));
+    EXPECT_CALL(led, setDelayOn(500));
+    EXPECT_CALL(led, setDelayOff(500));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
     phy.state(Action::Blink);
 }
