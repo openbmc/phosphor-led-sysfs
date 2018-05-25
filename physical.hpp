@@ -50,140 +50,137 @@ constexpr auto DELAYOFF = "/delay_off";
  *  @brief Responsible for applying actions on a particular physical LED
  */
 class Physical : public sdbusplus::server::object::object<
-    sdbusplus::xyz::openbmc_project::Led::server::Physical>
+                     sdbusplus::xyz::openbmc_project::Led::server::Physical>
 {
-    public:
-        Physical() = delete;
-        ~Physical() = default;
-        Physical(const Physical&) = delete;
-        Physical& operator=(const Physical&) = delete;
-        Physical(Physical&&) = delete;
-        Physical& operator=(Physical&&) = delete;
+  public:
+    Physical() = delete;
+    ~Physical() = default;
+    Physical(const Physical&) = delete;
+    Physical& operator=(const Physical&) = delete;
+    Physical(Physical&&) = delete;
+    Physical& operator=(Physical&&) = delete;
 
-        /** @brief Constructs LED object. Argument 'true' says that we hold off
-         *   from sending the signals since we need to do some house keeping and
-         *   only when we finish that, we are considered active and can then
-         *   broadcast the signal.
-         *
-         * @param[in] bus       - system dbus handler
-         * @param[in] objPath   - The Dbus path that hosts physical LED
-         * @param[in] ledPath   - sysfs path where this LED is exported
-         */
-        Physical(sdbusplus::bus::bus& bus,
-                const std::string& objPath,
-                const std::string& ledPath) :
+    /** @brief Constructs LED object. Argument 'true' says that we hold off
+     *   from sending the signals since we need to do some house keeping and
+     *   only when we finish that, we are considered active and can then
+     *   broadcast the signal.
+     *
+     * @param[in] bus       - system dbus handler
+     * @param[in] objPath   - The Dbus path that hosts physical LED
+     * @param[in] ledPath   - sysfs path where this LED is exported
+     */
+    Physical(sdbusplus::bus::bus& bus, const std::string& objPath,
+             const std::string& ledPath) :
 
-            sdbusplus::server::object::object<
-                sdbusplus::xyz::openbmc_project::Led::server::Physical>(
-                        bus, objPath.c_str(), true),
-            path(ledPath)
+        sdbusplus::server::object::object<
+            sdbusplus::xyz::openbmc_project::Led::server::Physical>(
+            bus, objPath.c_str(), true),
+        path(ledPath)
+    {
+        // Suppose this is getting launched as part of BMC reboot, then we
+        // need to save what the micro-controller currently has.
+        setInitialState();
+
+        // We are now ready.
+        emit_object_added();
+    }
+
+    /** @brief Overloaded State Property Setter function
+     *
+     *  @param[in] value   -  One of OFF / ON / BLINK
+     *  @return            -  Success or exception thrown
+     */
+    Action state(Action value) override;
+
+  private:
+    /** @brief File system location where this LED is exposed
+     *   Typically /sys/class/leds/<Led-Name>
+     */
+    std::string path;
+
+    /** @brief Frequency range that the LED can operate on.
+     *  Will be removed when frequency is put into interface
+     */
+    uint32_t frequency;
+
+    /** @brief Brightness described above */
+    std::string brightCtrl;
+
+    /** @brief BlinkCtrl described above */
+    std::string blinkCtrl;
+
+    /** @brief delay_on described above */
+    std::string delayOnCtrl;
+
+    /** @brief delay_ff described above */
+    std::string delayOffCtrl;
+
+    /** @brief reads sysfs and then setsup the parameteres accordingly
+     *
+     *  @return None
+     */
+    void setInitialState();
+
+    /** @brief Applies the user triggered action on the LED
+     *   by writing to sysfs
+     *
+     *  @param [in] current - Current state of LED
+     *  @param [in] request - Requested state
+     *
+     *  @return None
+     */
+    void driveLED(Action current, Action request);
+
+    /** @brief Sets the LED to either ON or OFF state
+     *
+     *  @param [in] action - Requested action. Could be OFF or ON
+     *  @return None
+     */
+    void stableStateOperation(Action action);
+
+    /** @brief Sets the LED to BLINKING
+     *
+     *  @return None
+     */
+    void blinkOperation();
+
+    /** @brief Generic file writer.
+     *   There are files like "brightness", "trigger" , "delay_on" and
+     *   "delay_off" that will tell what the LED driver needs to do.
+     *
+     *  @param[in] filename - Name of file to be written
+     *  @param[in] data     - Data to be written to
+     *  @return             - None
+     */
+    template <typename T> auto write(const std::string& fileName, T&& data)
+    {
+        if (std::ifstream(fileName))
         {
-            // Suppose this is getting launched as part of BMC reboot, then we
-            // need to save what the micro-controller currently has.
-            setInitialState();
-
-            // We are now ready.
-            emit_object_added();
+            std::ofstream file(fileName, std::ios::out);
+            file << data;
+            file.close();
         }
+        return;
+    }
 
-        /** @brief Overloaded State Property Setter function
-         *
-         *  @param[in] value   -  One of OFF / ON / BLINK
-         *  @return            -  Success or exception thrown
-         */
-        Action state(Action value) override;
-
-    private:
-        /** @brief File system location where this LED is exposed
-         *   Typically /sys/class/leds/<Led-Name>
-         */
-        std::string path;
-
-        /** @brief Frequency range that the LED can operate on.
-         *  Will be removed when frequency is put into interface
-         */
-        uint32_t frequency;
-
-        /** @brief Brightness described above */
-        std::string brightCtrl;
-
-        /** @brief BlinkCtrl described above */
-        std::string blinkCtrl;
-
-        /** @brief delay_on described above */
-        std::string delayOnCtrl;
-
-        /** @brief delay_ff described above */
-        std::string delayOffCtrl;
-
-        /** @brief reads sysfs and then setsup the parameteres accordingly
-         *
-         *  @return None
-         */
-        void setInitialState();
-
-        /** @brief Applies the user triggered action on the LED
-         *   by writing to sysfs
-         *
-         *  @param [in] current - Current state of LED
-         *  @param [in] request - Requested state
-         *
-         *  @return None
-         */
-        void driveLED(Action current, Action request);
-
-        /** @brief Sets the LED to either ON or OFF state
-         *
-         *  @param [in] action - Requested action. Could be OFF or ON
-         *  @return None
-         */
-        void stableStateOperation(Action action);
-
-        /** @brief Sets the LED to BLINKING
-         *
-         *  @return None
-         */
-        void blinkOperation();
-
-        /** @brief Generic file writer.
-         *   There are files like "brightness", "trigger" , "delay_on" and
-         *   "delay_off" that will tell what the LED driver needs to do.
-         *
-         *  @param[in] filename - Name of file to be written
-         *  @param[in] data     - Data to be written to
-         *  @return             - None
-         */
-        template <typename T>
-        auto write(const std::string& fileName, T&& data)
+    /** @brief Generic file reader.
+     *   There are files like "brightness", "trigger" , "delay_on" and
+     *   "delay_off" that will tell what the LED driver needs to do.
+     *
+     *  @param[in] filename - Name of file to be read
+     *  @return             - File content
+     */
+    template <typename T> T read(const std::string& fileName)
+    {
+        T data = T();
+        if (std::ifstream(fileName))
         {
-            if(std::ifstream(fileName))
-            {
-                std::ofstream file(fileName, std::ios::out);
-                file << data;
-                file.close();
-            }
-            return;
+            std::ifstream file(fileName, std::ios::in);
+            file >> data;
+            file.close();
         }
-
-        /** @brief Generic file reader.
-         *   There are files like "brightness", "trigger" , "delay_on" and
-         *   "delay_off" that will tell what the LED driver needs to do.
-         *
-         *  @param[in] filename - Name of file to be read
-         *  @return             - File content
-         */
-        template <typename T>
-        T read(const std::string& fileName)
-        {
-            T data = T();
-            if(std::ifstream(fileName))
-            {
-                std::ifstream file(fileName, std::ios::in);
-                file >> data;
-                file.close();
-            }
-            return data;
-        }
+        return data;
+    }
 };
 
 } // namespace led

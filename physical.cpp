@@ -27,7 +27,7 @@ void Physical::setInitialState()
 {
     // Control files in /sys/class/leds/<led-name>
     brightCtrl = path + BRIGHTNESS;
-    blinkCtrl =  path + BLINKCTRL;
+    blinkCtrl = path + BLINKCTRL;
 
     delayOnCtrl = path + DELAYON;
     delayOffCtrl = path + DELAYOFF;
@@ -66,14 +66,14 @@ void Physical::setInitialState()
         if (brightness == std::string(ASSERT))
         {
             // LED is in Solid ON
-            sdbusplus::xyz::openbmc_project::Led::server
-                          ::Physical::state(Action::On);
+            sdbusplus::xyz::openbmc_project::Led::server ::Physical::state(
+                Action::On);
         }
         else
         {
             // LED is in OFF state
-            sdbusplus::xyz::openbmc_project::Led::server
-                          ::Physical::state(Action::Off);
+            sdbusplus::xyz::openbmc_project::Led::server ::Physical::state(
+                Action::Off);
         }
     }
     return;
@@ -83,12 +83,12 @@ void Physical::setInitialState()
 auto Physical::state(Action value) -> Action
 {
     // Obtain current operation
-    auto current = sdbusplus::xyz::openbmc_project::Led::server
-                                   ::Physical::state();
+    auto current =
+        sdbusplus::xyz::openbmc_project::Led::server ::Physical::state();
 
     // Update requested operation into base class
-    auto requested = sdbusplus::xyz::openbmc_project::Led::server
-                                   ::Physical::state(value);
+    auto requested =
+        sdbusplus::xyz::openbmc_project::Led::server ::Physical::state(value);
 
     // Apply the action.
     driveLED(current, requested);
@@ -112,7 +112,7 @@ void Physical::driveLED(Action current, Action request)
     }
 
     // Transition TO Stable states.
-    if(request == Action::On || request == Action::Off)
+    if (request == Action::On || request == Action::Off)
     {
         return stableStateOperation(request);
     }
