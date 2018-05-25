@@ -26,6 +26,7 @@ namespace led
 /** @brief Populates key parameters */
 void Physical::setInitialState()
 {
+    assert = led.getMaxBrightness();
     auto trigger = led.getTrigger();
     if (trigger == "timer")
     {
@@ -43,7 +44,7 @@ void Physical::setInitialState()
 
         // Cache current LED state
         auto brightness = led.getBrightness();
-        if (brightness == ASSERT)
+        if (brightness == assert)
         {
             sdbusplus::xyz::openbmc_project::Led::server::Physical::state(
                 Action::On);
@@ -88,7 +89,7 @@ void Physical::driveLED(Action current, Action request)
 
 void Physical::stableStateOperation(Action action)
 {
-    auto value = (action == Action::On) ? ASSERT : DEASSERT;
+    auto value = (action == Action::On) ? assert : DEASSERT;
 
     led.setTrigger("none");
     led.setBrightness(value);
