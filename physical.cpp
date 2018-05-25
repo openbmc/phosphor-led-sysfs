@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+#include <cassert>
 #include <iostream>
 #include <string>
 #include "physical.hpp"
@@ -76,16 +77,13 @@ void Physical::driveLED(Action current, Action request)
         return;
     }
 
-    if (request == Action::Blink)
-    {
-        return blinkOperation();
-    }
-
     if (request == Action::On || request == Action::Off)
     {
         return stableStateOperation(request);
     }
-    return;
+
+    assert(request == Action::Blink);
+    blinkOperation();
 }
 
 void Physical::stableStateOperation(Action action)
