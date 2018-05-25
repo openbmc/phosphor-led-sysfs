@@ -66,6 +66,7 @@ class MockLed : public phosphor::led::SysfsLed
     MOCK_METHOD1(setDelayOff, void(unsigned long ms));
 };
 
+using ::testing::InSequence;
 using ::testing::NiceMock;
 using ::testing::Return;
 using ::testing::Throw;
@@ -124,4 +125,21 @@ TEST(Physical, ctor_none_trigger_asserted_brightness)
     constexpr auto val = phosphor::led::ASSERT;
     EXPECT_CALL(led, getBrightness()).WillRepeatedly(Return(val));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
+}
+
+TEST(Physical, on_to_off)
+{
+    InSequence s;
+
+    auto bus = sdbusplus::bus::new_default();
+    NiceMock<MockLed> led;
+    EXPECT_CALL(led, getTrigger()).Times(1).WillOnce(Return("none"));
+    constexpr auto deasserted = phosphor::led::DEASSERT;
+    EXPECT_CALL(led, getBrightness()).WillOnce(Return(deasserted));
+    constexpr auto asserted = phosphor::led::ASSERT;
+    EXPECT_CALL(led, setBrightness(asserted));
+    EXPECT_CALL(led, setBrightness(deasserted));
+    phosphor::led::Physical phy(bus, LED_OBJ, led);
+    phy.state(Action::On);
+    phy.state(Action::Off);
 }
