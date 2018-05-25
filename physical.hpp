@@ -12,10 +12,7 @@ namespace phosphor
 {
 namespace led
 {
-/** @brief Assert LED by writing 255 */
-constexpr auto ASSERT = 255;
-
-/** @brief De-assert by writing "0" */
+/** @brief De-assert value */
 constexpr auto DEASSERT = 0;
 
 /** @class Physical
@@ -69,6 +66,9 @@ class Physical : public sdbusplus::server::object::object<
      *   Typically /sys/class/leds/<Led-Name>
      */
     SysfsLed& led;
+
+    /** @brief The value that will assert the LED */
+    unsigned long assert;
 
     /** @brief The period that the LED will operate on, in milliseconds
      *  Will be removed when periodicity is put into interface
