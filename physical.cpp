@@ -31,14 +31,9 @@ void Physical::setInitialState()
     {
         // LED is blinking. Get the on and off delays and derive percent duty
         auto delayOn = led.getDelayOn();
-        auto delayOff = led.getDelayOff();
-
-        // Calculate duty from millisecond delay values and derive percentage on
-        periodMs = delayOn + delayOff;
-        auto factor = periodMs / 100;
-        auto dutyOn = delayOn / factor;
-
-        this->dutyOn(dutyOn);
+        periodMs = delayOn + led.getDelayOff();
+        auto percentScale = periodMs / 100;
+        this->dutyOn(delayOn / percentScale);
     }
     else
     {
