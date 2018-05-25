@@ -40,8 +40,8 @@ void Physical::setInitialState()
         auto delayOff = led.getDelayOff();
 
         // Calculate frequency and then percentage ON
-        frequency = delayOn + delayOff;
-        auto factor = frequency / 100;
+        periodMs = delayOn + delayOff;
+        auto factor = periodMs / 100;
         auto dutyOn = delayOn / factor;
 
         // Update.
@@ -49,10 +49,10 @@ void Physical::setInitialState()
     }
     else
     {
-        // This is hardcoded for now. This will be changed to this->frequency()
-        // when frequency is implemented.
+        // This is hardcoded for now. This will be changed to this->period()
+        // when configurable periodicity is implemented.
         // TODO
-        frequency = 1000;
+        periodMs = 1000;
 
         // LED is either ON or OFF
         auto brightness = led.getBrightness();
@@ -136,11 +136,11 @@ void Physical::blinkOperation()
 
     // Write DutyON. Value in percentage 1_millisecond.
     // so 50% input becomes 500. Driver wants string input
-    auto percentage = frequency / 100;
-    led.setDelayOn(dutyOn * percentage);
+    auto factor = periodMs / 100;
+    led.setDelayOn(dutyOn * factor);
 
     // Write DutyOFF. Value in milli seconds so 50% input becomes 500.
-    led.setDelayOff((100 - dutyOn) * percentage);
+    led.setDelayOff((100 - dutyOn) * factor);
     return;
 }
 
