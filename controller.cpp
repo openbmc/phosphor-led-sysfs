@@ -68,8 +68,8 @@ int main(int argc, char** argv)
     std::replace(name.begin(), name.end(), '-', '_');
 
     // Unique bus name representing a single LED.
-    auto busName =  std::string(BUSNAME) + '.' + name;
-    auto objPath =  std::string(OBJPATH) + '/' + name;
+    auto busName = std::string(BUSNAME) + '.' + name;
+    auto objPath = std::string(OBJPATH) + '/' + name;
 
     // Get a handle to system dbus.
     auto bus = std::move(sdbusplus::bus::new_default());
@@ -85,7 +85,7 @@ int main(int argc, char** argv)
     bus.request_name(busName.c_str());
 
     /** @brief Wait for client requests */
-    while(true)
+    while (true)
     {
         // Handle dbus message / signals discarding unhandled
         bus.process_discard();

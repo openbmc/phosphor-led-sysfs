@@ -29,17 +29,17 @@ const std::string ArgumentParser::true_string = "true";
 const std::string ArgumentParser::empty_string = "";
 
 const char* ArgumentParser::optionstr = "p:?h";
-const option ArgumentParser::options[] =
-{
-    { "path",   required_argument,  nullptr,   'p' },
-    { "help",   no_argument,        nullptr,   'h' },
-    { 0, 0, 0, 0},
+const option ArgumentParser::options[] = {
+    {"path", required_argument, nullptr, 'p'},
+    {"help", no_argument, nullptr, 'h'},
+    {0, 0, 0, 0},
 };
 
 ArgumentParser::ArgumentParser(int argc, char** argv)
 {
     int option = 0;
-    while(-1 != (option = getopt_long(argc, argv, optionstr, options, nullptr)))
+    while (-1 !=
+           (option = getopt_long(argc, argv, optionstr, options, nullptr)))
     {
         if ((option == '?') || (option == 'h'))
         {
@@ -48,7 +48,8 @@ ArgumentParser::ArgumentParser(int argc, char** argv)
         }
 
         auto i = &options[0];
-        while ((i->val != option) && (i->val != 0)) ++i;
+        while ((i->val != option) && (i->val != 0))
+            ++i;
 
         if (i->val)
             arguments[i->name] = (i->has_arg ? optarg : true_string);
@@ -74,8 +75,7 @@ void ArgumentParser::usage(char** argv)
     std::cerr << "Options:" << std::endl;
     std::cerr << "    --help               Print this menu" << std::endl;
     std::cerr << "    --path=<path>        absolute path of LED in sysfs; like";
-    std::cerr <<                           " /sys/class/leds/<name>"
-              << std::endl;
+    std::cerr << " /sys/class/leds/<name>" << std::endl;
 }
 } // namespace led
 } // namespace phosphor
