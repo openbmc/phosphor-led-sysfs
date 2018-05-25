@@ -69,10 +69,10 @@ class Physical : public sdbusplus::server::object::object<
      */
     SysfsLed& led;
 
-    /** @brief Frequency range that the LED can operate on.
-     *  Will be removed when frequency is put into interface
+    /** @brief The period that the LED will operate on, in milliseconds
+     *  Will be removed when periodicity is put into interface
      */
-    uint32_t frequency;
+    uint32_t periodMs;
 
     /** @brief reads sysfs and then setsup the parameteres accordingly
      *
