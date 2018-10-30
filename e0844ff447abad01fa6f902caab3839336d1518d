@@ -1,0 +1,12 @@
+Ok-To-Test+1: Jenkins <openbmc-ci-admin@ozlabs.org>
+Verified+1: Jenkins <openbmc-ci-admin@ozlabs.org>
+Code-Review+1: Brad Bishop <bradleyb@fuzziesquirrel.com>
+Code-Review+1: Ed Tanous <ed.tanous@intel.com>
+Code-Review+1: William A. Kennington III <wak@google.com>
+Code-Review+1: James Feist <james.feist@linux.intel.com>
+Code-Review+2: Andrew Jeffery <andrew@aj.id.au>
+Submitted-by: Andrew Jeffery <andrew@aj.id.au>
+Submitted-at: Tue, 30 Oct 2018 20:19:57 +0000
+Reviewed-on: https://gerrit.openbmc-project.xyz/13621
+Project: openbmc/phosphor-led-sysfs
+Branch: refs/heads/master
