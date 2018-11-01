@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-#include <iostream>
-#include <string>
-#include <algorithm>
+#include "config.h"
+
 #include "argument.hpp"
 #include "physical.hpp"
 #include "sysfs.hpp"
-#include "config.h"
+
+#include <algorithm>
+#include <iostream>
+#include <string>
 
 static void ExitWithError(const char* err, char** argv)
 {

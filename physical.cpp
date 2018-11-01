@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
+#include "physical.hpp"
+
 #include <cassert>
 #include <iostream>
 #include <string>
-#include "physical.hpp"
 namespace phosphor
 {
 namespace led

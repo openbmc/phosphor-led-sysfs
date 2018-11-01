@@ -1,12 +1,12 @@
 #pragma once
 
-#include <string>
+#include "sysfs.hpp"
+
 #include <fstream>
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/object.hpp>
+#include <string>
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
-
-#include "sysfs.hpp"
 
 namespace phosphor
 {
@@ -106,4 +106,4 @@ class Physical : public sdbusplus::server::object::object<
 };
 
 } // namespace led
-}
+} // namespace phosphor

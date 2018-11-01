@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-#include <iostream>
-#include <iterator>
+#include "argument.hpp"
+
 #include <algorithm>
 #include <cassert>
-#include "argument.hpp"
+#include <iostream>
+#include <iterator>
 
 namespace phosphor
 {
