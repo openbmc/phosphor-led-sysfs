@@ -1,7 +1,8 @@
+#include "sysfs.hpp"
+
 #include <fstream>
 #include <iostream>
 #include <string>
-#include "sysfs.hpp"
 
 namespace fs = std::experimental::filesystem;
 
@@ -16,9 +17,11 @@ constexpr char SysfsLed::TRIGGER[];
 constexpr char SysfsLed::DELAY_ON[];
 constexpr char SysfsLed::DELAY_OFF[];
 
-template <typename T> T get_sysfs_attr(fs::path&& path);
+template <typename T>
+T get_sysfs_attr(fs::path&& path);
 
-template <> std::string get_sysfs_attr(fs::path&& path)
+template <>
+std::string get_sysfs_attr(fs::path&& path)
 {
     std::string content;
     std::ifstream file(path, std::ios::in);
@@ -26,13 +29,15 @@ template <> std::string get_sysfs_attr(fs::path&& path)
     return content;
 }
 
-template <> unsigned long get_sysfs_attr(fs::path&& path)
+template <>
+unsigned long get_sysfs_attr(fs::path&& path)
 {
     std::string content = get_sysfs_attr<std::string>(std::move(path));
     return std::strtoul(content.c_str(), nullptr, 0);
 }
 
-template <typename T> void set_sysfs_attr(fs::path&& path, T& value)
+template <typename T>
+void set_sysfs_attr(fs::path&& path, T& value)
 {
     std::ofstream file(path, std::ios::out);
     file << value;
@@ -82,5 +87,5 @@ void SysfsLed::setDelayOff(unsigned long ms)
 {
     set_sysfs_attr<unsigned long>(root / DELAY_OFF, ms);
 }
-}
-}
+} // namespace led
+} // namespace phosphor

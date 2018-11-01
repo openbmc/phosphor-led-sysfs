@@ -35,5 +35,5 @@ class SysfsLed
 
     std::experimental::filesystem::path root;
 };
-}
-}
+} // namespace led
+} // namespace phosphor

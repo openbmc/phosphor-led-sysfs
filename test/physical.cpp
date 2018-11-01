@@ -1,9 +1,11 @@
-#include <gtest/gtest.h>
-#include <gmock/gmock.h>
-#include <sdbusplus/bus.hpp>
+#include "physical.hpp"
+
 #include <sys/param.h>
 
-#include "physical.hpp"
+#include <sdbusplus/bus.hpp>
+
+#include <gmock/gmock.h>
+#include <gtest/gtest.h>
 
 constexpr auto LED_OBJ = "/foo/bar/led";
 

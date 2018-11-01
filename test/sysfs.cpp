@@ -1,10 +1,12 @@
-#include <fstream>
-#include <cstdlib>
-#include <cerrno>
-#include <gtest/gtest.h>
+#include "sysfs.hpp"
+
 #include <sys/param.h>
 
-#include "sysfs.hpp"
+#include <cerrno>
+#include <cstdlib>
+#include <fstream>
+
+#include <gtest/gtest.h>
 
 namespace fs = std::experimental::filesystem;
 
