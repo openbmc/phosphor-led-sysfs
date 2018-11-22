@@ -16,6 +16,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include "physical.hpp"
 namespace phosphor
 {
@@ -149,6 +150,32 @@ void Physical::blinkOperation()
     // Write DutyOFF. Value in milli seconds so 50% input becomes 500.
     write(delayOffCtrl, std::to_string((100 - dutyOn) * percentage));
     return;
+}
+
+/** @brief read led color from conf file and set it */
+void Physical::setLedColor()
+{
+    static const std::string prefix = "xyz.openbmc_project.Led.Physical.Palette.";
+    size_t pos = path.rfind('/');
+    if (pos == std::string::npos) {
+        return;
+    }
+
+    std::string name = path.substr(pos + 1);
+    auto color = std::getenv(name.c_str());
+    if (!color) {
+        return;
+    }
+    try
+    {
+        auto palette = convertPaletteFromString(prefix + color);
+        setPropertyByName("Color", palette);
+    }
+    catch (const sdbusplus::exception::InvalidEnumString& )
+    {
+        // if color var contains invalid color,
+        // Color property will have default value
+    }
 }
 
 } // namespace led

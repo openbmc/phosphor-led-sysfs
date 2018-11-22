@@ -82,6 +82,9 @@ class Physical : public sdbusplus::server::object::object<
             // need to save what the micro-controller currently has.
             setInitialState();
 
+            // Read led color from enviroment and set it in DBus.
+            setLedColor();
+
             // We are now ready.
             emit_object_added();
         }
@@ -184,6 +187,9 @@ class Physical : public sdbusplus::server::object::object<
             }
             return data;
         }
+
+        /** @brief read led color from conf file and set it */
+        void setLedColor();
 };
 
 } // namespace led
