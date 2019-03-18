@@ -104,11 +104,14 @@ TEST(Physical, off)
 
 TEST(Physical, on)
 {
+    constexpr unsigned long asserted = 127;
+
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
+    ON_CALL(led, getMaxBrightness()).WillByDefault(Return(asserted));
     EXPECT_CALL(led, getTrigger()).WillOnce(Return("none"));
     EXPECT_CALL(led, setTrigger("none"));
-    EXPECT_CALL(led, setBrightness(phosphor::led::ASSERT));
+    EXPECT_CALL(led, setBrightness(asserted));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
     phy.state(Action::On);
 }
@@ -130,21 +133,21 @@ TEST(Physical, ctor_none_trigger_asserted_brightness)
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
     EXPECT_CALL(led, getTrigger()).WillRepeatedly(Return("none"));
-    constexpr auto val = phosphor::led::ASSERT;
-    EXPECT_CALL(led, getBrightness()).WillRepeatedly(Return(val));
+    EXPECT_CALL(led, getBrightness()).WillRepeatedly(Return(127));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
 }
 
 TEST(Physical, on_to_off)
 {
     InSequence s;
+    constexpr unsigned long asserted = 127;
 
     auto bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
+    ON_CALL(led, getMaxBrightness()).WillByDefault(Return(asserted));
     EXPECT_CALL(led, getTrigger()).Times(1).WillOnce(Return("none"));
     constexpr auto deasserted = phosphor::led::DEASSERT;
     EXPECT_CALL(led, getBrightness()).WillOnce(Return(deasserted));
-    constexpr auto asserted = phosphor::led::ASSERT;
     EXPECT_CALL(led, setBrightness(asserted));
     EXPECT_CALL(led, setBrightness(deasserted));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
