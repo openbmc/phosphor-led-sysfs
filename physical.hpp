@@ -37,9 +37,10 @@ class Physical : public sdbusplus::server::object::object<
      * @param[in] bus       - system dbus handler
      * @param[in] objPath   - The Dbus path that hosts physical LED
      * @param[in] ledPath   - sysfs path where this LED is exported
+     * @param[in] color     - led color name
      */
     Physical(sdbusplus::bus::bus& bus, const std::string& objPath,
-             SysfsLed& led) :
+             SysfsLed& led, const std::string& color = "") :
 
         sdbusplus::server::object::object<
             sdbusplus::xyz::openbmc_project::Led::server::Physical>(
@@ -49,6 +50,9 @@ class Physical : public sdbusplus::server::object::object<
         // Suppose this is getting launched as part of BMC reboot, then we
         // need to save what the micro-controller currently has.
         setInitialState();
+
+        // Read led color from enviroment and set it in DBus.
+        setLedColor(color);
 
         // We are now ready.
         emit_object_added();
@@ -102,6 +106,12 @@ class Physical : public sdbusplus::server::object::object<
      *  @return None
      */
     void blinkOperation();
+
+    /** @brief set led color property in DBus
+     *
+     *  @param[in] color - led color name
+     */
+    void setLedColor(const std::string& color);
 };
 
 } // namespace led
