@@ -17,6 +17,7 @@
 #include "physical.hpp"
 
 #include <cassert>
+#include <cstdlib>
 #include <iostream>
 #include <string>
 namespace phosphor
@@ -108,6 +109,26 @@ void Physical::blinkOperation()
 
     led.setTrigger("timer");
     return;
+}
+
+/** @brief set led color property in DBus*/
+void Physical::setLedColor(const std::string& color)
+{
+    static const std::string prefix = "xyz.openbmc_project.Led.Physical.Palette.";
+    if (!color.length())
+        return;
+    std::string tmp = color;
+    tmp[0] = toupper(tmp[0]);
+    try
+    {
+        auto palette = convertPaletteFromString(prefix + tmp);
+        setPropertyByName("Color", palette);
+    }
+    catch (const sdbusplus::exception::InvalidEnumString& )
+    {
+        // if color var contains invalid color,
+        // Color property will have default value
+    }
 }
 
 } // namespace led
