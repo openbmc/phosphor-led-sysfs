@@ -100,13 +100,14 @@ void Physical::stableStateOperation(Action action)
 void Physical::blinkOperation()
 {
     auto dutyOn = this->dutyOn();
+    auto periodMs = this->period();
 
+    led.setTrigger("timer");
     // Convert percent duty to milliseconds for sysfs interface
-    auto factor = periodMs / 100;
+    auto factor = periodMs / 100.0;
     led.setDelayOn(dutyOn * factor);
     led.setDelayOff((100 - dutyOn) * factor);
 
-    led.setTrigger("timer");
     return;
 }
 
