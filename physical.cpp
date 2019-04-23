@@ -32,16 +32,17 @@ void Physical::setInitialState()
     if (trigger == "timer")
     {
         // LED is blinking. Get the on and off delays and derive percent duty
+        uint32_t periodMs;
         auto delayOn = led.getDelayOn();
         periodMs = delayOn + led.getDelayOff();
         auto percentScale = periodMs / 100;
         this->dutyOn(delayOn / percentScale);
+        this->period(periodMs);
     }
     else
     {
         // TODO: Periodicity is hardcoded for now. This will be changed to
         // this->period() when configurable periodicity is implemented.
-        periodMs = 1000;
 
         // Cache current LED state
         auto brightness = led.getBrightness();
@@ -101,12 +102,12 @@ void Physical::blinkOperation()
 {
     auto dutyOn = this->dutyOn();
 
+    led.setTrigger("timer");
     // Convert percent duty to milliseconds for sysfs interface
-    auto factor = periodMs / 100;
+    auto factor = this->period() / 100.0;
     led.setDelayOn(dutyOn * factor);
     led.setDelayOff((100 - dutyOn) * factor);
 
-    led.setTrigger("timer");
     return;
 }
 
