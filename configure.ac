@@ -66,31 +66,45 @@ AS_IF([test "x$enable_tests" != "xno"], [
     AC_LANG_POP([C++])
     AX_RESTORE_FLAGS_WITH_PREFIX(OLD, [CPPFLAGS])
 
-    AX_SAVE_FLAGS_WITH_PREFIX(OLD, [LDFLAGS])
-    AX_APPEND_COMPILE_FLAGS([$GTEST_LIBS], [LDFLAGS])
-    AC_CHECK_LIB([gtest], [main], [
-        AS_IF([test "x$GTEST_LIBS" = "x"], [
-            AX_APPEND_COMPILE_FLAGS([-lgtest], [GTEST_LIBS])
-        ])
-    ], [
-        AS_IF([test "x$enable_tests" = "xyes"], [
-            AC_MSG_ERROR([Testing enabled but couldn't find gtest libs])
-        ])
-    ])
-    AX_RESTORE_FLAGS_WITH_PREFIX(OLD, [LDFLAGS])
+    AX_SAVE_FLAGS_WITH_PREFIX(OLD, [LIBS])
+    AX_APPEND_COMPILE_FLAGS([$GTEST_LIBS], [LIBS])
+    AX_SAVE_FLAGS_WITH_PREFIX(OLD, [CXXFLAGS])
+    AX_APPEND_COMPILE_FLAGS([$GTEST_CFLAGS], [CXXFLAGS])
+    AC_LANG_PUSH([C++])
+    AC_TRY_LINK([#include <gtest/gtest.h>],
+                [testing::AssertionFailure();],
+                have_libgtest=1,
+                have_libgtest=0)
+    AC_LANG_POP([C++])
+    AX_RESTORE_FLAGS_WITH_PREFIX(OLD, [CXXFLAGS])
+    AX_RESTORE_FLAGS_WITH_PREFIX(OLD, [LIBS])
 
-    AX_SAVE_FLAGS_WITH_PREFIX(OLD, [LDFLAGS])
-    AX_APPEND_COMPILE_FLAGS([$GMOCK_LIBS], [LDFLAGS])
-    AC_CHECK_LIB([gmock], [main], [
-        AS_IF([test "x$GMOCK_LIBS" = "x"], [
-            AX_APPEND_COMPILE_FLAGS([-lgmock], [GMOCK_LIBS])
-        ])
-    ], [
-        AS_IF([test "x$enable_tests" = "xyes"], [
-            AC_MSG_ERROR([Testing enabled but couldn't find gmock libs])
-        ])
-    ])
-    AX_RESTORE_FLAGS_WITH_PREFIX(OLD, [LDFLAGS])
+    AS_IF([test $have_libgtest = 1],
+          [ AX_APPEND_COMPILE_FLAGS([$GTEST_CFLAGS], [CXXFLAGS]) ],
+          [
+              AS_IF([test "x$enable_tests" = "xyes"],
+                 [AC_MSG_ERROR([Testing enabled but couldn't find gtest libs])])
+          ])
+
+    AX_SAVE_FLAGS_WITH_PREFIX(OLD, [LIBS])
+    AX_APPEND_COMPILE_FLAGS([$GMOCK_LIBS], [LIBS])
+    AX_SAVE_FLAGS_WITH_PREFIX(OLD, [CXXFLAGS])
+    AX_APPEND_COMPILE_FLAGS([$GMOCK_CFLAGS], [CXXFLAGS])
+    AC_LANG_PUSH([C++])
+    AC_TRY_LINK([#include <gmock/gmock.h>],
+                [testing::AnyNumber();],
+                have_libgmock=1,
+                have_libgmock=0)
+    AC_LANG_POP([C++])
+    AX_RESTORE_FLAGS_WITH_PREFIX(OLD, [CXXFLAGS])
+    AX_RESTORE_FLAGS_WITH_PREFIX(OLD, [LIBS])
+
+    AS_IF([test $have_libgmock = 1],
+          [ AX_APPEND_COMPILE_FLAGS([$GMOCK_CFLAGS], [CXXFLAGS]) ],
+          [
+              AS_IF([test "x$enable_tests" = "xyes"],
+                 [AC_MSG_ERROR([Testing enabled but couldn't find gmock libs])])
+          ])
 ])
 
 AX_CODE_COVERAGE
