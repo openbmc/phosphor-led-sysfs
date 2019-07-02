@@ -6,6 +6,10 @@ AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([subdir-objects -Wall -Werror foreign dist-xz])
 AM_SILENT_RULES([yes])
 
+AC_ARG_ENABLE(tests, "Fail configure if tests can't be built",
+              enable_tests="yes",
+              enable_tests="no")
+
 # Checks for programs.
 AC_PROG_CXX
 AC_PROG_INSTALL
