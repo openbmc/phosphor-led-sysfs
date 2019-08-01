@@ -3,7 +3,7 @@ AC_PREREQ([2.69])
 AC_INIT([phosphor-led-sysfs], [1.0], [https://github.com/openbmc/phosphor-led-sysfs/issues])
 AC_LANG([C++])
 AC_CONFIG_HEADERS([config.h])
-AM_INIT_AUTOMAKE([subdir-objects -Wall -Werror foreign dist-xz])
+AM_INIT_AUTOMAKE([subdir-objects -Wall -Wno-portability -Werror foreign dist-xz])
 AM_SILENT_RULES([yes])
 
 # Checks for programs.
@@ -90,6 +90,10 @@ AS_IF([test "x$enable_tests" != "xno"], [
 ])
 
 AX_CODE_COVERAGE
+m4_ifdef([_AX_CODE_COVERAGE_RULES],
+    [AM_CONDITIONAL(AUTOCONF_CODE_COVERAGE_2019_01_06, [true])],
+    [AM_CONDITIONAL(AUTOCONF_CODE_COVERAGE_2019_01_06, [false])])
+AX_ADD_AM_MACRO_STATIC([])
 
 AC_ARG_VAR(BUSNAME, [The Dbus busname to own])
 AS_IF([test "x$BUSNAME" == "x"], [BUSNAME="xyz.openbmc_project.LED.Controller"])
