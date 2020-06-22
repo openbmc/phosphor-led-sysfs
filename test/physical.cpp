@@ -46,8 +46,7 @@ class MockLed : public phosphor::led::SysfsLed
   public:
     /* Use a no-args ctor here to avoid headaches with {Nice,Strict}Mock */
     MockLed() : SysfsLed(create_sandbox())
-    {
-    }
+    {}
 
     virtual ~MockLed()
     {

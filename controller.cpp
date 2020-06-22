@@ -20,8 +20,9 @@
 #include "physical.hpp"
 #include "sysfs.hpp"
 
-#include <algorithm>
 #include <boost/algorithm/string.hpp>
+
+#include <algorithm>
 #include <iostream>
 #include <string>
 

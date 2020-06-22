@@ -2,11 +2,12 @@
 
 #include "sysfs.hpp"
 
-#include <fstream>
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/object.hpp>
-#include <string>
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
+
+#include <fstream>
+#include <string>
 
 namespace phosphor
 {
@@ -18,8 +19,9 @@ constexpr unsigned long DEASSERT = 0;
 /** @class Physical
  *  @brief Responsible for applying actions on a particular physical LED
  */
-class Physical : public sdbusplus::server::object::object<
-                     sdbusplus::xyz::openbmc_project::Led::server::Physical>
+class Physical :
+    public sdbusplus::server::object::object<
+        sdbusplus::xyz::openbmc_project::Led::server::Physical>
 {
   public:
     Physical() = delete;
