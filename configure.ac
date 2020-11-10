@@ -107,6 +107,13 @@ AC_ARG_VAR(DEVPATH, [Physical led device path])
 AS_IF([test "x$DEVPATH" == "x"], [DEVPATH="/sys/class/leds/"])
 AC_DEFINE_UNQUOTED([DEVPATH], ["$DEVPATH"], [Physical led device path])
 
+# enable lamp test
+AC_ARG_ENABLE([use-lamp-test],
+    AS_HELP_STRING([--enable-use-lamp-test], [Enable lamp test configuration.]))
+AS_IF([test "x$enable_use_lamp_test" == "xyes"],
+    AC_DEFINE([USE_LAMP_TEST],[],[Enable lamp test configuration.])
+)
+
 # Create configured output
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
