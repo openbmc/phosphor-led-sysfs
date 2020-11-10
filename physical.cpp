@@ -62,8 +62,14 @@ auto Physical::state(Action value) -> Action
     auto current =
         sdbusplus::xyz::openbmc_project::Led::server::Physical::state();
 
+#ifdef USE_LAMP_TEST
+    auto requested =
+        sdbusplus::xyz::openbmc_project::Led::server::Physical::state(value,
+                                                                      true);
+#else
     auto requested =
         sdbusplus::xyz::openbmc_project::Led::server::Physical::state(value);
+#endif
 
     driveLED(current, requested);
 
