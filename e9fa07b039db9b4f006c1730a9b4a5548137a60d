@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3c2b9648_521be77c",
+        "filename": "physical.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-11-11T05:37:46Z",
+      "side": 1,
+      "message": "sorry.. what we need is :\n\nifdef LAMP_TEST _and_ if lamp-test-is-in-progres ; then do this change.. can we take this as a last thing after all LED manager work is done ?",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 6
+      },
+      "revId": "e9fa07b039db9b4f006c1730a9b4a5548137a60d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
