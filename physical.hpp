@@ -1,18 +1,24 @@
 #pragma once
 
+#include "config.h"
+
 #include "sysfs.hpp"
+#include "utils.hpp"
 
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/object.hpp>
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
 
 #include <fstream>
+#include <iostream>
 #include <string>
 
 namespace phosphor
 {
 namespace led
 {
+using namespace phosphor::led::utils;
+
 /** @brief De-assert value */
 constexpr unsigned long DEASSERT = 0;
 
@@ -58,6 +64,30 @@ class Physical :
 
         // We are now ready.
         emit_object_added();
+
+#ifdef USE_LAMP_TEST
+        using namespace sdbusplus::bus::match::rules;
+        lampTestMatch = std::make_unique<sdbusplus::bus::match::match>(
+            bus,
+            propertiesChanged("/xyz/openbmc_project/led/groups/lamp_test",
+                              "xyz.openbmc_project.Led.Group"),
+            [this](auto& msg) mutable {
+                using PropertyValue = std::variant<bool>;
+                using DbusProp = std::string;
+                using DbusChangedProps = std::map<DbusProp, PropertyValue>;
+
+                DbusChangedProps props{};
+                std::string intf;
+                msg.read(intf, props);
+                const auto itr = props.find("Asserted");
+                if (itr != props.end())
+                {
+                    PropertyValue value = itr->second;
+                    auto propVal = std::get<bool>(value);
+                    this->isLampTestRunning = propVal ? true : false;
+                }
+            });
+#endif
     }
 
     /** @brief Overloaded State Property Setter function
@@ -74,6 +104,15 @@ class Physical :
 
     /** @brief The value that will assert the LED */
     unsigned long assert;
+
+    /** DBusHandler class handles the D-Bus operations */
+    DBusHandler dBusHandler;
+
+    /** @brief Get state of the lamp test operation */
+    bool isLampTestRunning{false};
+
+    /** @brief D-Bus property changed signal match */
+    std::unique_ptr<sdbusplus::bus::match::match> lampTestMatch;
 
     /** @brief reads sysfs and then setsup the parameteres accordingly
      *
