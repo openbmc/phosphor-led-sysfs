@@ -24,6 +24,7 @@ namespace phosphor
 {
 namespace led
 {
+using namespace phosphor::led::utils;
 
 /** @brief Populates key parameters */
 void Physical::setInitialState()
@@ -62,10 +63,20 @@ auto Physical::state(Action value) -> Action
     auto current =
         sdbusplus::xyz::openbmc_project::Led::server::Physical::state();
 
-    auto requested =
-        sdbusplus::xyz::openbmc_project::Led::server::Physical::state(value);
-
-    driveLED(current, requested);
+    if (isLampTestRunning)
+    {
+        auto requested =
+            sdbusplus::xyz::openbmc_project::Led::server::Physical::state(value,
+                                                                          true);
+        driveLED(current, requested);
+    }
+    else
+    {
+        auto requested =
+            sdbusplus::xyz::openbmc_project::Led::server::Physical::state(
+                value);
+        driveLED(current, requested);
+    }
 
     return value;
 }
