@@ -4,7 +4,8 @@ phosphor_ledcontroller_SOURCES = \
 				controller.cpp  \
 				argument.cpp 	\
 				physical.cpp \
-				sysfs.cpp
+				sysfs.cpp \
+				utils.cpp
 
 phosphor_ledcontroller_LDFLAGS = $(SDBUSPLUS_LIBS) \
                                  $(SYSTEMD_LIBS) \
