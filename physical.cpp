@@ -57,15 +57,44 @@ void Physical::setInitialState()
     return;
 }
 
+bool Physical::getLampTest()
+{
+    PropertyValue lampTest{};
+    try
+    {
+        lampTest = dBusHandler.getProperty(
+            "/xyz/openbmc_project/led/groups/lamp_test",
+            "xyz.openbmc_project.Led.Group", "Asserted");
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        return false;
+    }
+
+    auto& asserted = std::get<bool>(lampTest);
+
+    return asserted;
+}
+
 auto Physical::state(Action value) -> Action
 {
     auto current =
         sdbusplus::xyz::openbmc_project::Led::server::Physical::state();
 
-    auto requested =
-        sdbusplus::xyz::openbmc_project::Led::server::Physical::state(value);
-
-    driveLED(current, requested);
+    if (getLampTest())
+    {
+        auto requested =
+            sdbusplus::xyz::openbmc_project::Led::server::Physical::state(value,
+                                                                          true);
+        driveLED(current, requested);
+    }
+    else
+    {
+        auto requested =
+            sdbusplus::xyz::openbmc_project::Led::server::Physical::state(
+                value);
+        driveLED(current, requested);
+    }
 
     return value;
 }
