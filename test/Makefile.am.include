@@ -22,7 +22,6 @@ AM_LDFLAGS = \
 
 test_physical_SOURCES = %reldir%/physical.cpp
 test_physical_LDADD = physical.o sysfs.o
-
 test_sysfs_SOURCES = %reldir%/sysfs.cpp
 test_sysfs_LDADD = sysfs.cpp
 
