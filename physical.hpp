@@ -1,6 +1,7 @@
 #pragma once
 
 #include "sysfs.hpp"
+#include "utils.hpp"
 
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/object.hpp>
@@ -13,6 +14,8 @@ namespace phosphor
 {
 namespace led
 {
+using namespace phosphor::led::utils;
+
 /** @brief De-assert value */
 constexpr unsigned long DEASSERT = 0;
 
@@ -75,6 +78,9 @@ class Physical :
     /** @brief The value that will assert the LED */
     unsigned long assert;
 
+    /** DBusHandler class handles the D-Bus operations */
+    DBusHandler dBusHandler;
+
     /** @brief reads sysfs and then setsup the parameteres accordingly
      *
      *  @return None
@@ -109,6 +115,11 @@ class Physical :
      *  @param[in] color - led color name
      */
     void setLedColor(const std::string& color);
+
+    /** @brief get the status of lamp test
+     *
+     */
+    bool getLampTest();
 };
 
 } // namespace led
