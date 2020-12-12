@@ -1,5 +1,7 @@
 #pragma once
 
+#include "config.h"
+
 #include "sysfs.hpp"
 
 #include <sdbusplus/bus.hpp>
@@ -47,7 +49,7 @@ class Physical :
         sdbusplus::server::object::object<
             sdbusplus::xyz::openbmc_project::Led::server::Physical>(
             bus, objPath.c_str(), true),
-        led(led)
+        bus(bus), led(led)
     {
         // Suppose this is getting launched as part of BMC reboot, then we
         // need to save what the micro-controller currently has.
@@ -56,6 +58,10 @@ class Physical :
         // Read led color from enviroment and set it in DBus.
         setLedColor(color);
 
+#ifdef USE_LAMP_TEST
+        // Listen to the event of the lamp test
+        listenForLampTestEvent();
+#endif
         // We are now ready.
         emit_object_added();
     }
@@ -68,6 +74,9 @@ class Physical :
     Action state(Action value) override;
 
   private:
+    /** @brief sdbusplus handler */
+    sdbusplus::bus::bus& bus;
+
     /** @brief Associated LED implementation
      */
     SysfsLed& led;
@@ -75,11 +84,23 @@ class Physical :
     /** @brief The value that will assert the LED */
     unsigned long assert;
 
+    /** @brief Get state of the lamp test operation */
+    bool isLampTestRunning{false};
+
+    /** @brief D-Bus property changed signal match */
+    std::unique_ptr<sdbusplus::bus::match::match> lampTestMatch;
+
     /** @brief reads sysfs and then setsup the parameteres accordingly
      *
      *  @return None
      */
     void setInitialState();
+
+    /** @brief When the lamp test is enabled, listen to the lamp test event.
+     *
+     *  @return None
+     */
+    void listenForLampTestEvent();
 
     /** @brief Applies the user triggered action on the LED
      *   by writing to sysfs

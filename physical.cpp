@@ -62,10 +62,26 @@ auto Physical::state(Action value) -> Action
     auto current =
         sdbusplus::xyz::openbmc_project::Led::server::Physical::state();
 
-    auto requested =
-        sdbusplus::xyz::openbmc_project::Led::server::Physical::state(value);
-
-    driveLED(current, requested);
+    if (isLampTestRunning)
+    {
+        // Lamp test is a diagnostic run and as part of that, all the LEDs are
+        // lit-up. When that happens, we should not send a message saying the
+        // the LED is [ON], since the listeners of the PropertyChanged signal on
+        // this would think that the Physical LED is ON due to a real issue.
+        // This feature is here to maintain the feature mapping with IBM
+        // previous generation behaviours.
+        auto requested =
+            sdbusplus::xyz::openbmc_project::Led::server::Physical::state(value,
+                                                                          true);
+        driveLED(current, requested);
+    }
+    else
+    {
+        auto requested =
+            sdbusplus::xyz::openbmc_project::Led::server::Physical::state(
+                value);
+        driveLED(current, requested);
+    }
 
     return value;
 }
@@ -137,6 +153,35 @@ void Physical::setLedColor(const std::string& color)
         // if color var contains invalid color,
         // Color property will have default value
     }
+}
+
+void Physical::listenForLampTestEvent()
+{
+    using namespace sdbusplus::bus::match::rules;
+    using PropertyValue = std::variant<bool>;
+    using DbusProp = std::string;
+    using DbusChangedProps = std::map<DbusProp, PropertyValue>;
+
+    constexpr auto LAMP_TEST_PATH = "/xyz/openbmc_project/led/groups/lamp_test";
+    constexpr auto LAMP_TEST_INTF = "xyz.openbmc_project.Led.Group";
+
+    lampTestMatch = std::make_unique<sdbusplus::bus::match::match>(
+        bus, propertiesChanged(LAMP_TEST_PATH, LAMP_TEST_INTF),
+        [this](auto& msg) {
+            DbusChangedProps props{};
+            std::string intf{};
+            msg.read(intf, props);
+            const auto itr = props.find("Asserted");
+
+            // Listen whether its properties are changed, if it is changed to
+            // true, it means that the lamp test is running
+            if (itr != props.end())
+            {
+                PropertyValue value = itr->second;
+                auto propVal = std::get<bool>(value);
+                this->isLampTestRunning = propVal ? true : false;
+            }
+        });
 }
 
 } // namespace led
