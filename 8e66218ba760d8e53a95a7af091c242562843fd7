@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27dd6d67_2bfc9c59",
+        "filename": "physical.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-14T11:23:03Z",
+      "side": 1,
+      "message": "this would result in dead lock due to this reason.\n\nled manager calls led-sysfs to set the led \nled-sysfs now calls led-manager to get the state of asserted.\n\n---------------\n\nAlso, we can not call into led-manager for every request. Instead, we need led-sysfs watch for PropertiesChanged signal on lamp_test and maintain an internal variable. When the propertiesChanged is set to \"false\" then it indicates the lamp-test function is over.",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 5
+      },
+      "revId": "8e66218ba760d8e53a95a7af091c242562843fd7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
