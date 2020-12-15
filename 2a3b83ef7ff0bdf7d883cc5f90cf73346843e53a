@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce814c1c_dfeac557",
+        "filename": "configure.ac",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-15T14:04:06Z",
+      "side": 1,
+      "message": "so, we don\u0027t have WANTS_LAMP_TEST because there are no files to be compiled extra ?. But from the OE config, we need to pass just one variable across led-sysfs and led-manage",
+      "revId": "2a3b83ef7ff0bdf7d883cc5f90cf73346843e53a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
