@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11f6c525_ae633ab0",
+        "filename": "physical.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-15T13:59:36Z",
+      "side": 1,
+      "message": "Need a comment on why this is being done.. The comment goes like : \n\nLamp test is a diagnostic run and as part of that, all the LEDs are lit-up. When that happens, we should not send a message saying the the LED is [ON], since the listeners of the PropertyChanged signal on this would think that the Physical LED is ON due to a real issue. This feature is here to maintain the feature mapping with IBM previous generation behaviours.",
+      "revId": "5c2ff352675f3a71dc831688d6ba0f2d584e9c2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bcdf50b0_4b3bf6bd",
+        "filename": "physical.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-15T13:59:36Z",
+      "side": 1,
+      "message": "hmm.. may I know why is this needed ?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 19
+      },
+      "revId": "5c2ff352675f3a71dc831688d6ba0f2d584e9c2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c5789670_d4788eb6",
+        "filename": "physical.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-15T13:59:36Z",
+      "side": 1,
+      "message": "This must be the last thing in the constructor.",
+      "revId": "5c2ff352675f3a71dc831688d6ba0f2d584e9c2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "92c7047a_017d41fe",
+        "filename": "physical.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-15T13:59:36Z",
+      "side": 1,
+      "message": "where is this declared ?",
+      "range": {
+        "startLine": 69,
+        "startChar": 11,
+        "endLine": 69,
+        "endChar": 29
+      },
+      "revId": "5c2ff352675f3a71dc831688d6ba0f2d584e9c2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c8571fbc_d0b11b8c",
+        "filename": "physical.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-15T13:59:36Z",
+      "side": 1,
+      "message": "kinda looks cryptic to me . Is there a way to simplify this ?",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 75
+      },
+      "revId": "5c2ff352675f3a71dc831688d6ba0f2d584e9c2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e654efe0_5a011a02",
+        "filename": "physical.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-15T13:59:36Z",
+      "side": 1,
+      "message": "intf{};",
+      "range": {
+        "startLine": 77,
+        "startChar": 28,
+        "endLine": 77,
+        "endChar": 33
+      },
+      "revId": "5c2ff352675f3a71dc831688d6ba0f2d584e9c2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
