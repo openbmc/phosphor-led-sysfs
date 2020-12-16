@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8dcfa3e9_36728849",
+        "filename": "physical.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-16T01:19:44Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "11f6c525_ae633ab0",
+      "revId": "5c2ff352675f3a71dc831688d6ba0f2d584e9c2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bcdf50b0_4b3bf6bd",
         "filename": "physical.hpp",
         "patchSetId": 10
@@ -59,6 +77,24 @@
     },
     {
       "key": {
+        "uuid": "6805dc69_47a48fa5",
+        "filename": "physical.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-16T01:19:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5789670_d4788eb6",
+      "revId": "5c2ff352675f3a71dc831688d6ba0f2d584e9c2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "92c7047a_017d41fe",
         "filename": "physical.hpp",
         "patchSetId": 10
@@ -70,6 +106,30 @@
       "writtenOn": "2020-12-15T13:59:36Z",
       "side": 1,
       "message": "where is this declared ?",
+      "range": {
+        "startLine": 69,
+        "startChar": 11,
+        "endLine": 69,
+        "endChar": 29
+      },
+      "revId": "5c2ff352675f3a71dc831688d6ba0f2d584e9c2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "34b0a00d_b0f40da3",
+        "filename": "physical.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-16T01:19:44Z",
+      "side": 1,
+      "message": "https://github.com/openbmc/sdbusplus/blob/master/include/sdbusplus/bus/match.hpp#L197\n\n```\n#include \u003csdbusplus/bus.hpp\u003e\nusing namespace sdbusplus::bus::match::rules;\n```",
+      "parentUuid": "92c7047a_017d41fe",
       "range": {
         "startLine": 69,
         "startChar": 11,
@@ -105,6 +165,30 @@
     },
     {
       "key": {
+        "uuid": "c2e23ab1_c35a02cf",
+        "filename": "physical.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-16T01:19:44Z",
+      "side": 1,
+      "message": "move to the listenLampTestAsserted method.",
+      "parentUuid": "c8571fbc_d0b11b8c",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 75
+      },
+      "revId": "5c2ff352675f3a71dc831688d6ba0f2d584e9c2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e654efe0_5a011a02",
         "filename": "physical.hpp",
         "patchSetId": 10
@@ -116,6 +200,30 @@
       "writtenOn": "2020-12-15T13:59:36Z",
       "side": 1,
       "message": "intf{};",
+      "range": {
+        "startLine": 77,
+        "startChar": 28,
+        "endLine": 77,
+        "endChar": 33
+      },
+      "revId": "5c2ff352675f3a71dc831688d6ba0f2d584e9c2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d830047_f5d6064c",
+        "filename": "physical.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-16T01:19:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e654efe0_5a011a02",
       "range": {
         "startLine": 77,
         "startChar": 28,
