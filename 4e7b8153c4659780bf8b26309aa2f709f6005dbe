@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e533135_c0e4f1b0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-12T10:56:48Z",
+      "side": 1,
+      "message": "Please add the testcase result ?.. Also, I feel we need to add the GTEST",
+      "revId": "4e7b8153c4659780bf8b26309aa2f709f6005dbe",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "869b5f53_cb4294c5",
+        "filename": "physical.hpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-12T10:56:48Z",
+      "side": 1,
+      "message": "hmm.. I thought it;s a method.. could u leave a space ? \n\nisLampTestRunning {false};\n\nIdeally, I would put all this new code under #ifdef USE_LAMP_TEST.",
+      "range": {
+        "startLine": 88,
+        "startChar": 26,
+        "endLine": 88,
+        "endChar": 34
+      },
+      "revId": "4e7b8153c4659780bf8b26309aa2f709f6005dbe",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
