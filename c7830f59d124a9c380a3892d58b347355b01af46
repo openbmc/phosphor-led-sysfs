@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "725157d4_7eb9c7f3",
+        "filename": "physical.cpp",
+        "patchSetId": 15
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-13T08:05:44Z",
+      "side": 1,
+      "message": "these are common for both the cases. So why duplicate it ?",
+      "revId": "c7830f59d124a9c380a3892d58b347355b01af46",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
