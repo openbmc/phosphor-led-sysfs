@@ -39,6 +39,30 @@
       "revId": "4e7b8153c4659780bf8b26309aa2f709f6005dbe",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8cb0e929_89bf16c5",
+        "filename": "physical.hpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-13T07:53:14Z",
+      "side": 1,
+      "message": "\u003e I thought it;s a method.. could u leave a space ? \n\nSince `.clang-format` is used, could not leave a space.\n\n\n\u003e Ideally, I would put all this new code under #ifdef USE_LAMP_TEST.\nDone",
+      "parentUuid": "869b5f53_cb4294c5",
+      "range": {
+        "startLine": 88,
+        "startChar": 26,
+        "endLine": 88,
+        "endChar": 34
+      },
+      "revId": "4e7b8153c4659780bf8b26309aa2f709f6005dbe",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
