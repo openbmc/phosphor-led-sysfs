@@ -16,6 +16,23 @@
       "revId": "c7830f59d124a9c380a3892d58b347355b01af46",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d510ab5b_a4694741",
+        "filename": "physical.cpp",
+        "patchSetId": 15
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-13T08:07:13Z",
+      "side": 1,
+      "message": "looks like a bug in the previous code itself. we are setting the base class value even before doing the actual work. Generally, we would set that after handling the request. Anyway, no need to fix that along with this commit.",
+      "revId": "c7830f59d124a9c380a3892d58b347355b01af46",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
