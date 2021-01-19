@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "fe651440_a2edf464",
+        "filename": "physical.cpp",
+        "patchSetId": 15
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-19T16:07:31Z",
+      "side": 1,
+      "message": "This is not an acceptable approach no matter what the purpose of the property/signal consumption is.\n\nI don\u0027t see any reason why you shouldn\u0027t emit PropertyChanged in 99.9% of scenarios.  This one doesn\u0027t qualify to me.\n\nPropertyChanged signals allow asynchronous responses to the properties, but you cannot rely on consumers to actually listen / consume them.  An implementation could alternatively simply query your property every N seconds (not that this would be a \"good\" implementation, but it is valid).\n\nTaking this a step farther, a very common practice is to read a bunch of the existing properties upon start up.  If your \"consumer\" were to crash or start up dynamically, they\u0027re going to get the \"wrong value\" based on your proposal in the comments here.\n\nIn no case should you set a property to a value that you are unhappy with another application consuming that value.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 80
+      },
+      "revId": "c7830f59d124a9c380a3892d58b347355b01af46",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "725157d4_7eb9c7f3",
         "filename": "physical.cpp",
         "patchSetId": 15
