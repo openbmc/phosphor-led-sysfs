@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5495b3ef_529df5cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-03-22T23:50:05Z",
+      "side": 1,
+      "message": "We have unit tests now so we can remove this from the commit message?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 49
+      },
+      "revId": "c254ca9238f40de9996b5fe90e5bd75ca7a50615",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5352de9c_4becfd37",
+        "filename": "configure.ac",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-03-22T23:50:05Z",
+      "side": 1,
+      "message": "This comment is inaccurate now.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 37
+      },
+      "revId": "c254ca9238f40de9996b5fe90e5bd75ca7a50615",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83a1c068_d78924a7",
+        "filename": "configure.ac",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-03-22T23:50:05Z",
+      "side": 1,
+      "message": "This is a bug fix that is unrelated to your patch. Please make it a separate patch.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 1
+      },
+      "revId": "c254ca9238f40de9996b5fe90e5bd75ca7a50615",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb29fa59_c07913ae",
+        "filename": "physical.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-03-22T23:50:05Z",
+      "side": 1,
+      "message": "Split this out.",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 1
+      },
+      "revId": "c254ca9238f40de9996b5fe90e5bd75ca7a50615",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e6b430f_7feb2b46",
+        "filename": "physical.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-03-22T23:50:05Z",
+      "side": 1,
+      "message": "This is also a separate patch.",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 34
+      },
+      "revId": "c254ca9238f40de9996b5fe90e5bd75ca7a50615",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98b77834_5cdf02e2",
+        "filename": "test/Makefile.am.include",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-03-22T23:50:05Z",
+      "side": 1,
+      "message": "This is yet another fix?",
+      "range": {
+        "startLine": 2,
+        "startChar": 1,
+        "endLine": 3,
+        "endChar": 19
+      },
+      "revId": "c254ca9238f40de9996b5fe90e5bd75ca7a50615",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1973103_1c46ed11",
+        "filename": "test/Makefile.am.include",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-03-22T23:50:05Z",
+      "side": 1,
+      "message": "This is already present on line 25.",
+      "range": {
+        "startLine": 20,
+        "startChar": 3,
+        "endLine": 20,
+        "endChar": 23
+      },
+      "revId": "c254ca9238f40de9996b5fe90e5bd75ca7a50615",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7bbf23b9_9fadec83",
+        "filename": "test/Makefile.am.include",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-03-22T23:50:05Z",
+      "side": 1,
+      "message": "This seems like yet another fix?",
+      "range": {
+        "startLine": 21,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 16
+      },
+      "revId": "c254ca9238f40de9996b5fe90e5bd75ca7a50615",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a96f202c_dd79db8c",
+        "filename": "test/physical.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-03-22T23:50:05Z",
+      "side": 1,
+      "message": "Split the addition of these extra expectations out into the patch that adds the state() method.",
+      "revId": "c254ca9238f40de9996b5fe90e5bd75ca7a50615",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
