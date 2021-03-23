@@ -57,6 +57,11 @@ void Physical::setInitialState()
     return;
 }
 
+auto Physical::state() const -> Action
+{
+    return sdbusplus::xyz::openbmc_project::Led::server::Physical::state();
+}
+
 auto Physical::state(Action value) -> Action
 {
     auto current =

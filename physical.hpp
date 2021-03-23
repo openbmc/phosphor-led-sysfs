@@ -67,6 +67,12 @@ class Physical :
      */
     Action state(Action value) override;
 
+    /** @brief Overriden State Property Getter function
+     *
+     *  @return  -  One of OFF / ON / BLINK
+     */
+    Action state() const override;
+
   private:
     /** @brief Associated LED implementation
      */

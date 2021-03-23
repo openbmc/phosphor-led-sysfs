@@ -77,6 +77,7 @@ TEST(Physical, ctor_none_trigger)
     NiceMock<MockLed> led;
     ON_CALL(led, getTrigger()).WillByDefault(Return("none"));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
+    EXPECT_EQ(phy.state(), Action::Off);
 }
 
 TEST(Physical, ctor_timer_trigger)
@@ -87,6 +88,7 @@ TEST(Physical, ctor_timer_trigger)
     EXPECT_CALL(led, getDelayOn()).WillOnce(Return(500));
     EXPECT_CALL(led, getDelayOff()).WillOnce(Return(500));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
+    EXPECT_EQ(phy.state(), Action::Off);
 }
 
 TEST(Physical, off)
@@ -99,6 +101,7 @@ TEST(Physical, off)
     EXPECT_CALL(led, setBrightness(phosphor::led::DEASSERT)).Times(0);
     phosphor::led::Physical phy(bus, LED_OBJ, led);
     phy.state(Action::Off);
+    EXPECT_EQ(phy.state(), Action::Off);
 }
 
 TEST(Physical, on)
@@ -113,6 +116,7 @@ TEST(Physical, on)
     EXPECT_CALL(led, setBrightness(asserted));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
     phy.state(Action::On);
+    EXPECT_EQ(phy.state(), Action::On);
 }
 
 TEST(Physical, blink)
@@ -125,6 +129,7 @@ TEST(Physical, blink)
     EXPECT_CALL(led, setDelayOff(500));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
     phy.state(Action::Blink);
+    EXPECT_EQ(phy.state(), Action::Blink);
 }
 
 TEST(Physical, ctor_none_trigger_asserted_brightness)
@@ -134,6 +139,7 @@ TEST(Physical, ctor_none_trigger_asserted_brightness)
     EXPECT_CALL(led, getTrigger()).WillRepeatedly(Return("none"));
     EXPECT_CALL(led, getBrightness()).WillRepeatedly(Return(127));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
+    EXPECT_EQ(phy.state(), Action::Off);
 }
 
 TEST(Physical, on_to_off)
@@ -151,5 +157,7 @@ TEST(Physical, on_to_off)
     EXPECT_CALL(led, setBrightness(deasserted));
     phosphor::led::Physical phy(bus, LED_OBJ, led);
     phy.state(Action::On);
+    EXPECT_EQ(phy.state(), Action::On);
     phy.state(Action::Off);
+    EXPECT_EQ(phy.state(), Action::Off);
 }
