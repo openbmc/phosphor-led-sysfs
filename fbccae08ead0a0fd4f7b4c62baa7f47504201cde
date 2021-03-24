@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "952d02a1_587a664e",
+        "filename": "physical.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-03-24T23:51:54Z",
+      "side": 1,
+      "message": "This is breaking my brain. So, a truth-table:\n\n ┌────────────┬──────────┬──────────────────────┬────────────────────────────────────┐\n │ brightness │ asserted │ brightness \u003d\u003d assert │ brightness \u003d\u003d assert \u0026\u0026 brightness │\n ├────────────┼──────────┼──────────────────────┼────────────────────────────────────┤\n │     0      │    0     │          1           │                  0                 │\n │     0      │    1     │          0           │                  0                 │\n │     1      │    0     │          0           │                  0                 │\n │     1      │    1     │          1           │                  1                 │\n └────────────┴──────────┴──────────────────────┴────────────────────────────────────┘\n\nComparably:\n\n ┌────────────┬──────────┬────────────────────────┐\n │ brightness │ asserted │ brightness \u0026\u0026 asserted │\n ├────────────┼──────────┼────────────────────────┤\n │     0      │    0     │           0            │\n │     0      │    1     │           0            │\n │     1      │    0     │           0            │\n │     1      │    1     │           1            │\n └────────────┴──────────┴────────────────────────┘\n\nSo your condition should just be\n\n if (brightness \u0026\u0026 asserted)\n ...\n\nHowever, this highlights that you have four start-up states you need to test, so the test suite needs to be augmented to cover each of them.\n\nYou can check you\u0027ve got correct coverage with\n\n $ ./configure --enable-code-coverage \u0026\u0026 CODE_COVERAGE_BRANCH_COVERAGE\u003d1 make check-code-coverage\n\nThen viewing the HTML coverage output.",
+      "revId": "fbccae08ead0a0fd4f7b4c62baa7f47504201cde",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
