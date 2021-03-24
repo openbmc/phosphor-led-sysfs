@@ -22,6 +22,30 @@
       "revId": "736057b37b13e245180a3630d0726a3b97ced9c3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "839be098_4d93582c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-24T04:53:01Z",
+      "side": 1,
+      "message": "It can be any generic error scenario and the code has to handle that.",
+      "parentUuid": "d87dffd3_777b7455",
+      "range": {
+        "startLine": 10,
+        "startChar": 35,
+        "endLine": 11,
+        "endChar": 56
+      },
+      "revId": "736057b37b13e245180a3630d0726a3b97ced9c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
