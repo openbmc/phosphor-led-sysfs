@@ -1,0 +1,3 @@
+[wrap-git]
+url = https://github.com/openbmc/phosphor-dbus-interfaces.git
+revision = 33458d4432a8323616622881f314a73cf0b04d97
