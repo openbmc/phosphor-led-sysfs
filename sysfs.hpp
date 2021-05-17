@@ -15,7 +15,7 @@
  */
 
 #pragma once
-#include <experimental/filesystem>
+#include <filesystem>
 
 namespace phosphor
 {
@@ -24,7 +24,7 @@ namespace led
 class SysfsLed
 {
   public:
-    SysfsLed(std::experimental::filesystem::path&& root) : root(std::move(root))
+    SysfsLed(std::filesystem::path&& root) : root(std::move(root))
     {}
     SysfsLed() = delete;
     SysfsLed(const SysfsLed& other) = delete;
@@ -48,7 +48,7 @@ class SysfsLed
     static constexpr char DELAY_ON[] = "delay_on";
     static constexpr char DELAY_OFF[] = "delay_off";
 
-    std::experimental::filesystem::path root;
+    std::filesystem::path root;
 };
 } // namespace led
 } // namespace phosphor

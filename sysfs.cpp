@@ -16,11 +16,12 @@
 
 #include "sysfs.hpp"
 
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <string>
 
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 namespace phosphor
 {
