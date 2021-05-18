@@ -1,0 +1,277 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08b55b91_4b44578a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "I\u0027d like this in a separate commit.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 21
+      },
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71706e62_0cb4ffe5",
+        "filename": "controller.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "I would have preferred we dropped config.h in a separate, prior commit to changing the build system...",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 55
+      },
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53412f21_ccc1a39c",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "Are we intentionally upgrading from 17 to 20 in the same commit that we\u0027re replacing the build system?",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 24
+      },
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aab5e842_ab12e2be",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "Why not define a subproject for systemd also? Should be straight-forward as it uses meson?",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "083a575a_eb7cf6f1",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "configure.ac installs into sbindir. Maybe we should be bug-compatible until we remove autotools? Or, switch autotools to install into bindir first in a separate commit before adding meson.",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c0639f6_c904d271",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "I\u0027d prefer this as:\n\n if build_tests.enabled() or build_tests.auto()",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39b2ea50_5233a783",
+        "filename": "subprojects/googletest.wrap",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "This is not googletest.",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3c85f63_bb75ef1b",
+        "filename": "subprojects/googletest.wrap",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "Surely we want to fix this at a given revision for reproducible builds.",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "796b07be_b2954c2e",
+        "filename": "subprojects/phosphor-dbus-interfaces.wrap",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "Surely we want to fix this at a given revision for reproducible builds.",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e38fe7a_ba5b8a9b",
+        "filename": "subprojects/sdbusplus.wrap",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "This is not sdbusplus",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86fc6e25_511e1892",
+        "filename": "subprojects/sdbusplus.wrap",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "Surely we want to fix this at a given revision for reproducible builds.",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "093f70e7_274eeb3f",
+        "filename": "sysfs.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "Again, this is a separate problem to meson.",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "708356b9_43ace6eb",
+        "filename": "sysfs.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "This looks inspired by the switch to c++20? I\u0027d prefer that is a separate commit prior to adding a new build system.",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d386fd8_e54dc240",
+        "filename": "test/physical.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "Separate problem to meson.",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52a97fe3_1bafc067",
+        "filename": "test/sysfs.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-18T04:32:48Z",
+      "side": 1,
+      "message": "Separate problem to meson.",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
