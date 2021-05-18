@@ -83,7 +83,7 @@ std::string getDbusName(const LedDescr& ledDescr)
 
 int main(int argc, char** argv)
 {
-    namespace fs = std::experimental::filesystem;
+    namespace fs = std::filesystem;
 
     // Read arguments.
     auto options = phosphor::led::ArgumentParser(argc, argv);

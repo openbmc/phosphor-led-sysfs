@@ -8,8 +8,7 @@ phosphor_ledcontroller_SOURCES = \
 
 phosphor_ledcontroller_LDFLAGS = $(SDBUSPLUS_LIBS) \
                                  $(SYSTEMD_LIBS) \
-                                 $(PHOSPHOR_DBUS_INTERFACES_LIBS) \
-				 -lstdc++fs
+                                 $(PHOSPHOR_DBUS_INTERFACES_LIBS)
 phosphor_ledcontroller_CFLAGS =  $(SDBUSPLUS_CFLAGS) \
                                  $(SYSTEMD_CFLAGS) \
                                  $(PHOSPHOR_DBUS_INTERFACES_CFLAGS)

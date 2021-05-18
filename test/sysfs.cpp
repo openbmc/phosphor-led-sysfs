@@ -24,7 +24,7 @@
 
 #include <gtest/gtest.h>
 
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 constexpr unsigned long MAX_BRIGHTNESS_VAL = 128;
 
