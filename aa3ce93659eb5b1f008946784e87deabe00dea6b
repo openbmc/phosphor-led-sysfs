@@ -16,6 +16,24 @@
       "revId": "aa3ce93659eb5b1f008946784e87deabe00dea6b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "663636a9_89b8f524",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-05-19T15:52:59Z",
+      "side": 1,
+      "message": "Why?  There is no reason for anyone to ever override these things.  It is just useless copypasta that people have been doing in autotools for who-knows-why.  There is absolutely no reason to ever change the BUSNAME, for instance, so why would you ever autotools configure it?",
+      "parentUuid": "0e994259_2e3c01d9",
+      "revId": "aa3ce93659eb5b1f008946784e87deabe00dea6b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
