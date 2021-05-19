@@ -1,4 +1,4 @@
-sbin_PROGRAMS = phosphor-ledcontroller
+bin_PROGRAMS = phosphor-ledcontroller
 
 phosphor_ledcontroller_SOURCES = \
 				controller.cpp  \
