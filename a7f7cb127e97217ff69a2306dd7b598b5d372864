@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6468929c_033645d6",
+        "filename": "subprojects/phosphor-dbus-interfaces.wrap",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-19T10:48:24Z",
+      "side": 1,
+      "message": "Why is this pointing to a specific commit instead of HEAD ?.. using HEAD is the norm that I have seen all through.",
+      "revId": "a7f7cb127e97217ff69a2306dd7b598b5d372864",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "585948f1_fa6e270c",
+        "filename": "subprojects/sdbusplus.wrap",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-19T10:48:24Z",
+      "side": 1,
+      "message": "same comment as previous file ( HEAD )",
+      "revId": "a7f7cb127e97217ff69a2306dd7b598b5d372864",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
