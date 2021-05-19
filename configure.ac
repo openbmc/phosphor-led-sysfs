@@ -116,18 +116,6 @@ m4_ifdef([_AX_CODE_COVERAGE_RULES],
     [AM_CONDITIONAL(AUTOCONF_CODE_COVERAGE_2019_01_06, [false])])
 AX_ADD_AM_MACRO_STATIC([])
 
-AC_ARG_VAR(BUSNAME, [The Dbus busname to own])
-AS_IF([test "x$BUSNAME" == "x"], [BUSNAME="xyz.openbmc_project.LED.Controller"])
-AC_DEFINE_UNQUOTED([BUSNAME], ["$BUSNAME"], [The Dbus busname to own])
-AC_ARG_VAR(OBJPATH, [The physical LED controller Dbus root])
-AS_IF([test "x$OBJPATH" == "x"], [OBJPATH="/xyz/openbmc_project/led/physical"])
-AC_DEFINE_UNQUOTED([OBJPATH], ["$OBJPATH"], [The physical LED controller Dbus root])
-
-# Platform device path for led subsystem.
-AC_ARG_VAR(DEVPATH, [Physical led device path])
-AS_IF([test "x$DEVPATH" == "x"], [DEVPATH="/sys/class/leds/"])
-AC_DEFINE_UNQUOTED([DEVPATH], ["$DEVPATH"], [Physical led device path])
-
 # Create configured output
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
