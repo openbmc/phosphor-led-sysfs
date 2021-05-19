@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e994259_2e3c01d9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-19T10:46:10Z",
+      "side": 1,
+      "message": "What is the need of this commit and what does it solve ?.. This is how we have been doing in openbmc in all the repos with auto tools.. And when we move to Meson, we would define \u0027em in meson.build",
+      "revId": "aa3ce93659eb5b1f008946784e87deabe00dea6b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
