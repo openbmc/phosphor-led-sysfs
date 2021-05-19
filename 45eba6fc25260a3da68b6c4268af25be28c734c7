@@ -34,6 +34,24 @@
       "revId": "45eba6fc25260a3da68b6c4268af25be28c734c7",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8de8c7d_57cce373",
+        "filename": "Makefile.am",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-05-19T15:51:48Z",
+      "side": 1,
+      "message": "This was only needed on circa-C++14 versions of GCC.  It has been merged into the libstdcpp since at least 2017.",
+      "parentUuid": "949f13a7_353c344e",
+      "revId": "45eba6fc25260a3da68b6c4268af25be28c734c7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
