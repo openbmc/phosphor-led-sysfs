@@ -318,6 +318,24 @@
     },
     {
       "key": {
+        "uuid": "dfa32f2b_4fd7f0e1",
+        "filename": "subprojects/googletest.wrap",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-19T04:39:02Z",
+      "side": 1,
+      "message": "Well, probably whatever commit ID HEAD points to right now? 😊",
+      "parentUuid": "83c32cde_41c745e6",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "796b07be_b2954c2e",
         "filename": "subprojects/phosphor-dbus-interfaces.wrap",
         "patchSetId": 2
@@ -347,6 +365,24 @@
       "side": 1,
       "message": "Please tell me which revision?",
       "parentUuid": "796b07be_b2954c2e",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "668fcaa0_137f2bf9",
+        "filename": "subprojects/phosphor-dbus-interfaces.wrap",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-19T04:39:02Z",
+      "side": 1,
+      "message": "Whatever commit ID HEAD currently points to?",
+      "parentUuid": "27650c6f_5dfd5939",
       "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -417,6 +453,24 @@
       "side": 1,
       "message": "Sure, Could you tell me which revison?",
       "parentUuid": "86fc6e25_511e1892",
+      "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c3ade18_1ca58668",
+        "filename": "subprojects/sdbusplus.wrap",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-19T04:39:02Z",
+      "side": 1,
+      "message": "Whatever commit ID HEAD currently points to?",
+      "parentUuid": "75f43c97_b9438015",
       "revId": "ecf83eb903e004b65b6f1cf551d36a6fb7785ef2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
