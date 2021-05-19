@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ec84ff3_233611f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-05-19T15:59:13Z",
+      "side": 1,
+      "message": "I think this should be: \n\nhttps://github.com/openbmc/docs/blob/master/anti-patterns.md#placement-of-applications-in-sbin-or-usrsbin",
+      "revId": "db7f7c2cbb8140277822f2064bdada2b433dd82c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
