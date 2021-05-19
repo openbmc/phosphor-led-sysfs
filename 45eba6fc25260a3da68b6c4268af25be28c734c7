@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "55695de6_d5105bd2",
+        "filename": "Makefile.am",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-19T06:06:34Z",
+      "side": 1,
+      "message": "hmm.. why was this removed ?.. or was it needed only for experimental ?",
+      "revId": "45eba6fc25260a3da68b6c4268af25be28c734c7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
