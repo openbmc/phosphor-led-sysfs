@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-#include "config.h"
-
 #include "argument.hpp"
 #include "physical.hpp"
 #include "sysfs.hpp"
@@ -84,6 +82,9 @@ std::string getDbusName(const LedDescr& ledDescr)
 int main(int argc, char** argv)
 {
     namespace fs = std::filesystem;
+    static constexpr auto BUSNAME = "xyz.openbmc_project.LED.Controller";
+    static constexpr auto OBJPATH = "/xyz/openbmc_project/led/physical";
+    static constexpr auto DEVPATH = "/sys/class/leds/";
 
     // Read arguments.
     auto options = phosphor::led::ArgumentParser(argc, argv);
