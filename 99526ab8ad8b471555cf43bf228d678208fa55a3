@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fe597dce_74482185",
+        "filename": "meson.build",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-05-20T16:05:50Z",
+      "side": 1,
+      "message": "I\u0027m not seeing any systemd header files being used by this codebase, so there shouldn\u0027t be need for a direct systemd dependency.  There is an implicit / indirect dependency on it that sdbusplus brings in, but you don\u0027t need to express that.\n\n(Maybe place we have this listed in the autotools files has always been wrong...)",
+      "parentUuid": "72f45a61_08dd79d2",
+      "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2914d871_5d0987ee",
         "filename": "meson.build",
         "patchSetId": 6
