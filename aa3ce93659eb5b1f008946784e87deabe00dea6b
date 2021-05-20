@@ -88,6 +88,24 @@
       "revId": "aa3ce93659eb5b1f008946784e87deabe00dea6b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d6c141d_bef2a816",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-20T05:40:17Z",
+      "side": 1,
+      "message": "\u003e Your language didn\u0027t imply \"trying to understand\".  There was a lot of statements and not much questions.\n\nwell, on the language front, \"What is the need of this commit and what does it solve\" is the part about trying to understand.",
+      "parentUuid": "bfaf716f_85ef3e0a",
+      "revId": "aa3ce93659eb5b1f008946784e87deabe00dea6b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
