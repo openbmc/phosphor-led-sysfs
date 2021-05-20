@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "72f45a61_08dd79d2",
+        "filename": "meson.build",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-05-20T12:24:03Z",
+      "side": 1,
+      "message": "missing systemd dependency ?",
+      "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2914d871_5d0987ee",
         "filename": "meson.build",
         "patchSetId": 6
@@ -13,6 +30,52 @@
       "writtenOn": "2021-05-20T05:44:11Z",
       "side": 1,
       "message": "this line here conflicts with Patrick\u0027s -1 on /usr/bin . So we need to arrive at some consensus on that before this can go in.",
+      "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9dba56bf_f2d9585d",
+        "filename": "meson_options.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-05-20T12:24:03Z",
+      "side": 1,
+      "message": "https://github.com/openbmc/phosphor-led-sysfs/blob/master/configure.ac#L127\n\nshould the devpath be another meson configurable option ?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 5
+      },
+      "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "659af591_886b6535",
+        "filename": "test/meson.build",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-05-20T12:24:03Z",
+      "side": 1,
+      "message": "better variable name ?",
+      "range": {
+        "startLine": 32,
+        "startChar": 8,
+        "endLine": 32,
+        "endChar": 10
+      },
       "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
