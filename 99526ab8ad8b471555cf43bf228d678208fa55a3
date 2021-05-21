@@ -247,6 +247,30 @@
       "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7884c7cf_2fb3c1fd",
+        "filename": "test/meson.build",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-05-21T02:17:13Z",
+      "side": 1,
+      "message": "Sure\nI will update when the https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-sysfs/+/43344 commit is vote passed.",
+      "parentUuid": "23a2c052_509ad395",
+      "range": {
+        "startLine": 32,
+        "startChar": 8,
+        "endLine": 32,
+        "endChar": 10
+      },
+      "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
