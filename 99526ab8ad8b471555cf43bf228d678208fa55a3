@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ded8d247_08c29482",
+        "filename": "meson.build",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-05-21T01:03:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fe597dce_74482185",
+      "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2914d871_5d0987ee",
         "filename": "meson.build",
         "patchSetId": 6
@@ -48,6 +66,24 @@
       "writtenOn": "2021-05-20T05:44:11Z",
       "side": 1,
       "message": "this line here conflicts with Patrick\u0027s -1 on /usr/bin . So we need to arrive at some consensus on that before this can go in.",
+      "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39754430_8b727059",
+        "filename": "meson.build",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-05-21T01:03:18Z",
+      "side": 1,
+      "message": "Yeah, But I think using `/usr/bin` makes sense.",
+      "parentUuid": "2914d871_5d0987ee",
       "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -101,6 +137,30 @@
     },
     {
       "key": {
+        "uuid": "078dc2d2_bb2bfb49",
+        "filename": "meson_options.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-05-21T01:03:18Z",
+      "side": 1,
+      "message": "Yeah, We don’t have any reason to change DEVPATH, so we can hardcoded",
+      "parentUuid": "1dbc238e_119e9496",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 5
+      },
+      "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "659af591_886b6535",
         "filename": "test/meson.build",
         "patchSetId": 6
@@ -112,6 +172,30 @@
       "writtenOn": "2021-05-20T12:24:03Z",
       "side": 1,
       "message": "better variable name ?",
+      "range": {
+        "startLine": 32,
+        "startChar": 8,
+        "endLine": 32,
+        "endChar": 10
+      },
+      "revId": "99526ab8ad8b471555cf43bf228d678208fa55a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee5b09e4_6f481b25",
+        "filename": "test/meson.build",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-05-21T01:03:18Z",
+      "side": 1,
+      "message": "I saw many repos use `t`, so I have no plans to change the value of this variable.",
+      "parentUuid": "659af591_886b6535",
       "range": {
         "startLine": 32,
         "startChar": 8,
