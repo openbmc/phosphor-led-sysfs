@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6da83fa0_0f90da86",
+        "filename": "meson_options.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-25T16:58:40Z",
+      "side": 1,
+      "message": "Currently, configure.ac as --enable-oe-sdk.. May I know where is that covered ?.. When I made the last change, just the \"tests\" did not work and I ended up putting oe-sdk support for GTEST.\n\nWere you able to run GTEST with just this ?",
+      "revId": "c7d70b67fc301d43db135c59e69e6ab6f806d6c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
