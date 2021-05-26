@@ -16,6 +16,24 @@
       "revId": "c7d70b67fc301d43db135c59e69e6ab6f806d6c3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b332170_8e239fee",
+        "filename": "meson_options.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-26T00:03:48Z",
+      "side": 1,
+      "message": "It should just work because of the subprojects - meson can build all the dependencies itself.",
+      "parentUuid": "6da83fa0_0f90da86",
+      "revId": "c7d70b67fc301d43db135c59e69e6ab6f806d6c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
