@@ -52,6 +52,24 @@
       "revId": "c7d70b67fc301d43db135c59e69e6ab6f806d6c3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab81ccf8_72d0dd34",
+        "filename": "meson_options.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-26T12:05:32Z",
+      "side": 1,
+      "message": "I am not confused. All I am saying is this : \n\nIn Auto tools, I just could not see how to enable tests. However, I saw \"test\" was getting built default. However, `make check` always failed. So, I am asking if GTEST worked fine in this method ?",
+      "parentUuid": "c4238c82_889312ff",
+      "revId": "c7d70b67fc301d43db135c59e69e6ab6f806d6c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
