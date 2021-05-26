@@ -70,6 +70,24 @@
       "revId": "c7d70b67fc301d43db135c59e69e6ab6f806d6c3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "820c5cca_23cd2d14",
+        "filename": "meson_options.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2021-05-26T12:34:35Z",
+      "side": 1,
+      "message": "You can go look at the CI run:\n\nhttps://jenkins.openbmc.org/job/ci-repository/18032/console\n\n Full log written to /data0/jenkins/workspace/ci-repository/openbmc/phosphor-led-sysfs/build/meson-logs/testlog-ubasan.txt\n /data0/jenkins/workspace/ci-repository/openbmc/phosphor-led-sysfs \u003e meson configure build -Db_sanitize\u003dnone \n /data0/jenkins/workspace/ci-repository/openbmc/phosphor-led-sysfs \u003e meson configure build -Db_coverage\u003dtrue \n /data0/jenkins/workspace/ci-repository/openbmc/phosphor-led-sysfs \u003e meson test --repeat 1 -C build \n ninja: Entering directory `/data0/jenkins/workspace/ci-repository/openbmc/phosphor-led-sysfs/build\u0027\n\n [0/1] Regenerating build files.\n The Meson build system\n Version: 0.58.0\n Source dir: /data0/jenkins/workspace/ci-repository/openbmc/phosphor-led-sysfs\n Build dir: /data0/jenkins/workspace/ci-repository/openbmc/phosphor-led-sysfs/build\n Build type: native build\n Project name: phosphor-ledcontroller\n Project version: 1.0.0\n C++ compiler for the host machine: c++ (gcc 11.1.0 \"c++ (Ubuntu 11.1.0-1ubuntu1~21.04) 11.1.0\")\n C++ linker for the host machine: c++ ld.bfd 2.36.1\n Host machine cpu family: x86_64\n Host machine cpu: x86_64\n Dependency sdbusplus found: YES 1.0.0 (cached)\n Dependency phosphor-dbus-interfaces found: YES 1.0.0 (cached)\n Dependency gtest found: YES 1.10.0 (cached)\n Dependency gmock found: YES 1.10.0 (cached)\n Build targets in project: 3\n\n Option buildtype is: debug [default: debugoptimized]\n Found ninja-1.10.1 at /usr/bin/ninja\n\n [0/8] Compiling C++ object test/physical_cpp.p/physical.cpp.o\n [0/8] Compiling C++ object test/physical_cpp.p/.._physical.cpp.o\n [0/8] Compiling C++ object test/physical_cpp.p/.._sysfs.cpp.o\n [0/8] Compiling C++ object test/sysfs_cpp.p/sysfs.cpp.o\n [0/8] Compiling C++ object test/sysfs_cpp.p/.._physical.cpp.o\n [0/8] Compiling C++ object test/sysfs_cpp.p/.._sysfs.cpp.o\n [1/8] Compiling C++ object test/sysfs_cpp.p/.._sysfs.cpp.o\n [2/8] Compiling C++ object test/physical_cpp.p/.._sysfs.cpp.o\n [3/8] Compiling C++ object test/sysfs_cpp.p/.._physical.cpp.o\n [4/8] Compiling C++ object test/physical_cpp.p/.._physical.cpp.o\n [5/8] Compiling C++ object test/sysfs_cpp.p/sysfs.cpp.o\n [5/8] Linking target test/sysfs_cpp\n [6/8] Linking target test/sysfs_cpp\n [7/8] Compiling C++ object test/physical_cpp.p/physical.cpp.o\n [7/8] Linking target test/physical_cpp\n [8/8] Linking target test/physical_cpp\n [1-2/2] 🌑 sysfs.cpp                    0/30s\n 1/2 sysfs.cpp           OK              0.01s\n [2/2] 🌒 physical.cpp                   0/30s\n 2/2 physical.cpp        OK              0.01s\n\n\n Ok:                 2   \n Expected Fail:      0   \n Fail:               0   \n Unexpected Pass:    0   \n Skipped:            0   \n Timeout:            0   \n\n Full log written to /data0/jenkins/workspace/ci-repository/openbmc/phosphor-led-sysfs/build/meson-logs/testlog.txt\n /data0/jenkins/workspace/ci-repository/openbmc/phosphor-led-sysfs \u003e ninja -C build coverage-html",
+      "parentUuid": "ab81ccf8_72d0dd34",
+      "revId": "c7d70b67fc301d43db135c59e69e6ab6f806d6c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
