@@ -34,6 +34,24 @@
       "revId": "c7d70b67fc301d43db135c59e69e6ab6f806d6c3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4238c82_889312ff",
+        "filename": "meson_options.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-05-26T00:54:05Z",
+      "side": 1,
+      "message": "\u003e It should just work because of the subprojects - meson can build all the dependencies itself.\n\n+1\n\n\u003e Were you able to run GTEST with just this ?\n\nI think you may confuse meson and autotools compilation method\n\nFor autotools:\n```\n1. ./bootstrap.sh\n2. ./configure ${CONFIGURE_FLAGS} --enable-oe-sdk\n3. make\n4. make check\n```\n\nFor meson\n```\n1. meson build(because test is enabled by default) or meson -Dtest\u003denabled build\n2. ninja -C build test\n```\n\nDoes make sense?",
+      "parentUuid": "5b332170_8e239fee",
+      "revId": "c7d70b67fc301d43db135c59e69e6ab6f806d6c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
