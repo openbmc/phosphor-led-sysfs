@@ -10,20 +10,8 @@ project(
     ]
 )
 
-sdbusplus_dep = dependency(
-    'sdbusplus',
-    fallback: [
-        'sdbusplus',
-        'sdbusplus_dep'
-    ],
-)
-phosphor_dbus_interfaces_dep = dependency(
-    'phosphor-dbus-interfaces',
-    fallback: [
-        'phosphor-dbus-interfaces',
-        'phosphor_dbus_interfaces_dep'
-    ],
-)
+sdbusplus_dep = dependency('sdbusplus')
+phosphor_dbus_interfaces_dep = dependency('phosphor-dbus-interfaces')
 
 deps = [
     sdbusplus_dep,
