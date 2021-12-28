@@ -50,7 +50,7 @@ class FakeSysfsLed : public phosphor::led::SysfsLed
     }
 
   private:
-    FakeSysfsLed(fs::path&& path) : SysfsLed(std::move(path))
+    explicit FakeSysfsLed(fs::path&& path) : SysfsLed(std::move(path))
     {
         std::string attrs[4] = {BRIGHTNESS, TRIGGER, DELAY_ON, DELAY_OFF};
         for (const auto& attr : attrs)

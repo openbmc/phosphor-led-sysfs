@@ -24,7 +24,7 @@ namespace led
 class SysfsLed
 {
   public:
-    SysfsLed(std::filesystem::path&& root) : root(std::move(root))
+    explicit SysfsLed(std::filesystem::path&& root) : root(std::move(root))
     {}
     SysfsLed() = delete;
     SysfsLed(const SysfsLed& other) = delete;
