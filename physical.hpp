@@ -16,12 +16,16 @@ namespace led
 /** @brief De-assert value */
 constexpr unsigned long DEASSERT = 0;
 
+namespace
+{
+using PhysicalIfaces = sdbusplus::server::object_t<
+    sdbusplus::xyz::openbmc_project::Led::server::Physical>;
+}
+
 /** @class Physical
  *  @brief Responsible for applying actions on a particular physical LED
  */
-class Physical :
-    public sdbusplus::server::object::object<
-        sdbusplus::xyz::openbmc_project::Led::server::Physical>
+class Physical : public PhysicalIfaces
 {
   public:
     Physical() = delete;
@@ -43,10 +47,8 @@ class Physical :
      */
     Physical(sdbusplus::bus::bus& bus, const std::string& objPath,
              SysfsLed& led, const std::string& color = "") :
-
-        sdbusplus::server::object::object<
-            sdbusplus::xyz::openbmc_project::Led::server::Physical>(
-            bus, objPath.c_str(), true),
+        PhysicalIfaces(bus, objPath.c_str(),
+                       PhysicalIfaces::action::defer_emit),
         led(led)
     {
         // Suppose this is getting launched as part of BMC reboot, then we
