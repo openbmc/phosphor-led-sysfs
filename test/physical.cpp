@@ -72,7 +72,7 @@ using ::testing::Throw;
 
 TEST(Physical, ctor_none_trigger)
 {
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    sdbusplus::bus_t bus = sdbusplus::bus::new_default();
     /* NiceMock ignores calls to methods with no expectations defined */
     NiceMock<MockLed> led;
     ON_CALL(led, getTrigger()).WillByDefault(Return("none"));
@@ -82,7 +82,7 @@ TEST(Physical, ctor_none_trigger)
 
 TEST(Physical, ctor_maxbrightness_and_brightness_read_127)
 {
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    sdbusplus::bus_t bus = sdbusplus::bus::new_default();
     /* NiceMock ignores calls to methods with no expectations defined */
     NiceMock<MockLed> led;
     EXPECT_CALL(led, getTrigger()).WillRepeatedly(Return("none"));
@@ -94,7 +94,7 @@ TEST(Physical, ctor_maxbrightness_and_brightness_read_127)
 
 TEST(Physical, ctor_maxbrightness_and_brightness_read_0)
 {
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    sdbusplus::bus_t bus = sdbusplus::bus::new_default();
     /* NiceMock ignores calls to methods with no expectations defined */
     NiceMock<MockLed> led;
     EXPECT_CALL(led, getTrigger()).WillRepeatedly(Return("none"));
@@ -106,7 +106,7 @@ TEST(Physical, ctor_maxbrightness_and_brightness_read_0)
 
 TEST(Physical, ctor_only_maxbrightness_read_127)
 {
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    sdbusplus::bus_t bus = sdbusplus::bus::new_default();
     /* NiceMock ignores calls to methods with no expectations defined */
     NiceMock<MockLed> led;
     EXPECT_CALL(led, getTrigger()).WillRepeatedly(Return("none"));
@@ -118,7 +118,7 @@ TEST(Physical, ctor_only_maxbrightness_read_127)
 
 TEST(Physical, ctor_only_brightness_read_127)
 {
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    sdbusplus::bus_t bus = sdbusplus::bus::new_default();
     /* NiceMock ignores calls to methods with no expectations defined */
     NiceMock<MockLed> led;
     EXPECT_CALL(led, getTrigger()).WillRepeatedly(Return("none"));
@@ -130,7 +130,7 @@ TEST(Physical, ctor_only_brightness_read_127)
 
 TEST(Physical, ctor_timer_trigger)
 {
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    sdbusplus::bus_t bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
     EXPECT_CALL(led, getTrigger()).WillOnce(Return("timer"));
     EXPECT_CALL(led, getDelayOn()).WillOnce(Return(500));
@@ -141,7 +141,7 @@ TEST(Physical, ctor_timer_trigger)
 
 TEST(Physical, off)
 {
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    sdbusplus::bus_t bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
     ON_CALL(led, getMaxBrightness()).WillByDefault(Return(127));
     EXPECT_CALL(led, getTrigger()).WillOnce(Return("none"));
@@ -156,7 +156,7 @@ TEST(Physical, on)
 {
     constexpr unsigned long asserted = 127;
 
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    sdbusplus::bus_t bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
     ON_CALL(led, getMaxBrightness()).WillByDefault(Return(asserted));
     EXPECT_CALL(led, getTrigger()).WillOnce(Return("none"));
@@ -169,7 +169,7 @@ TEST(Physical, on)
 
 TEST(Physical, blink)
 {
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    sdbusplus::bus_t bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
     EXPECT_CALL(led, getTrigger()).WillOnce(Return("none"));
     EXPECT_CALL(led, setTrigger("timer"));
@@ -182,7 +182,7 @@ TEST(Physical, blink)
 
 TEST(Physical, ctor_none_trigger_asserted_brightness)
 {
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    sdbusplus::bus_t bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
     EXPECT_CALL(led, getTrigger()).WillRepeatedly(Return("none"));
     EXPECT_CALL(led, getBrightness()).WillRepeatedly(Return(127));

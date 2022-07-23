@@ -45,8 +45,8 @@ class Physical : public PhysicalIfaces
      * @param[in] ledPath   - sysfs path where this LED is exported
      * @param[in] color     - led color name
      */
-    Physical(sdbusplus::bus::bus& bus, const std::string& objPath,
-             SysfsLed& led, const std::string& color = "") :
+    Physical(sdbusplus::bus_t& bus, const std::string& objPath, SysfsLed& led,
+             const std::string& color = "") :
         PhysicalIfaces(bus, objPath.c_str(),
                        PhysicalIfaces::action::defer_emit),
         led(led)
