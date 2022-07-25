@@ -1,0 +1,7 @@
+Code-Review+2: Andrew Jeffery <andrew@aj.id.au>
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Submitted-by: Andrew Jeffery <andrew@aj.id.au>
+Submitted-at: Mon, 25 Jul 2022 00:33:58 +0000
+Reviewed-on: https://gerrit.openbmc.org/c/openbmc/phosphor-led-sysfs/+/55790
+Project: openbmc/phosphor-led-sysfs
+Branch: refs/heads/master
