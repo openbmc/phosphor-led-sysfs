@@ -146,8 +146,8 @@ int main(int argc, char** argv)
 
     // Create the Physical LED objects for directing actions.
     // Need to save this else sdbusplus destructor will wipe this off.
-    phosphor::led::SysfsLed sled{fs::path(path)};
-    phosphor::led::Physical led(bus, objPath, sled, ledDescr.color);
+    auto sled = std::make_unique<phosphor::led::SysfsLed>(fs::path(path));
+    phosphor::led::Physical led(bus, objPath, std::move(sled), ledDescr.color);
 
     /** @brief Claim the bus */
     bus.request_name(busName.c_str());
