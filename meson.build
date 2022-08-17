@@ -19,7 +19,6 @@ deps = [
 ]
 
 sources = [
-    'argument.cpp',
     'controller.cpp',
     'physical.cpp',
     'sysfs.cpp',
