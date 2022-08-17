@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-#include "argument.hpp"
+#include "controller.hpp"
+
 #include "physical.hpp"
 #include "sysfs.hpp"
 
 #include <boost/algorithm/string.hpp>
+#include <sdeventplus/event.hpp>
 
 #include <algorithm>
 #include <iostream>
 #include <string>
 
-static void ExitWithError(const char* err, char** argv)
-{
-    phosphor::led::ArgumentParser::usage(argv);
-    std::cerr << std::endl;
-    std::cerr << "ERROR: " << err << std::endl;
-    exit(-1);
-}
+boost::container::flat_map<std::string,
+                           std::unique_ptr<phosphor::led::Physical>>
+    leds;
 
 struct LedDescr
 {
@@ -71,48 +69,81 @@ void getLedDescr(const std::string& name, LedDescr& ledDescr)
 std::string getDbusName(const LedDescr& ledDescr)
 {
     std::vector<std::string> words;
-    words.emplace_back(ledDescr.devicename);
     if (!ledDescr.function.empty())
         words.emplace_back(ledDescr.function);
     if (!ledDescr.color.empty())
         words.emplace_back(ledDescr.color);
+    if (words.empty())
+        words.emplace_back(ledDescr.devicename);
     return boost::join(words, "_");
 }
 
-int main(int argc, char** argv)
+namespace phosphor
 {
-    namespace fs = std::filesystem;
-    static constexpr auto BUSNAME = "xyz.openbmc_project.LED.Controller";
-    static constexpr auto OBJPATH = "/xyz/openbmc_project/led/physical";
-    static constexpr auto DEVPATH = "/sys/class/leds/";
+namespace led
+{
 
-    // Read arguments.
-    auto options = phosphor::led::ArgumentParser(argc, argv);
+void Controller::interfacesAdded(sdbusplus::bus_t& bus)
+{
+    auto eventHandler = [&](sdbusplus::message_t& message) {
+        if (message.is_method_error())
+        {
+            std::cerr << "callback method error\n";
+            return;
+        }
+        getManagedObjects(message);
+    };
 
-    // Parse out Path argument.
-    auto path = std::move((options)["path"]);
-    if (path == phosphor::led::ArgumentParser::empty_string)
+    auto match = std::make_unique<sdbusplus::bus::match_t>(
+        static_cast<sdbusplus::bus_t&>(bus),
+        sdbusplus::bus::match::rules::interfacesAdded() +
+            sdbusplus::bus::match::rules::sender(entityService),
+        eventHandler);
+    matches.emplace_back(std::move(match));
+}
+
+void Controller::getManagedObjects(sdbusplus::message_t& message)
+{
+    sdbusplus::message::object_path path;
+    LedData interfaces;
+    message.read(path, interfaces);
+
+    if (!interfaces.contains(interface))
     {
-        ExitWithError("Path not specified.", argv);
+        return;
     }
 
-    // If the LED has a hyphen in the name like: "one-two", then it gets passed
-    // as /one/two/ as opposed to /one-two to the service file. There is a
-    // change needed in systemd to solve this issue and hence putting in this
-    // work-around.
+    const auto& entry = interfaces.at(interface);
 
-    // Since this application always gets invoked as part of a udev rule,
-    // it is always guaranteed to get /sys/class/leds/one/two
-    // and we can go beyond leds/ to get the actual LED name.
-    // Refer: systemd/systemd#5072
+    auto findName = entry.find("Name");
+    std::string function = std::get<std::string>(findName->second);
 
-    // On an error, this throws an exception and terminates.
-    auto name = path.substr(strlen(DEVPATH));
+    std::string deviceName = function;
+    auto findClass = entry.find("Class");
+    if (findClass != entry.end())
+    {
+        deviceName = std::get<std::string>(findClass->second);
+    }
+
+    std::string color;
+    auto findColor = entry.find("Name1");
+    if (findColor != entry.end())
+    {
+        color = std::get<std::string>(findColor->second);
+    }
+
+    std::string sysfsName = deviceName + ":" + color + ":" + function;
+    createLEDPath(sysfsName);
+}
+
+void Controller::createLEDPath(std::string& ledName)
+{
+    std::string name = ledName;
 
     // LED names may have a hyphen and that would be an issue for
     // dbus paths and hence need to convert them to underscores.
     std::replace(name.begin(), name.end(), '/', '-');
-    path = DEVPATH + name;
+    std::string path = devPath + name;
 
     // Convert to lowercase just in case some are not and that
     // we follow lowercase all over
@@ -127,30 +158,46 @@ int main(int argc, char** argv)
     getLedDescr(name, ledDescr);
     name = getDbusName(ledDescr);
 
-    // Unique bus name representing a single LED.
-    auto busName = std::string(BUSNAME) + '.' + name;
-    auto objPath = std::string(OBJPATH) + '/' + name;
+    // Unique path name representing a single LED.
+    std::string objPath =
+        std::string(objectPath) + '/' + ledDescr.devicename + '/' + name;
 
-    // Get a handle to system dbus.
-    auto bus = sdbusplus::bus::new_default();
-
-    // Add systemd object manager.
-    sdbusplus::server::manager_t(bus, objPath.c_str());
+    // Check whether the path is present in hardware.
+    if (!std::filesystem::exists(fs::path(path)))
+    {
+        std::cerr << "No such directory " << path << "\n";
+        return;
+    }
 
     // Create the Physical LED objects for directing actions.
     // Need to save this else sdbusplus destructor will wipe this off.
-    phosphor::led::SysfsLed sled{fs::path(path)};
-    phosphor::led::Physical led(bus, objPath, sled, ledDescr.color);
+    auto& physical = leds[objPath];
+    physical = std::make_unique<phosphor::led::Physical>(
+        bus, objPath, fs::path(path), ledDescr.color);
+}
+} // namespace led
+} // namespace phosphor
 
-    /** @brief Claim the bus */
-    bus.request_name(busName.c_str());
+int main()
+{
+    // Get a default event loop
+    auto event = sdeventplus::Event::get_default();
 
-    /** @brief Wait for client requests */
-    while (true)
-    {
-        // Handle dbus message / signals discarding unhandled
-        bus.process_discard();
-        bus.wait();
-    }
+    // Get a handle to system dbus
+    auto bus = sdbusplus::bus::new_default();
+
+    // Add the ObjectManager interface
+    sdbusplus::server::manager::manager objManager(bus, "/");
+
+    // Create an led controller object
+    phosphor::led::Controller controller(bus);
+
+    // Request service bus name
+    bus.request_name(busName);
+
+    // Attach the bus to sd_event to service user requests
+    bus.attach_event(event.get(), SD_EVENT_PRIORITY_NORMAL);
+    event.loop();
+
     return 0;
 }
