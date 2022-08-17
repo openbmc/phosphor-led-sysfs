@@ -9,6 +9,8 @@
 #include <fstream>
 #include <string>
 
+namespace fs = std::filesystem;
+
 namespace phosphor
 {
 namespace led
@@ -45,7 +47,9 @@ class Physical : public PhysicalIfaces
      * @param[in] ledPath   - sysfs path where this LED is exported
      * @param[in] color     - led color name
      */
-    Physical(sdbusplus::bus_t& bus, const std::string& objPath, SysfsLed& led,
+
+    Physical(sdbusplus::bus_t& bus, const std::string& objPath,
+             std::unique_ptr<phosphor::led::SysfsLed>& led,
              const std::string& color = "") :
         PhysicalIfaces(bus, objPath.c_str(),
                        PhysicalIfaces::action::defer_emit),
@@ -78,7 +82,7 @@ class Physical : public PhysicalIfaces
   private:
     /** @brief Associated LED implementation
      */
-    SysfsLed& led;
+    std::unique_ptr<phosphor::led::SysfsLed>& led;
 
     /** @brief The value that will assert the LED */
     unsigned long assert;
