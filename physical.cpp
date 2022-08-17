@@ -28,13 +28,13 @@ namespace led
 /** @brief Populates key parameters */
 void Physical::setInitialState()
 {
-    assert = led.getMaxBrightness();
-    auto trigger = led.getTrigger();
+    assert = led->getMaxBrightness();
+    auto trigger = led->getTrigger();
     if (trigger == "timer")
     {
         // LED is blinking. Get the on and off delays and derive percent duty
-        auto delayOn = led.getDelayOn();
-        uint16_t periodMs = delayOn + led.getDelayOff();
+        auto delayOn = led->getDelayOn();
+        uint16_t periodMs = delayOn + led->getDelayOff();
         auto percentScale = periodMs / 100;
         this->dutyOn(delayOn / percentScale);
         this->period(periodMs);
@@ -42,7 +42,7 @@ void Physical::setInitialState()
     else
     {
         // Cache current LED state
-        auto brightness = led.getBrightness();
+        auto brightness = led->getBrightness();
         if (brightness != 0U && assert != 0U)
         {
             sdbusplus::xyz::openbmc_project::Led::server::Physical::state(
@@ -94,8 +94,8 @@ void Physical::stableStateOperation(Action action)
 {
     auto value = (action == Action::On) ? assert : DEASSERT;
 
-    led.setTrigger("none");
-    led.setBrightness(value);
+    led->setTrigger("none");
+    led->setBrightness(value);
 }
 
 void Physical::blinkOperation()
@@ -118,9 +118,9 @@ void Physical::blinkOperation()
 
     auto p = static_cast<unsigned long>(period());
 
-    led.setTrigger("timer");
-    led.setDelayOn(p * d / 100UL);
-    led.setDelayOff(p * (100UL - d) / 100UL);
+    led->setTrigger("timer");
+    led->setDelayOn(p * d / 100UL);
+    led->setDelayOff(p * (100UL - d) / 100UL);
 }
 
 /** @brief set led color property in DBus*/
