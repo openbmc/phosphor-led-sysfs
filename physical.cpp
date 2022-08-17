@@ -28,13 +28,13 @@ namespace led
 /** @brief Populates key parameters */
 void Physical::setInitialState()
 {
-    assert = led.getMaxBrightness();
-    auto trigger = led.getTrigger();
+    assert = getMaxBrightness();
+    auto trigger = getTrigger();
     if (trigger == "timer")
     {
         // LED is blinking. Get the on and off delays and derive percent duty
-        auto delayOn = led.getDelayOn();
-        uint16_t periodMs = delayOn + led.getDelayOff();
+        auto delayOn = getDelayOn();
+        uint16_t periodMs = delayOn + getDelayOff();
         auto percentScale = periodMs / 100;
         this->dutyOn(delayOn / percentScale);
         this->period(periodMs);
@@ -42,7 +42,7 @@ void Physical::setInitialState()
     else
     {
         // Cache current LED state
-        auto brightness = led.getBrightness();
+        auto brightness = getBrightness();
         if (brightness && assert)
         {
             sdbusplus::xyz::openbmc_project::Led::server::Physical::state(
@@ -95,8 +95,8 @@ void Physical::stableStateOperation(Action action)
 {
     auto value = (action == Action::On) ? assert : DEASSERT;
 
-    led.setTrigger("none");
-    led.setBrightness(value);
+    setTrigger("none");
+    setBrightness(value);
     return;
 }
 
@@ -114,11 +114,11 @@ void Physical::blinkOperation()
       Refer:
       https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/leds/leds-class.txt?h=v5.2#n26
     */
-    led.setTrigger("timer");
+    setTrigger("timer");
     // Convert percent duty to milliseconds for sysfs interface
     auto factor = this->period() / 100.0;
-    led.setDelayOn(dutyOn * factor);
-    led.setDelayOff((100 - dutyOn) * factor);
+    setDelayOn(dutyOn * factor);
+    setDelayOff((100 - dutyOn) * factor);
 
     return;
 }

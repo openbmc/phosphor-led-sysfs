@@ -9,6 +9,8 @@
 #include <fstream>
 #include <string>
 
+namespace fs = std::filesystem;
+
 namespace phosphor
 {
 namespace led
@@ -25,7 +27,7 @@ using PhysicalIfaces = sdbusplus::server::object_t<
 /** @class Physical
  *  @brief Responsible for applying actions on a particular physical LED
  */
-class Physical : public PhysicalIfaces
+class Physical : public PhysicalIfaces, SysfsLed
 {
   public:
     Physical() = delete;
@@ -45,11 +47,12 @@ class Physical : public PhysicalIfaces
      * @param[in] ledPath   - sysfs path where this LED is exported
      * @param[in] color     - led color name
      */
-    Physical(sdbusplus::bus_t& bus, const std::string& objPath, SysfsLed& led,
-             const std::string& color = "") :
+
+    Physical(sdbusplus::bus_t& bus, const std::string& objPath,
+             fs::path&& rootPath, const std::string& color = "") :
         PhysicalIfaces(bus, objPath.c_str(),
                        PhysicalIfaces::action::defer_emit),
-        led(led)
+        SysfsLed(fs::path(rootPath))
     {
         // Suppose this is getting launched as part of BMC reboot, then we
         // need to save what the micro-controller currently has.
@@ -76,10 +79,6 @@ class Physical : public PhysicalIfaces
     Action state() const override;
 
   private:
-    /** @brief Associated LED implementation
-     */
-    SysfsLed& led;
-
     /** @brief The value that will assert the LED */
     unsigned long assert;
 
