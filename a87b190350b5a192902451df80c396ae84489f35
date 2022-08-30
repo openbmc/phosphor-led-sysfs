@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d96f435f_0bdd11db",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000907
+      },
+      "writtenOn": "2022-08-30T17:24:34Z",
+      "side": 1,
+      "message": "I guess std::get\u003c\u003e() can throw an exception.\nPossible to use std::get_if\u003c\u003e() instead ?",
+      "range": {
+        "startLine": 119,
+        "startChar": 27,
+        "endLine": 119,
+        "endChar": 35
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
