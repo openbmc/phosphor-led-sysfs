@@ -3,6 +3,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c0add71f_f4dfa6e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-09-01T04:43:22Z",
+      "side": 1,
+      "message": "We need to get buy-in from maintainers of other platforms that were using it in the original method. We need broader testing than just YosemiteV2.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 60
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8096a2fa_b26d6186",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-09-01T04:43:22Z",
+      "side": 1,
+      "message": "Hi Jayashree,\n\nI have a few comments and queries. You need a change to stop the udev invocation of the service as well right? Is there a patch somewhere for that (can you link to it?) I\u0027m interested in how that patch allows phosphor-led-sysfs to continue working on existing systems using it without migrating them to EntityManager.",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d96f435f_0bdd11db",
         "filename": "controller.cpp",
         "patchSetId": 1
@@ -20,6 +60,80 @@
         "endLine": 119,
         "endChar": 35
       },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1d6c699_9b39d50f",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-09-01T04:43:22Z",
+      "side": 1,
+      "message": "Do we really need a std::unique_ptr here? Also why can\u0027t we embed the objects directly in the map? And then just use an emplace() style call?",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "627a322d_a85f5c92",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-09-01T04:43:22Z",
+      "side": 1,
+      "message": "I think we moved away from creating object managers at the root. I\u0027ve asked here: https://discord.com/channels/775381525260664832/867820390406422538/1014753835643842601",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a754388e_1f295489",
+        "filename": "controller.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-09-01T04:43:22Z",
+      "side": 1,
+      "message": "Let\u0027s drop \u0027Sysfs\u0027 here. `...Configuration.Led` (or LED, whatever the convention is) is enough.\n\nRegardless, you need to propose a new schema for EntityManager and get that merged before we can merge this patch.",
+      "range": {
+        "startLine": 23,
+        "startChar": 39,
+        "endLine": 23,
+        "endChar": 44
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13e5b1ae_9a35910f",
+        "filename": "physical.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-09-01T04:43:22Z",
+      "side": 1,
+      "message": "Can you separate this bit out into its own patch? That will clean up the noise.\n\nThat said, how does the test suite fair with this?\n\nLooking at the Jenkins output, it blows up:\n\n FAILED: test/physical_cpp.p/physical.cpp.o \n c++ -Itest/physical_cpp.p -Itest -I../test -I. -I.. -I/usr/local/include -fdiagnostics-color\u003dnever -D_FILE_OFFSET_BITS\u003d64 -Wall -Winvalid-pch -Wnon-virtual-dtor -Wextra -Wpedantic -Werror -std\u003dc++20 -O0 -g -DBOOST_ASIO_DISABLE_THREADS -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_NO_DEPRECATED -DBOOST_ERROR_CODE_HEADER_ONLY -DBOOST_COROUTINES_NO_DEPRECATION_WARNING -DGTEST_HAS_PTHREAD\u003d1 -MD -MQ test/physical_cpp.p/physical.cpp.o -MF test/physical_cpp.p/physical.cpp.o.d -o test/physical_cpp.p/physical.cpp.o -c ../test/physical.cpp\n ../test/physical.cpp: In member function ‘virtual void Physical_ctor_none_trigger_Test::TestBody()’:\n ../test/physical.cpp:79:50: error: no matching function for call to ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const char* const\u0026, testing::NiceMock\u003cMockLed\u003e\u0026)’\n    79 |     phosphor::led::Physical phy(bus, LED_OBJ, led);\n       |                                                  ^\n In file included from ../test/physical.cpp:1:\n ../physical.hpp:51:5: note: candidate: ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const string\u0026, std::filesystem::__cxx11::path\u0026\u0026, const string\u0026)’\n    51 |     Physical(sdbusplus::bus_t\u0026 bus, const std::string\u0026 objPath,\n       |     ^~~~~~~~\n ../physical.hpp:52:25: note:   no known conversion for argument 3 from ‘testing::NiceMock\u003cMockLed\u003e’ to ‘std::filesystem::__cxx11::path\u0026\u0026’\n    52 |              fs::path\u0026\u0026 rootPath, const std::string\u0026 color \u003d \"\") :\n       |              ~~~~~~~~~~~^~~~~~~~\n ../test/physical.cpp: In member function ‘virtual void Physical_ctor_maxbrightness_and_brightness_read_127_Test::TestBody()’:\n ../test/physical.cpp:91:50: error: no matching function for call to ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const char* const\u0026, testing::NiceMock\u003cMockLed\u003e\u0026)’\n    91 |     phosphor::led::Physical phy(bus, LED_OBJ, led);\n       |                                                  ^\n In file included from ../test/physical.cpp:1:\n ../physical.hpp:51:5: note: candidate: ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const string\u0026, std::filesystem::__cxx11::path\u0026\u0026, const string\u0026)’\n    51 |     Physical(sdbusplus::bus_t\u0026 bus, const std::string\u0026 objPath,\n       |     ^~~~~~~~\n ../physical.hpp:52:25: note:   no known conversion for argument 3 from ‘testing::NiceMock\u003cMockLed\u003e’ to ‘std::filesystem::__cxx11::path\u0026\u0026’\n    52 |              fs::path\u0026\u0026 rootPath, const std::string\u0026 color \u003d \"\") :\n       |              ~~~~~~~~~~~^~~~~~~~\n ../test/physical.cpp: In member function ‘virtual void Physical_ctor_maxbrightness_and_brightness_read_0_Test::TestBody()’:\n ../test/physical.cpp:103:50: error: no matching function for call to ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const char* const\u0026, testing::NiceMock\u003cMockLed\u003e\u0026)’\n   103 |     phosphor::led::Physical phy(bus, LED_OBJ, led);\n       |                                                  ^\n In file included from ../test/physical.cpp:1:\n ../physical.hpp:51:5: note: candidate: ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const string\u0026, std::filesystem::__cxx11::path\u0026\u0026, const string\u0026)’\n    51 |     Physical(sdbusplus::bus_t\u0026 bus, const std::string\u0026 objPath,\n       |     ^~~~~~~~\n ../physical.hpp:52:25: note:   no known conversion for argument 3 from ‘testing::NiceMock\u003cMockLed\u003e’ to ‘std::filesystem::__cxx11::path\u0026\u0026’\n    52 |              fs::path\u0026\u0026 rootPath, const std::string\u0026 color \u003d \"\") :\n       |              ~~~~~~~~~~~^~~~~~~~\n ../test/physical.cpp: In member function ‘virtual void Physical_ctor_only_maxbrightness_read_127_Test::TestBody()’:\n ../test/physical.cpp:115:50: error: no matching function for call to ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const char* const\u0026, testing::NiceMock\u003cMockLed\u003e\u0026)’\n   115 |     phosphor::led::Physical phy(bus, LED_OBJ, led);\n       |                                                  ^\n In file included from ../test/physical.cpp:1:\n ../physical.hpp:51:5: note: candidate: ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const string\u0026, std::filesystem::__cxx11::path\u0026\u0026, const string\u0026)’\n    51 |     Physical(sdbusplus::bus_t\u0026 bus, const std::string\u0026 objPath,\n       |     ^~~~~~~~\n ../physical.hpp:52:25: note:   no known conversion for argument 3 from ‘testing::NiceMock\u003cMockLed\u003e’ to ‘std::filesystem::__cxx11::path\u0026\u0026’\n    52 |              fs::path\u0026\u0026 rootPath, const std::string\u0026 color \u003d \"\") :\n       |              ~~~~~~~~~~~^~~~~~~~\n ../test/physical.cpp: In member function ‘virtual void Physical_ctor_only_brightness_read_127_Test::TestBody()’:\n ../test/physical.cpp:127:50: error: no matching function for call to ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const char* const\u0026, testing::NiceMock\u003cMockLed\u003e\u0026)’\n   127 |     phosphor::led::Physical phy(bus, LED_OBJ, led);\n       |                                                  ^\n In file included from ../test/physical.cpp:1:\n ../physical.hpp:51:5: note: candidate: ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const string\u0026, std::filesystem::__cxx11::path\u0026\u0026, const string\u0026)’\n    51 |     Physical(sdbusplus::bus_t\u0026 bus, const std::string\u0026 objPath,\n       |     ^~~~~~~~\n ../physical.hpp:52:25: note:   no known conversion for argument 3 from ‘testing::NiceMock\u003cMockLed\u003e’ to ‘std::filesystem::__cxx11::path\u0026\u0026’\n    52 |              fs::path\u0026\u0026 rootPath, const std::string\u0026 color \u003d \"\") :\n       |              ~~~~~~~~~~~^~~~~~~~\n ../test/physical.cpp: In member function ‘virtual void Physical_ctor_timer_trigger_Test::TestBody()’:\n ../test/physical.cpp:138:50: error: no matching function for call to ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const char* const\u0026, testing::NiceMock\u003cMockLed\u003e\u0026)’\n   138 |     phosphor::led::Physical phy(bus, LED_OBJ, led);\n       |                                                  ^\n In file included from ../test/physical.cpp:1:\n ../physical.hpp:51:5: note: candidate: ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const string\u0026, std::filesystem::__cxx11::path\u0026\u0026, const string\u0026)’\n    51 |     Physical(sdbusplus::bus_t\u0026 bus, const std::string\u0026 objPath,\n       |     ^~~~~~~~\n ../physical.hpp:52:25: note:   no known conversion for argument 3 from ‘testing::NiceMock\u003cMockLed\u003e’ to ‘std::filesystem::__cxx11::path\u0026\u0026’\n    52 |              fs::path\u0026\u0026 rootPath, const std::string\u0026 color \u003d \"\") :\n       |              ~~~~~~~~~~~^~~~~~~~\n ../test/physical.cpp: In member function ‘virtual void Physical_off_Test::TestBody()’:\n ../test/physical.cpp:150:50: error: no matching function for call to ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const char* const\u0026, testing::NiceMock\u003cMockLed\u003e\u0026)’\n   150 |     phosphor::led::Physical phy(bus, LED_OBJ, led);\n       |                                                  ^\n In file included from ../test/physical.cpp:1:\n ../physical.hpp:51:5: note: candidate: ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const string\u0026, std::filesystem::__cxx11::path\u0026\u0026, const string\u0026)’\n    51 |     Physical(sdbusplus::bus_t\u0026 bus, const std::string\u0026 objPath,\n       |     ^~~~~~~~\n ../physical.hpp:52:25: note:   no known conversion for argument 3 from ‘testing::NiceMock\u003cMockLed\u003e’ to ‘std::filesystem::__cxx11::path\u0026\u0026’\n    52 |              fs::path\u0026\u0026 rootPath, const std::string\u0026 color \u003d \"\") :\n       |              ~~~~~~~~~~~^~~~~~~~\n ../test/physical.cpp: In member function ‘virtual void Physical_on_Test::TestBody()’:\n ../test/physical.cpp:165:50: error: no matching function for call to ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const char* const\u0026, testing::NiceMock\u003cMockLed\u003e\u0026)’\n   165 |     phosphor::led::Physical phy(bus, LED_OBJ, led);\n       |                                                  ^\n In file included from ../test/physical.cpp:1:\n ../physical.hpp:51:5: note: candidate: ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const string\u0026, std::filesystem::__cxx11::path\u0026\u0026, const string\u0026)’\n    51 |     Physical(sdbusplus::bus_t\u0026 bus, const std::string\u0026 objPath,\n       |     ^~~~~~~~\n ../physical.hpp:52:25: note:   no known conversion for argument 3 from ‘testing::NiceMock\u003cMockLed\u003e’ to ‘std::filesystem::__cxx11::path\u0026\u0026’\n    52 |              fs::path\u0026\u0026 rootPath, const std::string\u0026 color \u003d \"\") :\n       |              ~~~~~~~~~~~^~~~~~~~\n ../test/physical.cpp: In member function ‘virtual void Physical_blink_Test::TestBody()’:\n ../test/physical.cpp:178:50: error: no matching function for call to ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const char* const\u0026, testing::NiceMock\u003cMockLed\u003e\u0026)’\n   178 |     phosphor::led::Physical phy(bus, LED_OBJ, led);\n       |                                                  ^\n In file included from ../test/physical.cpp:1:\n ../physical.hpp:51:5: note: candidate: ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const string\u0026, std::filesystem::__cxx11::path\u0026\u0026, const string\u0026)’\n    51 |     Physical(sdbusplus::bus_t\u0026 bus, const std::string\u0026 objPath,\n       |     ^~~~~~~~\n ../physical.hpp:52:25: note:   no known conversion for argument 3 from ‘testing::NiceMock\u003cMockLed\u003e’ to ‘std::filesystem::__cxx11::path\u0026\u0026’\n    52 |              fs::path\u0026\u0026 rootPath, const std::string\u0026 color \u003d \"\") :\n       |              ~~~~~~~~~~~^~~~~~~~\n ../test/physical.cpp: In member function ‘virtual void Physical_ctor_none_trigger_asserted_brightness_Test::TestBody()’:\n ../test/physical.cpp:189:50: error: no matching function for call to ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const char* const\u0026, testing::NiceMock\u003cMockLed\u003e\u0026)’\n   189 |     phosphor::led::Physical phy(bus, LED_OBJ, led);\n       |                                                  ^\n In file included from ../test/physical.cpp:1:\n ../physical.hpp:51:5: note: candidate: ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const string\u0026, std::filesystem::__cxx11::path\u0026\u0026, const string\u0026)’\n    51 |     Physical(sdbusplus::bus_t\u0026 bus, const std::string\u0026 objPath,\n       |     ^~~~~~~~\n ../physical.hpp:52:25: note:   no known conversion for argument 3 from ‘testing::NiceMock\u003cMockLed\u003e’ to ‘std::filesystem::__cxx11::path\u0026\u0026’\n    52 |              fs::path\u0026\u0026 rootPath, const std::string\u0026 color \u003d \"\") :\n       |              ~~~~~~~~~~~^~~~~~~~\n ../test/physical.cpp: In member function ‘virtual void Physical_on_to_off_Test::TestBody()’:\n ../test/physical.cpp:206:50: error: no matching function for call to ‘phosphor::led::Physical::Physical(sdbusplus::bus::bus\u0026, const char* const\u0026, testing::NiceMock\u003cMockLed\u003e\u0026)’\n   206 |     phosphor::led::Physical phy(bus, LED_OBJ, led);\n       |                                                  ^\n In file included from ../test/physical.cpp:1:\n ../physical.hpp:51:5: note: candidate: ‘phosphor::led::Physical::Physical(sdbusplus::bus_t\u0026, const string\u0026, std::filesystem::__cxx11::path\u0026\u0026, const string\u0026)’\n    51 |     Physical(sdbusplus::bus_t\u0026 bus, const std::string\u0026 objPath,\n       |     ^~~~~~~~\n ../physical.hpp:52:25: note:   no known conversion for argument 3 from ‘testing::NiceMock\u003cMockLed\u003e’ to ‘std::filesystem::__cxx11::path\u0026\u0026’\n    52 |              fs::path\u0026\u0026 rootPath, const std::string\u0026 color \u003d \"\") :\n       |              ~~~~~~~~~~~^~~~~~~~\n \n [10/12] Compiling C++ object phosphor-ledcontroller.p/controller.cpp.o",
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
