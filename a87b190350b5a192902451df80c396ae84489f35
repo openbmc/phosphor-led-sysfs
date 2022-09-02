@@ -85,6 +85,144 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4c420c10_76efce23",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "Not all systems use entity-manager.  I\u0027d prefer we find a mechanism to still inform the daemon of new LEDs via udev.  There is no reason to lean entirely on entity-manager for this, especially since there can be lag between the entity-manager config and the device probing to enable the appropriate GPIOs / LEDs.",
+      "parentUuid": "a28b6bf7_61337592",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8f0fcdf_765c26f5",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "Why not unordered_map?",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 26
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19d37b8a_2b14915e",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "Why are we using std::error instead of phosphor-logging?  Who is expected to ever see these messages?  Are there any cases where we should be throwing an exception instead and causing the application to restart?  I suspect we have a bunch of instances in this change where bad entity-manager config just goes silently unnoticed until someone really digs into their system.  This is not a good approach to me.",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1396d2a8_5464098f",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "Why is this static_cast necessary?  Isn\u0027t that already the type?",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 42
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92411eac_ef044919",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "It looks like now we are only adding exactly 1 match, so why do we need the unique_ptr and vector and everything?  Can\u0027t we hold a match_t directly in the object?",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9221b0a4_2f7e7b26",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "A minor improvement:\n\nauto [path, interfaces] \u003d message.unpack\u003cobject_path, LedData\u003e();",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 35
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b83d29f_f7a2b425",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "const auto\u0026?  At least auto\u0026.",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d96f435f_0bdd11db",
         "filename": "controller.cpp",
         "patchSetId": 1
@@ -125,6 +263,53 @@
         "startChar": 27,
         "endLine": 119,
         "endChar": 35
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8cf7cdd_f98f05d1",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "Or check `findName-\u003esecond.holds_alternative`.",
+      "parentUuid": "1c6f82e8_78279668",
+      "range": {
+        "startLine": 119,
+        "startChar": 27,
+        "endLine": 119,
+        "endChar": 35
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cd2b46b_12242d66",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "There is a whole lot of work being done here that is not necessary.\n\n1. getDbusName formulates the last part of the path from the device/color/function, but we already did that on line 135.\n2. sdbusplus already has operations to do path transformation to ensure that only valid characters are used.\n\nPlease use sdbusplus::object_path and its `operator /\u003d` in order to put together the path, so that the correct transformations are used.",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 73
       },
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
@@ -202,6 +387,70 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "956903be_4d1a10fe",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "Yes, whatever the first path is after openbmc_project for the objects that this daemon will create.",
+      "parentUuid": "6ea3ae0c_f2ce90c9",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5de8bb7c_ef4daf0c",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "There is no need for sdeventplus here.  It is a bunch of extra code and dependency for no good reason.  Just use bus::process_loop().\n\n\nI don\u0027t understand why you even added this.  The original code worked just fine with the while-loop.  All bus.process_loop() is is exactly the while loop that previously existed.",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 17
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9659c5b_3e89f0d2",
+        "filename": "controller.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "I\u0027m not finding these used anywhere, but I could be failing to search in Gerrit.\n\nWhy are these flat_map instead of std::unordered_map?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 73
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a754388e_1f295489",
         "filename": "controller.hpp",
         "patchSetId": 1
@@ -249,6 +498,87 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3a7343dd_f51e7a35",
+        "filename": "controller.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "\u003e Let\u0027s drop \u0027Sysfs\u0027 here. `...Configuration.Led` (or LED, whatever the convention is) is enough.\n\nExcept there is a difference between the physical LED config and the virtual groups, right?  How do we ensure that people understand the difference?  I don\u0027t know if \"Configuration.Led\" is sufficient.",
+      "parentUuid": "a65a5252_87d4ba03",
+      "range": {
+        "startLine": 23,
+        "startChar": 39,
+        "endLine": 23,
+        "endChar": 44
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2206750c_8bceb23d",
+        "filename": "controller.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "add explicit",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec01de55_d1d851f5",
+        "filename": "controller.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "const std::string\u0026?",
+      "range": {
+        "startLine": 52,
+        "startChar": 23,
+        "endLine": 52,
+        "endChar": 35
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3317020c_43d9b27c",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "I see no use for this being added.",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "13e5b1ae_9a35910f",
         "filename": "physical.hpp",
         "patchSetId": 1
@@ -278,6 +608,23 @@
       "side": 1,
       "message": "\u003e Can you separate this bit out into its own patch? That will clean up the noise.\n\u003e \n\nWill submit a new patch for this.\n\n\n\n\u003e That said, how does the test suite fair with this?\n\u003e \n\u003e Looking at the Jenkins output, it blows up:\n\nI am working on resolving test suite for this implementation. Will change the test suite once it is completed.",
       "parentUuid": "13e5b1ae_9a35910f",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42e123ab_6dfe07b8",
+        "filename": "subprojects/sdeventplus.wrap",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-02T13:48:27Z",
+      "side": 1,
+      "message": "Not needed.",
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
