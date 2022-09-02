@@ -67,6 +67,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a28b6bf7_61337592",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-02T12:32:53Z",
+      "side": 1,
+      "message": "In existing platforms, migration needs to be done from udev rule to entity-manager configuration inorder to support the physical LEDs.\n\nThe below patch is submitted for meta-phosphor change.\n\nhttps://gerrit.openbmc.org/c/openbmc/openbmc/+/56947",
+      "parentUuid": "8096a2fa_b26d6186",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d96f435f_0bdd11db",
         "filename": "controller.cpp",
         "patchSetId": 1
