@@ -103,6 +103,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "19a21408_9a1e9fbe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-09-05T23:35:09Z",
+      "side": 1,
+      "message": "Right, I think we need to split up the patches adding any EM support so that the daemon can still work without EM. This necessitates leaving some udev support in-place. One way that this might work is that udev runs a helper executable that calls a DBus API on the phosphor-led-sysfs daemon to add a new LED. This helper could be some C++-based binary or just a shell script that invokes busctl. phosphor-led-sysfs can then funnel actions from EM or udev into the one handler implementation.\n\nIt\u0027s possible that with this approach you could implement what you need without any EM bits required, and we can kick that can down the road until we need to describe add-in cards with LEDs.\n\nI feel like I suggested this (and EM) on the design doc some time back? I think I leaned the EM way because it is more general, but I don\u0027t think I ever suggested we drop the current udev mechanism.",
+      "parentUuid": "4c420c10_76efce23",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b8f0fcdf_765c26f5",
         "filename": "controller.cpp",
         "patchSetId": 1
@@ -510,6 +528,30 @@
       "side": 1,
       "message": "\u003e Let\u0027s drop \u0027Sysfs\u0027 here. `...Configuration.Led` (or LED, whatever the convention is) is enough.\n\nExcept there is a difference between the physical LED config and the virtual groups, right?  How do we ensure that people understand the difference?  I don\u0027t know if \"Configuration.Led\" is sufficient.",
       "parentUuid": "a65a5252_87d4ba03",
+      "range": {
+        "startLine": 23,
+        "startChar": 39,
+        "endLine": 23,
+        "endChar": 44
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27c3ba77_153bfa99",
+        "filename": "controller.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-09-05T23:35:09Z",
+      "side": 1,
+      "message": "Maybe \"Configuration.Led\" isn\u0027t sufficient, but I feel like it\u0027s wrong to embed implementation details like \"sysfs\" into the API? Do we need \"Configuration.Led\" and \"Configuration.VirtualLed\" or \"Configuration.ComposedLed\"?",
+      "parentUuid": "3a7343dd_f51e7a35",
       "range": {
         "startLine": 23,
         "startChar": 39,
