@@ -121,6 +121,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "94a7ef10_da497c89",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "phosphor-led-sysfs daemon needs to support both udev and EM configs mechanism.\n\nudev event needs to support physical LEDs, therefore, it will not break the existing platform. udev rule can invoke the phosphor-led-sysfs daemon through script/binary by calling DBus API under single service.\n\nEM config can also be supported to create physical LEDs dbus path under single service and not disturbing udev event.\n\nIs my above understanding is correct ?",
+      "parentUuid": "19a21408_9a1e9fbe",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b8f0fcdf_765c26f5",
         "filename": "controller.cpp",
         "patchSetId": 1
@@ -132,6 +150,30 @@
       "writtenOn": "2022-09-02T13:48:27Z",
       "side": 1,
       "message": "Why not unordered_map?",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 26
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61a5bce8_cb3ccb7d",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b8f0fcdf_765c26f5",
       "range": {
         "startLine": 29,
         "startChar": 0,
@@ -161,6 +203,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "02eee796_3b0960f6",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "19d37b8a_2b14915e",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1396d2a8_5464098f",
         "filename": "controller.cpp",
         "patchSetId": 1
@@ -172,6 +232,30 @@
       "writtenOn": "2022-09-02T13:48:27Z",
       "side": 1,
       "message": "Why is this static_cast necessary?  Isn\u0027t that already the type?",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 42
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "787e21a7_903414c3",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1396d2a8_5464098f",
       "range": {
         "startLine": 98,
         "startChar": 8,
@@ -201,6 +285,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "22084998_d120f783",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "92411eac_ef044919",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9221b0a4_2f7e7b26",
         "filename": "controller.cpp",
         "patchSetId": 1
@@ -224,6 +326,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "01f83c58_dd32dd0d",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9221b0a4_2f7e7b26",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 35
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7b83d29f_f7a2b425",
         "filename": "controller.cpp",
         "patchSetId": 1
@@ -235,6 +361,24 @@
       "writtenOn": "2022-09-02T13:48:27Z",
       "side": 1,
       "message": "const auto\u0026?  At least auto\u0026.",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0134642_56327406",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7b83d29f_f7a2b425",
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -312,6 +456,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "33598dcc_f325174a",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c8cf7cdd_f98f05d1",
+      "range": {
+        "startLine": 119,
+        "startChar": 27,
+        "endLine": 119,
+        "endChar": 35
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7cd2b46b_12242d66",
         "filename": "controller.cpp",
         "patchSetId": 1
@@ -323,6 +491,30 @@
       "writtenOn": "2022-09-02T13:48:27Z",
       "side": 1,
       "message": "There is a whole lot of work being done here that is not necessary.\n\n1. getDbusName formulates the last part of the path from the device/color/function, but we already did that on line 135.\n2. sdbusplus already has operations to do path transformation to ensure that only valid characters are used.\n\nPlease use sdbusplus::object_path and its `operator /\u003d` in order to put together the path, so that the correct transformations are used.",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 73
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7a20140_23f5a184",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7cd2b46b_12242d66",
       "range": {
         "startLine": 143,
         "startChar": 0,
@@ -423,6 +615,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0d84ada2_d85e30cb",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "956903be_4d1a10fe",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5de8bb7c_ef4daf0c",
         "filename": "controller.cpp",
         "patchSetId": 1
@@ -446,6 +656,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a6f021eb_a78b60ca",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5de8bb7c_ef4daf0c",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 17
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b9659c5b_3e89f0d2",
         "filename": "controller.hpp",
         "patchSetId": 1
@@ -457,6 +691,30 @@
       "writtenOn": "2022-09-02T13:48:27Z",
       "side": 1,
       "message": "I\u0027m not finding these used anywhere, but I could be failing to search in Gerrit.\n\nWhy are these flat_map instead of std::unordered_map?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 73
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8d45b95_0e56fda3",
+        "filename": "controller.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "These are used to handle the sdbusplus message. flat_map is used based on the reference in other repos. I will change to std::unordered_map in next patchset.",
+      "parentUuid": "b9659c5b_3e89f0d2",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -581,6 +839,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "49ecaa41_f22f85ff",
+        "filename": "controller.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2206750c_8bceb23d",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ec01de55_d1d851f5",
         "filename": "controller.hpp",
         "patchSetId": 1
@@ -604,6 +880,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4e00c185_bc59bebb",
+        "filename": "controller.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ec01de55_d1d851f5",
+      "range": {
+        "startLine": 52,
+        "startChar": 23,
+        "endLine": 52,
+        "endChar": 35
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3317020c_43d9b27c",
         "filename": "meson.build",
         "patchSetId": 1
@@ -615,6 +915,24 @@
       "writtenOn": "2022-09-02T13:48:27Z",
       "side": 1,
       "message": "I see no use for this being added.",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1b35863_c39a8aac",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3317020c_43d9b27c",
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -667,6 +985,24 @@
       "writtenOn": "2022-09-02T13:48:27Z",
       "side": 1,
       "message": "Not needed.",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcb2dd84_0b1194eb",
+        "filename": "subprojects/sdeventplus.wrap",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-06T09:10:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "42e123ab_6dfe07b8",
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
