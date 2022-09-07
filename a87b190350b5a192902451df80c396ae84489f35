@@ -139,6 +139,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "76f29bf1_1ce9a5a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-09-07T00:03:26Z",
+      "side": 1,
+      "message": "Yes, we need to at least retain udev support to prevent breaking existing platforms that use phosphor-led-sysfs in its current implementation.\n\nEM support is something you can add if you need EM; this will give you the capability to describe LEDs on pluggable cards (which you shouldn\u0027t do via the devicetree).",
+      "parentUuid": "94a7ef10_da497c89",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b8f0fcdf_765c26f5",
         "filename": "controller.cpp",
         "patchSetId": 1
