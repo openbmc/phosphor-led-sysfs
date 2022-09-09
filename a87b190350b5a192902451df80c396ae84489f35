@@ -157,6 +157,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e03f7ba1_1dddf579",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "ok, I will work on phosphor-led-sysfs daemon to support both udev and entity-manager and submit the patch as soon as possible.",
+      "parentUuid": "76f29bf1_1ce9a5a8",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b8f0fcdf_765c26f5",
         "filename": "controller.cpp",
         "patchSetId": 1
@@ -202,6 +220,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c8e5183_cba6945c",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61a5bce8_cb3ccb7d",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 26
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19d37b8a_2b14915e",
@@ -233,6 +275,24 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "19d37b8a_2b14915e",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "806dd811_4e45de42",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02eee796_3b0960f6",
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -284,6 +344,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0edcf707_5f72ae44",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "787e21a7_903414c3",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 42
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "92411eac_ef044919",
@@ -315,6 +399,24 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "92411eac_ef044919",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdfaeabc_24994773",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22084998_d120f783",
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -397,6 +499,24 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "7b83d29f_f7a2b425",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad0ae2e7_89e577b3",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0134642_56327406",
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -543,6 +663,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "657df02d_80af7aaf",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7a20140_23f5a184",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 73
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e1d6c699_9b39d50f",
@@ -574,6 +718,24 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "e1d6c699_9b39d50f",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a69d6162_eaefb4ff",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b75e3c89_2992cb25",
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -649,6 +811,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0bcd706_dc0c3912",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d84ada2_d85e30cb",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5de8bb7c_ef4daf0c",
@@ -686,6 +866,30 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "5de8bb7c_ef4daf0c",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 17
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed86933c_b3240ca2",
+        "filename": "controller.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6f021eb_a78b60ca",
       "range": {
         "startLine": 198,
         "startChar": 0,
@@ -873,6 +1077,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "20d7c5cc_42ec2ec3",
+        "filename": "controller.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49ecaa41_f22f85ff",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec01de55_d1d851f5",
@@ -920,6 +1142,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "77345585_39fbefbe",
+        "filename": "controller.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e00c185_bc59bebb",
+      "range": {
+        "startLine": 52,
+        "startChar": 23,
+        "endLine": 52,
+        "endChar": 35
+      },
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3317020c_43d9b27c",
@@ -951,6 +1197,24 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "3317020c_43d9b27c",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b9b7d9e_e3a2af6b",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1b35863_c39a8aac",
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -1021,6 +1285,24 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "42e123ab_6dfe07b8",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a003a130_90fdc155",
+        "filename": "subprojects/sdeventplus.wrap",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-09T10:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dcb2dd84_0b1194eb",
       "revId": "a87b190350b5a192902451df80c396ae84489f35",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
