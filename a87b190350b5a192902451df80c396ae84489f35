@@ -211,6 +211,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "164b275b_7d61688b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-16T12:39:16Z",
+      "side": 1,
+      "message": "The design doc is now updated to support udev event and entity-manager is not required now, since LEDs are configured in existing platforms via devicetree",
+      "parentUuid": "eebdf66d_61f8d58f",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b8f0fcdf_765c26f5",
         "filename": "controller.cpp",
         "patchSetId": 1
