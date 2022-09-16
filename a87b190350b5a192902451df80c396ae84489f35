@@ -175,6 +175,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eebdf66d_61f8d58f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-09-16T03:52:36Z",
+      "side": 1,
+      "message": "Just to be clear, only add EM support if you need it. It\u0027s possible to rework the udev support consolidate the processes without requiring EM while also being backwards compatible with existing systems. And if that\u0027s enough to get your problems solved, then we can leave EM support to someone else.",
+      "parentUuid": "e03f7ba1_1dddf579",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b8f0fcdf_765c26f5",
         "filename": "controller.cpp",
         "patchSetId": 1
