@@ -229,6 +229,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a2faa422_ca806db7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2022-09-19T14:18:59Z",
+      "side": 1,
+      "message": "This is a drive by comment - I\u0027m not looking for any changes.\n\n\u003e automatic way (based on name)\n\nIs it any more automatic to require specific naming conventions in the device tree?\n\nAdditionally, EM configurations can already have schema verification applied.\n\nFWIW, one of the goals of entity manager is to consolidate where this kind of information lives, to make new system ports easier.",
+      "parentUuid": "164b275b_7d61688b",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b8f0fcdf_765c26f5",
         "filename": "controller.cpp",
         "patchSetId": 1
