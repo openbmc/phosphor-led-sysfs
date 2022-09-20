@@ -18,6 +18,15 @@ deps = [
     phosphor_dbus_interfaces_dep,
 ]
 
+udevdir = dependency('udev').get_variable(pkgconfig: 'udevdir')
+install_data(['70-leds.rules'], install_dir : udevdir / 'rules.d')
+
+systemd = dependency('systemd')
+install_data(
+  ['xyz.openbmc_project.led.controller@.service'],
+  install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir')
+)
+
 sources = [
     'argument.cpp',
     'controller.cpp',
@@ -31,7 +40,7 @@ executable(
     implicit_include_directories: true,
     dependencies: deps,
     install: true,
-    install_dir: '/usr/sbin'
+    install_dir: '/usr/libexec/phosphor-led-sysfs'
 )
 
 build_tests = get_option('tests')
