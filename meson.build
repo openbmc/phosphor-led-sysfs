@@ -18,6 +18,15 @@ deps = [
     phosphor_dbus_interfaces_dep,
 ]
 
+udevdir = dependency('udev').get_pkgconfig_variable('udevdir')
+install_data(['70-leds.rules'], install_dir : udevdir / 'rules.d')
+
+systemd = dependency('systemd')
+install_data(
+  ['xyz.openbmc_project.led.controller@.service'],
+  install_dir: systemd.get_pkgconfig_variable('systemdsystemunitdir')
+)
+
 sources = [
     'argument.cpp',
     'controller.cpp',
