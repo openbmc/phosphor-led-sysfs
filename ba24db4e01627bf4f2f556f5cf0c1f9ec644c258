@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d622b8ca_c872a562",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2022-09-21T12:34:41Z",
+      "side": 1,
+      "message": "does this actually work?  I thought you had to do:\n\n get_variable(    pkgconfig : \u0027systemdsystemunitdir\u0027)",
+      "revId": "ba24db4e01627bf4f2f556f5cf0c1f9ec644c258",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56cb105c_11451255",
+        "filename": "xyz.openbmc_project.led.controller@.service",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2022-09-21T12:34:41Z",
+      "side": 1,
+      "message": "I\u0027m looking at line 43 and this gets installed to sbin, not bin.",
+      "revId": "ba24db4e01627bf4f2f556f5cf0c1f9ec644c258",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
