@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "36d2cb41_69471b92",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-21T13:10:40Z",
+      "side": 1,
+      "message": "Yes, Brad is right.  Both of this and line 21 are wrong.  If you don\u0027t specify `pkgconfig` what this will do is return the literal string \u0027systemdsystemunitdir\u0027, which is not what you intend.\n\nhttps://mesonbuild.com/Reference-manual_returned_dep.html#depget_variable",
+      "parentUuid": "d622b8ca_c872a562",
+      "revId": "ba24db4e01627bf4f2f556f5cf0c1f9ec644c258",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "56cb105c_11451255",
         "filename": "xyz.openbmc_project.led.controller@.service",
         "patchSetId": 2
