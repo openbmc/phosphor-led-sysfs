@@ -41,6 +41,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d32d851f_091ee85a",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-21T08:19:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7000db7_d3fe5859",
+      "range": {
+        "startLine": 27,
+        "startChar": 23,
+        "endLine": 27,
+        "endChar": 45
+      },
+      "revId": "61232b984e268185387c566405c78c9a274d7fda",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "07c4b78a_c50cdc05",
@@ -64,6 +88,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6fa2c96_e5f7cf46",
+        "filename": "xyz.openbmc_project.led.controller@.service",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-21T08:19:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07c4b78a_c50cdc05",
+      "range": {
+        "startLine": 6,
+        "startChar": 10,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "61232b984e268185387c566405c78c9a274d7fda",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1139494c_e8821987",
@@ -77,6 +125,30 @@
       "writtenOn": "2022-09-20T19:29:40Z",
       "side": 1,
       "message": "unnecessary if you get rid of /usr/bin/env.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 39
+      },
+      "revId": "61232b984e268185387c566405c78c9a274d7fda",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62fcaf42_15dd2e1a",
+        "filename": "xyz.openbmc_project.led.controller@.service",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-21T08:19:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1139494c_e8821987",
       "range": {
         "startLine": 7,
         "startChar": 0,
