@@ -247,6 +247,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9607ee99_08374e9e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-09-22T12:36:44Z",
+      "side": 1,
+      "message": "Well, I\u0027d prefer we didn\u0027t use something like names. But, if it means dragging EM into your system just for handling LEDs then I think I could live with the name hack whilst also supporting EM to do it properly at some point down the track.",
+      "parentUuid": "a2faa422_ca806db7",
+      "revId": "a87b190350b5a192902451df80c396ae84489f35",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b8f0fcdf_765c26f5",
         "filename": "controller.cpp",
         "patchSetId": 1
