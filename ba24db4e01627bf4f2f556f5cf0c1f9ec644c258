@@ -54,6 +54,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "822179e1_dc811219",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-23T08:09:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0c737c2_ca4a8f69",
+      "revId": "ba24db4e01627bf4f2f556f5cf0c1f9ec644c258",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "56cb105c_11451255",
@@ -67,6 +85,24 @@
       "writtenOn": "2022-09-21T12:34:41Z",
       "side": 1,
       "message": "I\u0027m looking at line 43 and this gets installed to sbin, not bin.",
+      "revId": "ba24db4e01627bf4f2f556f5cf0c1f9ec644c258",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97079de5_e39b6508",
+        "filename": "xyz.openbmc_project.led.controller@.service",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-23T08:09:26Z",
+      "side": 1,
+      "message": "Changed to bin in meson.build to install in /usr/bin path.",
+      "parentUuid": "56cb105c_11451255",
       "revId": "ba24db4e01627bf4f2f556f5cf0c1f9ec644c258",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
