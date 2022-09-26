@@ -52,6 +52,24 @@
       "parentUuid": "27ccae72_b9775c15",
       "revId": "ab74247f4a70fa2d785a45e24ac88fc67afba5b8",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42a85dc3_fa1d3f39",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-09-26T14:16:21Z",
+      "side": 1,
+      "message": "The only thing outside of the “hier” man page we already link to that I can find is this: https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch04s07.html\n\nIt seems to imply that libexec is “newer”.",
+      "parentUuid": "007a26d7_51da4c21",
+      "revId": "ab74247f4a70fa2d785a45e24ac88fc67afba5b8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
