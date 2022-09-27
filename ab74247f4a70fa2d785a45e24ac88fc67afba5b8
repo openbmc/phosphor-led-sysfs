@@ -70,6 +70,24 @@
       "parentUuid": "007a26d7_51da4c21",
       "revId": "ab74247f4a70fa2d785a45e24ac88fc67afba5b8",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "743acaa3_a11fed33",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-09-27T10:17:01Z",
+      "side": 1,
+      "message": "I have used /usr/bin for installation path, since all other applications binary are copied in that place.\n\nCould you please clarify the path, which needs to be updated to install the binary file for phopshor-ledcontroller.",
+      "parentUuid": "42a85dc3_fa1d3f39",
+      "revId": "ab74247f4a70fa2d785a45e24ac88fc67afba5b8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
