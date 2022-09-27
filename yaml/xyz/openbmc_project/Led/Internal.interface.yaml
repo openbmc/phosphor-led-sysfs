@@ -1,0 +1,21 @@
+description: >
+    Implementing this interface to provide the method to add or
+    remove the physical LED directly over DBus for each udev
+    LED event.
+methods:
+    - name: AddLed
+      description: >
+          Add the LED name based on udev event.
+      parameters:
+          - name: LedName
+            type: string
+            description: >
+                The unique physical LED name to be addded.
+    - name: RemoveLed
+      description: >
+          Remove the LED name based on udev event.
+      parameters:
+          - name: LedName
+            type: string
+            description: >
+                The unique physical LED name to be removed.

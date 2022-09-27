@@ -13,6 +13,21 @@ project(
 sdbusplus_dep = dependency('sdbusplus')
 phosphor_dbus_interfaces_dep = dependency('phosphor-dbus-interfaces')
 
+sdbusplus_dep = dependency('sdbusplus')
+phosphor_dbus_interfaces_dep = dependency('phosphor-dbus-interfaces')
+
+sdbusplusplus_prog = find_program('sdbus++', native: true)
+sdbuspp_gen_meson_prog = find_program('sdbus++-gen-meson', native: true)
+sdbusplusplus_depfiles = files()
+if sdbusplus_dep.type_name() == 'internal'
+    sdbusplusplus_depfiles = subproject('sdbusplus').get_variable('sdbusplusplus_depfiles')
+endif
+
+generated_sources = []
+generated_others = []
+subdir('gen')
+subdir('gen/xyz')
+
 deps = [
     sdbusplus_dep,
     phosphor_dbus_interfaces_dep,
@@ -28,19 +43,23 @@ install_data(
 )
 
 sources = [
-    'argument.cpp',
-    'controller.cpp',
-    'physical.cpp',
-    'sysfs.cpp',
+    generated_sources,
+    files(
+        'argument.cpp',
+        'controller.cpp',
+        'physical.cpp',
+        'sysfs.cpp',
+    )
 ]
 
 executable(
     'phosphor-ledcontroller',
     sources,
+    include_directories: include_directories('gen'),
     implicit_include_directories: true,
     dependencies: deps,
     install: true,
-    install_dir: '/usr/bin'
+    install_dir: '/usr/libexec/phosphor-led-sysfs'
 )
 
 build_tests = get_option('tests')
