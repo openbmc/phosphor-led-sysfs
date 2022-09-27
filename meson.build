@@ -30,6 +30,7 @@ install_data(
 )
 
 sources = [
+    'interfaces/internal_interface.cpp',
     'argument.cpp',
     'controller.cpp',
     'physical.cpp',
