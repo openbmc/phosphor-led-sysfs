@@ -1,13 +1,8 @@
 #include "argument.hpp"
+#include "interfaces/internal_interface.hpp"
 
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/bus.hpp>
-
-static constexpr auto BUSNAME = "xyz.openbmc_project.LED.Controller";
-static constexpr auto ROOTPATH = "/xyz/openbmc_project/led";
-static constexpr auto DEVPATH = "/sys/class/leds/";
-static constexpr auto INTERFACE = "xyz.openbmc_project.Led.Sysfs.Internal";
-static constexpr auto LEDADDMETHOD = "AddLED";
 
 std::string rootPathVerify(std::string path)
 {
