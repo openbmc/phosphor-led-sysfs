@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+#include "interfaces/internal_interface.hpp"
 #include "physical.hpp"
 #include "sysfs.hpp"
 
@@ -28,6 +29,11 @@ static constexpr auto busName = "xyz.openbmc_project.LED.Controller";
 static constexpr auto objectPath = "/xyz/openbmc_project/led/physical";
 static constexpr auto rootPath = "/xyz/openbmc_project/led";
 static constexpr auto devPath = "/sys/class/leds/";
+
+std::unordered_map<std::string, std::unique_ptr<phosphor::led::SysfsLed>>
+    sysfsled;
+
+std::unordered_map<std::string, std::shared_ptr<phosphor::led::Physical>> leds;
 
 struct LedDescr
 {
@@ -76,6 +82,38 @@ std::string getDbusName(const LedDescr& ledDescr)
     return boost::join(words, "_");
 }
 
+namespace phosphor::led::sysfs::interface
+{
+void InternalInterface::createLEDPath(const std::string& ledName)
+{
+    std::string name = ledName;
+
+    std::string path = devPath + name;
+
+    if (!std::filesystem::exists(fs::path(path)))
+    {
+        lg2::error("No such directory {PATH}", "PATH", path);
+        return;
+    }
+
+    // Convert LED name in sysfs into DBus name
+    LedDescr ledDescr;
+    getLedDescr(name, ledDescr);
+    name = getDbusName(ledDescr);
+
+    // Unique path name representing a single LED.
+    sdbusplus::message::object_path objPath = std::string(objectPath);
+    objPath /= name;
+
+    auto& sled = sysfsled[objPath];
+    sled = std::make_unique<phosphor::led::SysfsLed>(fs::path(path));
+
+    auto& physical = leds[objPath];
+    physical = std::make_unique<phosphor::led::Physical>(bus, objPath, sled,
+                                                         ledDescr.color);
+}
+} // namespace phosphor::led::sysfs::interface
+
 int main()
 {
     // Get a handle to system dbus
@@ -83,6 +121,9 @@ int main()
 
     // Add the ObjectManager interface
     sdbusplus::server::manager::manager objManager(bus, rootPath);
+
+    // Create an led controller object
+    phosphor::led::sysfs::interface::InternalInterface internal(bus, rootPath);
 
     // Request service bus name
     bus.request_name(busName);
