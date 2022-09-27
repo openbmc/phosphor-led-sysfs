@@ -15,14 +15,21 @@
  */
 
 #include "argument.hpp"
+#include "interfaces/internal_interface.hpp"
 #include "physical.hpp"
 #include "sysfs.hpp"
 
 #include <boost/algorithm/string.hpp>
+#include <phosphor-logging/lg2.hpp>
 
 #include <algorithm>
 #include <iostream>
 #include <string>
+
+static constexpr auto busName = "xyz.openbmc_project.LED.Controller";
+static constexpr auto objectPath = "/xyz/openbmc_project/led/physical";
+static constexpr auto rootPath = "/xyz/openbmc_project/led";
+static constexpr auto devPath = "/sys/class/leds/";
 
 static void ExitWithError(const char* err, char** argv)
 {
@@ -78,6 +85,31 @@ std::string getDbusName(const LedDescr& ledDescr)
         words.emplace_back(ledDescr.color);
     return boost::join(words, "_");
 }
+
+namespace phosphor::led::sysfs::interface
+{
+void InternalInterface::createLEDPath(const std::string& ledName)
+{
+    std::string name = ledName;
+
+    std::string path = devPath + name;
+
+    if (!std::filesystem::exists(fs::path(path)))
+    {
+        lg2::error("No such directory {PATH}", "PATH", path);
+        return;
+    }
+
+    // Convert LED name in sysfs into DBus name
+    LedDescr ledDescr;
+    getLedDescr(name, ledDescr);
+    name = getDbusName(ledDescr);
+
+    // Unique path name representing a single LED.
+    sdbusplus::message::object_path objPath = std::string(objectPath);
+    objPath /= name;
+}
+} // namespace phosphor::led::sysfs::interface
 
 int main(int argc, char** argv)
 {
