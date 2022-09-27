@@ -14,17 +14,7 @@
  * limitations under the License.
  */
 
-#include "physical.hpp"
-#include "sysfs.hpp"
-
-#include <boost/algorithm/string.hpp>
-
-#include <algorithm>
-#include <iostream>
-#include <string>
-
-static constexpr auto busName = "xyz.openbmc_project.LED.Controller";
-static constexpr auto rootPath = "/xyz/openbmc_project/led";
+#include "interfaces/internal_interface.hpp"
 
 int main()
 {
@@ -32,10 +22,13 @@ int main()
     auto bus = sdbusplus::bus::new_default();
 
     // Add the ObjectManager interface
-    sdbusplus::server::manager::manager objManager(bus, rootPath);
+    sdbusplus::server::manager_t objManager(bus, ROOTPATH);
+
+    // Create an led controller object
+    phosphor::led::sysfs::interface::InternalInterface internal(bus, ROOTPATH);
 
     // Request service bus name
-    bus.request_name(busName);
+    bus.request_name(BUSNAME);
 
     while (true)
     {

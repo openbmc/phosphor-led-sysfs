@@ -12,10 +12,12 @@ project(
 
 sdbusplus_dep = dependency('sdbusplus')
 phosphor_dbus_interfaces_dep = dependency('phosphor-dbus-interfaces')
+phosphor_logging_dep = dependency('phosphor-logging')
 
 deps = [
     sdbusplus_dep,
     phosphor_dbus_interfaces_dep,
+    phosphor_logging_dep,
 ]
 
 udevdir = dependency('udev').get_variable(pkgconfig: 'udevdir')
@@ -28,6 +30,7 @@ install_data(
 )
 
 sources = [
+    'interfaces/internal_interface.cpp',
     'controller.cpp',
     'physical.cpp',
     'sysfs.cpp',
