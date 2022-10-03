@@ -34,6 +34,24 @@
       "parentUuid": "94cbd338_f2d1ecde",
       "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf416bfc_bdb744ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2022-10-03T13:53:00Z",
+      "side": 1,
+      "message": "A DBus API is by definition public.\n\nIt was a convention long ago.  Is it still?  I\u0027m not sure.  I certainly don\u0027t advocate for it.\n\nWhy can\u0027t things other than udev add LEDs?",
+      "parentUuid": "12f20de5_10ed3270",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
