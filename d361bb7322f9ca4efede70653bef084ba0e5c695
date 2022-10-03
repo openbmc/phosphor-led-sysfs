@@ -16,6 +16,24 @@
       "message": "DBus is an API to other processes.  What does it mean for an interface to be \"Internal\" given that definition?  I don\u0027t think we should do that.\n\nFurther, I think introducing the entire p-d-i code generation process to the building of this repository is a step backwards.  Just add your interface to PDI and drop \"Internal\" from the name.",
       "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12f20de5_10ed3270",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-03T13:47:30Z",
+      "side": 1,
+      "message": "Hasn\u0027t this been the convention in other repositories where they want a way to trigger between two applications (or a library and application) in the same repository without exposing a public API?\n\nhttps://github.com/openbmc/phosphor-debug-collector/blob/ff92ffe29db4099fa44864fc22f40843f4ca1834/xyz/openbmc_project/Dump/Internal/Create.interface.yaml\n\nhttps://github.com/openbmc/phosphor-logging/blob/fdd1dc04b56160f03ca774c92c7af92d3dbd24d3/yaml/xyz/openbmc_project/Logging/Internal/Manager.interface.yaml",
+      "parentUuid": "94cbd338_f2d1ecde",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
