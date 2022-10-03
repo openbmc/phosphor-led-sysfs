@@ -52,6 +52,24 @@
       "parentUuid": "12f20de5_10ed3270",
       "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22b846e1_e38a3253",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-03T14:14:01Z",
+      "side": 1,
+      "message": "\u003e A DBus API is by definition public.\n\nIt is public in the sense that anyone _could_ make calls to it, but if it is left undocumented and named as \"Internal\" it seems rather unlikely (and something we should be screening for in a code review).\n\n\u003e Why can\u0027t things other than udev add LEDs?\n\nWhat other entity than udev would indicate that a new sysfs entry exists and should be managed by this application?  That\u0027s exactly what udev does.  I can\u0027t even think of a way you would know this without udev also knowing it.\n\nThis isn\u0027t about another application adding an LED.  This is about another adding a sysfs-managed LED, since that is what this repository is about.  If someone comes up with a design where LEDs are not managed via sysfs, they\u0027d need to come up with a design for that.  Maybe at that point it would make sense to define a more globally applicable API?\n\n\u003e It was a convention long ago.  Is it still?  I\u0027m not sure.  I certainly don\u0027t advocate for it.\n\nCan you elaborate?  It doesn\u0027t seem like we\u0027ve made any recent suggestions to not do this.\n\n```\n$ for f in $(find -name regenerate-meson | grep -v sdbusplus) ; do git -C $(dirname $f) log regenerate-meson | grep Date: | tail -n1 ; done                      \nDate:   Wed Jun 24 16:12:44 2020 -0500\nDate:   Fri Apr 16 16:30:04 2021 -0500\nDate:   Tue Sep 13 11:20:56 2022 -0500\nDate:   Thu May 13 18:38:57 2021 -0700\nDate:   Wed Sep 8 08:46:22 2021 +0800\n```\n\n---\n\nJayashree is presently trying to keep backwards compatible support for the existing users (which used udev to create N independent processes), while also satisfying the design that was documented at https://gerrit.openbmc.org/c/openbmc/docs/+/55230 .",
+      "parentUuid": "bf416bfc_bdb744ff",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
