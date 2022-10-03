@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94cbd338_f2d1ecde",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2022-10-03T13:30:06Z",
+      "side": 1,
+      "message": "DBus is an API to other processes.  What does it mean for an interface to be \"Internal\" given that definition?  I don\u0027t think we should do that.\n\nFurther, I think introducing the entire p-d-i code generation process to the building of this repository is a step backwards.  Just add your interface to PDI and drop \"Internal\" from the name.",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
