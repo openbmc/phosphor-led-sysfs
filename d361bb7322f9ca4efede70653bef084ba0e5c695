@@ -88,6 +88,24 @@
       "parentUuid": "22b846e1_e38a3253",
       "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "733ac327_4d49719c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2022-10-03T15:41:42Z",
+      "side": 1,
+      "message": "\u003e It is public in the sense that anyone _could_ make calls to it, but if it is left undocumented and named as \"Internal\" it seems rather unlikely (and something we should be screening for in a code review).\n\nI don\u0027t think we should have undocumented interfaces or be screening for their use.  They should just be documented and allowed to be used, like any other interface.\n\n\u003e What other entity than udev would indicate that a new sysfs entry exists and should be managed by this application?  That\u0027s exactly what udev does.  I can\u0027t even think of a way you would know this without udev also knowing it.\n\nA developer application?  A testing application?  A manufacturing application?\nI\u0027m not sure.  Let me ask it another way - why does udev\u0027s use of this API make it special/internal compared to any other OpenBMC application.\n\n\u003e Can you elaborate?\n\nI don\u0027t really feel like digging through history to provide examples.  I know I have had conversations about this with others in the past.  I guess I\u0027ll just have to hope they are paying attention and speak up if they share my dislike of this practice.\n\n\u003e Jayashree is presently trying to keep backwards compatible support for the existing users \n\nI appreciate the effort to maintain backwards compatibility.\n\n\u003e Maybe we need to define a light-weight way to add interfaces to PDI that are intended to be intra-repository?\n\nI just don\u0027t see the point in the distinction.",
+      "parentUuid": "9b546213_730bd60e",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
