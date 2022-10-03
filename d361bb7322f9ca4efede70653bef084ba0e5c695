@@ -70,6 +70,24 @@
       "parentUuid": "bf416bfc_bdb744ff",
       "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b546213_730bd60e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-03T14:19:49Z",
+      "side": 1,
+      "message": "\u003e I think introducing the entire p-d-i code generation process to the building of this repository is a step backwards.  Just add your interface to PDI and drop \"Internal\" from the name.\n\nMaybe we need to define a light-weight way to add interfaces to PDI that are intended to be intra-repository?",
+      "parentUuid": "22b846e1_e38a3253",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
