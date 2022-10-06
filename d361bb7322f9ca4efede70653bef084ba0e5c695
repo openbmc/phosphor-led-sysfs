@@ -106,6 +106,126 @@
       "parentUuid": "9b546213_730bd60e",
       "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5692a39_42af0e62",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-06T03:46:49Z",
+      "side": 1,
+      "message": "\u003e Further, I think introducing the entire p-d-i code generation process to the building of this repository is a step backwards.  Just add your interface to PDI and drop \"Internal\" from the name.\n\nI disagree. We shouldn\u0027t be adding definitions to PDI that we don\u0027t want to consider part of the OpenBMC data model. If it\u0027s annoying to do per-repo stuff with sdbusplus we should fix that, not shoe-horn everything into PDI because it already makes life easy.\n\nI\u0027m just hoping I\u0027m not too far off with the trade-off between purism and pragmatism there.\n\n\u003e It was a convention long ago.  Is it still?  I\u0027m not sure.  I certainly don\u0027t advocate for it.\n\nIt\u0027s at least an established practice that \"Internal\" can be a component of an API name for object behaviours that are not for general consumption. If we have a beef with that then we should have a wider discussion about it, not try to change existing practice through commentary in Gerrit buried in some arbitrary patch. Let\u0027s get a proposal to docs or something on the mailing list if that\u0027s where we want to go and how to deal with existing APIs that fall afoul of the new philosophy.\n\n\u003e Why can\u0027t things other than udev add LEDs?\n\nThey could, but as Patrick points out that\u0027s really the only thing we care about for now, and the likelyhood of something else calling this interface is pretty low.\n\n\u003e A developer application?  A testing application?  A manufacturing application?\nI\u0027m not sure.  Let me ask it another way - why does udev\u0027s use of this API make it special/internal compared to any other OpenBMC application.\n\nI don\u0027t think this is the right question. udev\u0027s use of this API isn\u0027t special, and the API is also not named in terms of udev. It\u0027s not like it\u0027s called xyz.openbmc_project.LED.Udev. That said it\u0027s not an API that I think deserves representation in the OpenBMC data model either.\n\nOverall I\u0027m fine with the \u0027Internal\u0027 component given that it\u0027s existing practice, I\u0027m fine with defining the interface in this repository given that it\u0027s also existing practice, and I don\u0027t share concerns about things other than udev not being able to call it.\n\nIn the interest of moving this forward, I\u0027m happy for it to go in.",
+      "parentUuid": "733ac327_4d49719c",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb0265e8_eb06a3b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-06T03:46:49Z",
+      "side": 1,
+      "message": "Hi Jayashree,\n\nThanks for continuing to plug away at this. I have a query about the need to commit the generated files, that doesn\u0027t quite seem right to me. Is that existing practice?\n\nI\u0027ve also weighed in on Brad\u0027s discussion.",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28a8e28c_455adec5",
+        "filename": "gen/meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-06T03:46:49Z",
+      "side": 1,
+      "message": "If this is generated we probably shouldn\u0027t commit it? Is there some existing practice here?",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6590f46d_cdbacbb1",
+        "filename": "gen/xyz/meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-06T03:46:49Z",
+      "side": 1,
+      "message": "Same query",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09045af0_b03f3fad",
+        "filename": "gen/xyz/openbmc_project/Led/Internal/meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-06T03:46:49Z",
+      "side": 1,
+      "message": "Same query",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7a034f1_eb6addec",
+        "filename": "gen/xyz/openbmc_project/Led/meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-06T03:46:49Z",
+      "side": 1,
+      "message": "Same query",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51dd9bcb_5f96b55d",
+        "filename": "gen/xyz/openbmc_project/meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-06T03:46:49Z",
+      "side": 1,
+      "message": "Same query",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
