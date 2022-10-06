@@ -180,6 +180,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8c232415_0df875d6",
+        "filename": "gen/meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-06T09:55:29Z",
+      "side": 1,
+      "message": "It is expected convention to check these in even though they are generated. \n\nIn theory you could do a meson run-command at the top level to create them, but it would increase your [re]build times.  There was a discussion about it when all this gen-scriptage was written and wak was especially opposed to it being done as run-commands, so this is what we settled on.",
+      "parentUuid": "4d2c3e90_2ca7e422",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6590f46d_cdbacbb1",
         "filename": "gen/xyz/meson.build",
         "patchSetId": 5
