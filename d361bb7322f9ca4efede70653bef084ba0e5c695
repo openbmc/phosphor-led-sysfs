@@ -162,6 +162,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4d2c3e90_2ca7e422",
+        "filename": "gen/meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-06T08:16:44Z",
+      "side": 1,
+      "message": "I referred this yaml/gen file from phosphor-logging reposiory. I can remove this line, if this is not necessary in all the meson.build files.\nhttps://github.com/openbmc/phosphor-logging/blob/master/gen/meson.build",
+      "parentUuid": "28a8e28c_455adec5",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6590f46d_cdbacbb1",
         "filename": "gen/xyz/meson.build",
         "patchSetId": 5
