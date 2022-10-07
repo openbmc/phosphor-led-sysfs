@@ -143,6 +143,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f90dc651_cb5267e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2022-10-07T15:52:17Z",
+      "side": 1,
+      "message": "Some good points Andrew.  Overall I think \"existing practice\" might be getting a more weight than it deserves as rationale (there are other projects in OpenBMC doing this in other ways) and I am slightly worried this will cause some teams in the community to look elsewhere for an LED solution.  However, I think everyone here is very smart and I\u0027m happy to get out of the way and hope I\u0027m wrong 🙂",
+      "parentUuid": "c5692a39_42af0e62",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28a8e28c_455adec5",
