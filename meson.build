@@ -13,6 +13,7 @@ project(
 sdbusplus_dep = dependency('sdbusplus')
 phosphor_dbus_interfaces_dep = dependency('phosphor-dbus-interfaces')
 boost = dependency('boost', include_type: 'system')
+phosphor_logging_dep = dependency('phosphor-logging')
 
 cxx = meson.get_compiler('cpp')
 if cxx.has_header('CLI/CLI.hpp')
@@ -26,6 +27,7 @@ deps = [
     sdbusplus_dep,
     phosphor_dbus_interfaces_dep,
     boost,
+    phosphor_logging_dep,
 ]
 
 udevdir = dependency('udev').get_variable('udevdir')
@@ -51,6 +53,17 @@ executable(
     install_dir: '/usr/libexec/phosphor-led-sysfs'
 )
 
-if get_option('tests').allowed()
+executable(
+    'add-led-action',
+    'argument.cpp',
+    'add_led_action.cpp',
+    implicit_include_directories: true,
+    dependencies: deps,
+    install: true,
+    install_dir: '/usr/libexec/phosphor-led-sysfs'
+)
+
+build_tests = get_option('tests')
+if build_tests.enabled()
   subdir('test')
 endif
