@@ -1,0 +1,9 @@
+[Unit]
+Description=Phosphor Sysfs - Add LED
+
+[Service]
+ExecStart=/usr/libexec/phosphor-led-sysfs/add-led-action -p /sys/class/leds/%i
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
