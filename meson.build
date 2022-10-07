@@ -45,6 +45,16 @@ executable(
     install_dir: '/usr/libexec/phosphor-led-sysfs'
 )
 
+executable(
+    'add-led-action',
+    'argument.cpp',
+    'add_led_action.cpp',
+    implicit_include_directories: true,
+    dependencies: deps,
+    install: true,
+    install_dir: '/usr/libexec/phosphor-led-sysfs'
+)
+
 build_tests = get_option('tests')
 if build_tests.enabled()
   subdir('test')
