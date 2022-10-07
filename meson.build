@@ -13,10 +13,13 @@ project(
 sdbusplus_dep = dependency('sdbusplus')
 phosphor_dbus_interfaces_dep = dependency('phosphor-dbus-interfaces')
 boost = dependency('boost', include_type: 'system')
+phosphor_logging_dep = dependency('phosphor-logging')
+
 deps = [
-    sdbusplus_dep,
-    phosphor_dbus_interfaces_dep,
     boost,
+    phosphor_dbus_interfaces_dep,
+    phosphor_logging_dep,
+    sdbusplus_dep,
 ]
 
 udevdir = dependency('udev').get_variable(pkgconfig: 'udevdir')
@@ -37,6 +40,16 @@ sources = [
 executable(
     'phosphor-ledcontroller',
     sources,
+    implicit_include_directories: true,
+    dependencies: deps,
+    install: true,
+    install_dir: '/usr/libexec/phosphor-led-sysfs'
+)
+
+executable(
+    'add-led-action',
+    'argument.cpp',
+    'add_led_action.cpp',
     implicit_include_directories: true,
     dependencies: deps,
     install: true,

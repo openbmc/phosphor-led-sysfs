@@ -28,13 +28,15 @@ class ArgumentParser
      *  @param argv - the main function's argv passed as is
      *  @return Object constructed
      */
-    ArgumentParser(int argc, char** argv);
+    // NOLINTNEXTLINE(cppcoreguidelines-avoid-c-arrays)
+    ArgumentParser(int argc, char* argv[]);
 
     /** @brief Given a option, returns its argument(optarg) */
     const std::string& operator[](const std::string& opt);
 
     /** @brief Displays usage */
-    static void usage(char** argv);
+    // NOLINTNEXTLINE(cppcoreguidelines-avoid-c-arrays)
+    static void usage(char* argv[]);
 
   private:
     /** @brief Option to argument mapping */
