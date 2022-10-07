@@ -12,10 +12,12 @@ project(
 
 sdbusplus_dep = dependency('sdbusplus')
 phosphor_dbus_interfaces_dep = dependency('phosphor-dbus-interfaces')
+phosphor_logging_dep = dependency('phosphor-logging')
 
 deps = [
     sdbusplus_dep,
     phosphor_dbus_interfaces_dep,
+    phosphor_logging_dep,
 ]
 
 udevdir = dependency('udev').get_variable(pkgconfig: 'udevdir')
@@ -41,6 +43,16 @@ executable(
     dependencies: deps,
     install: true,
     install_dir: '/usr/libexec/phosphor-led-sysfs'
+)
+
+executable(
+    'led-methodcall',
+    'argument.cpp',
+    'led_method_call.cpp',
+    implicit_include_directories: true,
+    dependencies: deps,
+    install: true,
+    install_dir: '/usr/sbin'
 )
 
 build_tests = get_option('tests')
