@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f5d50476_73cdbea9",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2022-10-07T13:17:12Z",
+      "side": 1,
+      "message": "Is there never any need to remove LEDs, such as when a card with an LED is removed from the system? Even if there isn\u0027t at the moment, I wonder if it would be a good idea to make it explicit, like by adding an arg, that this is doing an add, so it\u0027s easier to add a remove later if necessary.",
+      "range": {
+        "startLine": 11,
+        "startChar": 14,
+        "endLine": 11,
+        "endChar": 36
+      },
+      "revId": "8817272e7883c7b4ac5e209d5abe3030abc39fb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c33171cf_b36294cf",
         "filename": "led_method_call.cpp",
         "patchSetId": 1
