@@ -25,7 +25,8 @@ namespace phosphor
 {
 namespace led
 {
-ArgumentParser::ArgumentParser(int argc, char** argv)
+// NOLINTNEXTLINE(cppcoreguidelines-avoid-c-arrays)
+ArgumentParser::ArgumentParser(int argc, char* argv[])
 {
     int option = 0;
     while (-1 !=
@@ -58,7 +59,8 @@ const std::string& ArgumentParser::operator[](const std::string& opt)
     return i->second;
 }
 
-void ArgumentParser::usage(char** argv)
+// NOLINTNEXTLINE(cppcoreguidelines-avoid-c-arrays)
+void ArgumentParser::usage(char* argv[])
 {
     // NOLINTNEXTLINE
     std::cerr << "Usage: " << argv[0] << " [options]" << std::endl;
