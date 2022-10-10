@@ -163,6 +163,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1e62f6aa_5d88e915",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-10T01:00:04Z",
+      "side": 1,
+      "message": "I feel like I came in a bit hot there, so apologies for how it came across.\n\n\u003e (there are other projects in OpenBMC doing this in other ways)\n\nIt was handy that Patrick provided some links to demonstrate the use of Internal - can you provide some to demonstrate these alternatives? I am interested in whether it would change my position above.\n\n\u003e I am slightly worried this will cause some teams in the community to look elsewhere for an LED solution. \n\nCan you substantiate this worry a bit? Or can you strongly suggest that the people who are concerned comment here? I can\u0027t do anything but disregard the concern otherwise, there\u0027s nothing actionable I can take away from it. I don\u0027t have the bandwidth to invent my own solutions.",
+      "parentUuid": "f90dc651_cb5267e0",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28a8e28c_455adec5",
         "filename": "gen/meson.build",
         "patchSetId": 5
