@@ -24,6 +24,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9c89719_6c9ef4b9",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-10T07:01:36Z",
+      "side": 1,
+      "message": "RemoveLed is also a method which is used in this interface \"xyz.openbmc_project.Led.Internal\". \nhttps://gerrit.openbmc.org/c/openbmc/phosphor-led-sysfs/+/57455/8/yaml/xyz/openbmc_project/Led/Internal.interface.yaml#14\nFor now, AddLed method is implemented, if it requires RemoveLed can also be added later.",
+      "parentUuid": "f5d50476_73cdbea9",
+      "range": {
+        "startLine": 11,
+        "startChar": 14,
+        "endLine": 11,
+        "endChar": 36
+      },
+      "revId": "8817272e7883c7b4ac5e209d5abe3030abc39fb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c33171cf_b36294cf",
@@ -41,6 +65,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2baa4a1a_a8cc236c",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-10T07:01:36Z",
+      "side": 1,
+      "message": "No, I have updated lg2 in latest patchset.",
+      "parentUuid": "c33171cf_b36294cf",
+      "revId": "8817272e7883c7b4ac5e209d5abe3030abc39fb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9cb85b85_9f4b8477",
@@ -54,6 +96,24 @@
       "writtenOn": "2022-10-07T11:17:21Z",
       "side": 1,
       "message": "Please use lg2 on new code.",
+      "revId": "8817272e7883c7b4ac5e209d5abe3030abc39fb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06702be0_491132f1",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-10T07:01:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9cb85b85_9f4b8477",
       "revId": "8817272e7883c7b4ac5e209d5abe3030abc39fb5",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
