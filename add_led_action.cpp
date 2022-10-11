@@ -1,13 +1,8 @@
 #include "argument.hpp"
+#include "interfaces/internal_interface.hpp"
 
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/bus.hpp>
-
-static constexpr auto busName = "xyz.openbmc_project.LED.Controller";
-static constexpr auto rootPath = "/xyz/openbmc_project/led";
-static constexpr auto devPath = "/sys/class/leds/";
-static constexpr auto interface = "xyz.openbmc_project.Led.Sysfs.Internal";
-static constexpr auto ledAddMethod = "AddLED";
 
 std::string rootPathVerify(std::string path)
 {
@@ -29,8 +24,8 @@ void addLed(std::string ledName)
     try
     {
         auto bus = sdbusplus::bus::new_default();
-        auto method =
-            bus.new_method_call(busName, rootPath, interface, ledAddMethod);
+        auto method = bus.new_method_call(busName, rootPath, internalInterface,
+                                          ledAddMethod);
 
         method.append(ledName);
         bus.call(method);
