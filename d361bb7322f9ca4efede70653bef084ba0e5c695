@@ -199,6 +199,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ca6aaa59_afe5829a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-11T22:48:30Z",
+      "side": 1,
+      "message": "Patrick: Do you have concerns with the implementation strategy used by phosphor-power above? Given that it\u0027s a private interface, is there any reason to pick the generated-code method over the manual implementation? I see the generated-code method as a mechanism to control the specification of the interface as configuration rather than code, which makes it easier to review. That\u0027s nice for interfaces that are part of the core data model, but it\u0027s probably less important for interfaces that are private such as this one. Manual implementation means a lot fewer moving parts in the integration.",
+      "parentUuid": "34fad5fe_8174d93e",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28a8e28c_455adec5",
         "filename": "gen/meson.build",
         "patchSetId": 5
