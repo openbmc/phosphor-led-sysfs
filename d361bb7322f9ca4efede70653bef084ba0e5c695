@@ -217,6 +217,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "56788d89_3a6c11c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-11T23:18:22Z",
+      "side": 1,
+      "message": "\u003e Do you have concerns with the implementation strategy used by phosphor-power above? \n\nIt is up to you.  Generally I prefer the generated bindings because they give compile time guarantees of correctness (and I\u0027m working on the client side as well), but for a one-off inside a single repository that is obviously less useful.",
+      "parentUuid": "ca6aaa59_afe5829a",
+      "revId": "d361bb7322f9ca4efede70653bef084ba0e5c695",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28a8e28c_455adec5",
         "filename": "gen/meson.build",
         "patchSetId": 5
