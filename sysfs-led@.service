@@ -1,0 +1,7 @@
+[Unit]
+Description=Sysfs Led Service
+Wants=xyz.openbmc_project.led.controller.service
+After=xyz.openbmc_project.led.controller.service
+
+[Service]
+ExecStart=/usr/libexec/phosphor-led-sysfs/add-led-action -p %f
