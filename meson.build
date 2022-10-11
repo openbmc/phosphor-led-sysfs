@@ -26,12 +26,17 @@ udevdir = dependency('udev').get_variable(pkgconfig: 'udevdir')
 install_data(['udev' / 'rules.d' / '70-leds.rules'], install_dir : udevdir / 'rules.d')
 
 systemd = dependency('systemd')
-install_data(['systemd' / 'system' / 'xyz.openbmc_project.led.controller@.service'],
+install_data(['systemd' / 'system' / 'phosphor-ledcontroller.service'],
              install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir')
 )
 
+dbus = dependency('dbus-1')
+install_data(['dbus-1' / 'system-services' / 'xyz.openbmc_project.LED.Controller.service'],
+             install_dir: dbus.get_variable(pkgconfig: 'system_bus_services_dir')
+)
+
 sources = [
-    'argument.cpp',
+    'interfaces/internal_interface.cpp',
     'controller.cpp',
     'physical.cpp',
     'sysfs.cpp',
