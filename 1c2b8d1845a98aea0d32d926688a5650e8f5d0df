@@ -1,0 +1,319 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "928c4861_8a4bc7de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "Hi Jayashree, thanks for the patch. I\u0027ve made a bunch of comments. Most of them are kinda nit-picky but I feel that addressing them will improve the readability of the code. There are a few in particular that are more significant:\n\n1. The name of the binary and its installation path\n2. The addition of a comment as documentation about how you expect the binary to be invoked, including a concrete example of its command-line arguments\n3. The behaviour around parsing the sysfs path",
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2498d4d2_efda0ef5",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "Unfortunately I\u0027m not a huge fan of the file name, I think the \u0027method_call\u0027 component is too abstract given its specific implementation. Can we call it add-led-action.cpp and compile it to an \u0027add-led-action\u0027 binary that we put in /usr/libexec/phosphor-led-sysfs/?",
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70705c08_1ae6bd59",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "I think we just need `sdbusplus/bus.hpp` as we\u0027re not starting a server here, just connecting to a DBus session.",
+      "range": {
+        "startLine": 4,
+        "startChar": 20,
+        "endLine": 4,
+        "endChar": 30
+      },
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdc7b976_f9c9edbf",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "I think this would be better named \u0027ledConnection\u0027",
+      "range": {
+        "startLine": 8,
+        "startChar": 15,
+        "endLine": 8,
+        "endChar": 22
+      },
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd40da7f_2acb84cb",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "\u0027ledPath\u0027",
+      "range": {
+        "startLine": 9,
+        "startChar": 15,
+        "endLine": 9,
+        "endChar": 25
+      },
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f77685a7_2522f72d",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "Maybe \u0027ledPresenceInterface\u0027?",
+      "range": {
+        "startLine": 10,
+        "startChar": 15,
+        "endLine": 10,
+        "endChar": 24
+      },
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d990d8f7_c04b6928",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "\u0027ledAddMethod\u0027?",
+      "range": {
+        "startLine": 11,
+        "startChar": 15,
+        "endLine": 11,
+        "endChar": 25
+      },
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "befbc8f1_0a8337d6",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "maybe \u0027LED_CLASS_ROOT\u0027?",
+      "range": {
+        "startLine": 12,
+        "startChar": 15,
+        "endLine": 12,
+        "endChar": 22
+      },
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1283b5e_94dec7fa",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "This is only called once in the code in main(). I prefer we open-code the implementation in the body of the condition.",
+      "range": {
+        "startLine": 14,
+        "startChar": 12,
+        "endLine": 14,
+        "endChar": 25
+      },
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91848587_e1088a4f",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "I think this path should cause us to exit with a negative error code, otherwise it will look like the operation succeeded to the rest of the system.",
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4d2e470_c3fe1b76",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "Can you please add a comment that demonstrates how the binary will be invoked by udev so we can get a feeling for the content of argv?\n\nAlso I\u0027d prefer we specify the type of argv as `const char* argv[]` :)",
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7cec88c_8de283c4",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "This is probably the one thing that does need to be put in a separate function, IMO :)\n\nConcretely, this is a behaviour implemented in terms of the specification of sysfs. We should check that the value passed in is in-fact a path rooted at DEVPATH before we substring into it. Further, we should exit with an error code if the provided path is not rooted at DEVPATH, because there\u0027s no way we can make sense of it. Ideally we\u0027d specify the function behaviour in terms of pre- and post- conditions and write some tests to validate the behaviour too :)",
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1062cae7_42a0f63d",
+        "filename": "led_method_call.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "\"methodCall\" is far too abstract here. The implementation always calls the AddLed() method on the DBus object, so we should call the function \"AddLed\"",
+      "range": {
+        "startLine": 54,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 14
+      },
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "824a6d16_bc153c48",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "See my commentary in the implementation.",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 26
+      },
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06b7d721_617fd070",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-10-16T23:04:03Z",
+      "side": 1,
+      "message": "This is an anti-pattern: https://github.com/openbmc/docs/blob/master/anti-patterns.md#incorrect-placement-of-executables-in-sbin-usrsbin-or-bin-usrbin\n\nThe binary should go in /usr/libexec/phosphor-led-sysfs",
+      "range": {
+        "startLine": 55,
+        "startChar": 18,
+        "endLine": 55,
+        "endChar": 27
+      },
+      "revId": "1c2b8d1845a98aea0d32d926688a5650e8f5d0df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
