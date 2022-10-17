@@ -16,6 +16,24 @@
       "message": "This will need to be adjusted wrt the comments on the parent patch.",
       "revId": "ea5f0a87ad5076b252275caf88a433fd21c54c5b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd8b18cf_6680fe31",
+        "filename": "sysfs-led@.service",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-17T13:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45120c05_d7606f61",
+      "revId": "ea5f0a87ad5076b252275caf88a433fd21c54c5b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
