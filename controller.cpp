@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#include "controller.hpp"
+
 #include "argument.hpp"
 #include "physical.hpp"
 #include "sysfs.hpp"
