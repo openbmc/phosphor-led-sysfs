@@ -29,6 +29,16 @@ InternalInterface::InternalInterface(sdbusplus::bus_t& bus, const char* path) :
     serverInterface(bus, path, interface, vtable, this)
 {}
 
+void InternalInterface::addLed(std::string name)
+{
+    lg2::error("Unable to add LED - {NAME}", "NAME", name);
+}
+
+void InternalInterface::removeLed(std::string name)
+{
+    lg2::error("Unable to remove LED - {NAME}", "NAME", name);
+}
+
 int InternalInterface::addLedConfigure(sd_bus_message* msg, void* context,
                                        sd_bus_error* error)
 {
@@ -41,6 +51,10 @@ int InternalInterface::addLedConfigure(sd_bus_message* msg, void* context,
     try
     {
         auto message = sdbusplus::message_t(msg);
+        auto ledName = message.unpack<std::string>();
+
+        auto self = static_cast<InternalInterface*>(context);
+        self->addLed(ledName);
 
         auto reply = message.new_method_return();
         reply.method_return();
@@ -65,6 +79,10 @@ int InternalInterface::removeLedConfigure(sd_bus_message* msg, void* context,
     try
     {
         auto message = sdbusplus::message_t(msg);
+        auto ledName = message.unpack<std::string>();
+
+        auto self = static_cast<InternalInterface*>(context);
+        self->removeLed(ledName);
 
         auto reply = message.new_method_return();
         reply.method_return();
