@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b613a81_a62df2c7",
+        "filename": "controller.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-24T18:02:27Z",
+      "side": 1,
+      "message": "I am not following what this single #include is doing for us.\n\nI\u0027m also surprised that clang-format didn\u0027t get upset with you now having the headers out of order.  Is something broken in this repository with clang-format?",
+      "revId": "d6dc32f0eb0cc2d600713f71ebe57df2e04f19cc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e18bcf69_d0f5974d",
+        "filename": "controller.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-24T18:02:27Z",
+      "side": 1,
+      "message": "Is this inheritance really necessary?  Can you just put the content right into the underlying object?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 55
+      },
+      "revId": "d6dc32f0eb0cc2d600713f71ebe57df2e04f19cc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
