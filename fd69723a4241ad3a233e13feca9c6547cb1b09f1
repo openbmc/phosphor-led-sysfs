@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1567f8ca_83ca5e3f",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-24T17:58:45Z",
+      "side": 1,
+      "message": "I prefer a minor change here:\n\nauto ledName \u003d message.unpack\u003cstd::string\u003e();",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 34
+      },
+      "revId": "fd69723a4241ad3a233e13feca9c6547cb1b09f1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab9d91ba_72b1d492",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-24T17:58:45Z",
+      "side": 1,
+      "message": "Convention would tend to use \u0027self\u0027 for this.",
+      "range": {
+        "startLine": 44,
+        "startChar": 17,
+        "endLine": 44,
+        "endChar": 23
+      },
+      "revId": "fd69723a4241ad3a233e13feca9c6547cb1b09f1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0371452d_854a8627",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-24T17:58:45Z",
+      "side": 1,
+      "message": "This whitespace seems unnatural and unnecessary.",
+      "revId": "fd69723a4241ad3a233e13feca9c6547cb1b09f1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "550bb28a_0044a1ac",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-24T17:58:45Z",
+      "side": 1,
+      "message": "Can you early-exit instead of late-exit?  That reduces one level of indentation here.\n\nDo we need to return -EINVAL or is -1 acceptable?",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 5
+      },
+      "revId": "fd69723a4241ad3a233e13feca9c6547cb1b09f1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d7b2a6b_715543d6",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-24T17:58:45Z",
+      "side": 1,
+      "message": "Can also use \u0027unpack\u0027 here.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 34
+      },
+      "revId": "fd69723a4241ad3a233e13feca9c6547cb1b09f1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
