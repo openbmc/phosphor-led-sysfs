@@ -24,6 +24,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f66f745a_1e613c33",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-25T14:57:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1567f8ca_83ca5e3f",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 34
+      },
+      "revId": "fd69723a4241ad3a233e13feca9c6547cb1b09f1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ab9d91ba_72b1d492",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-10-24T17:58:45Z",
       "side": 1,
       "message": "Convention would tend to use \u0027self\u0027 for this.",
+      "range": {
+        "startLine": 44,
+        "startChar": 17,
+        "endLine": 44,
+        "endChar": 23
+      },
+      "revId": "fd69723a4241ad3a233e13feca9c6547cb1b09f1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07fbb1d4_8f7bbe00",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-25T14:57:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab9d91ba_72b1d492",
       "range": {
         "startLine": 44,
         "startChar": 17,
@@ -64,6 +112,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "03b3c229_7ee9c72f",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-25T14:57:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0371452d_854a8627",
+      "revId": "fd69723a4241ad3a233e13feca9c6547cb1b09f1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "550bb28a_0044a1ac",
@@ -87,6 +153,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "29a0d43d_5c79efa3",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-25T14:57:17Z",
+      "side": 1,
+      "message": "Done\n\nEINVAL is returned.",
+      "parentUuid": "550bb28a_0044a1ac",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 5
+      },
+      "revId": "fd69723a4241ad3a233e13feca9c6547cb1b09f1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d7b2a6b_715543d6",
@@ -100,6 +190,30 @@
       "writtenOn": "2022-10-24T17:58:45Z",
       "side": 1,
       "message": "Can also use \u0027unpack\u0027 here.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 34
+      },
+      "revId": "fd69723a4241ad3a233e13feca9c6547cb1b09f1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7f3e361_ebe2dab1",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-25T14:57:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d7b2a6b_715543d6",
       "range": {
         "startLine": 74,
         "startChar": 0,
