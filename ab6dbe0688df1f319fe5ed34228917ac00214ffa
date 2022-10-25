@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "29ce6939_6d21f5e8",
+        "filename": "add_led_action.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-25T15:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb54bfa6_3a94b7bc",
+      "revId": "ab6dbe0688df1f319fe5ed34228917ac00214ffa",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ebfb2210_e056d237",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-10-24T18:05:20Z",
       "side": 1,
       "message": "I don\u0027t see the reason to use \u0027exit\u0027 here.  There isn\u0027t much value in having caught any exception.  Let it go up the stack and the application crash.  Calling \u0027exit\u0027 directly doesn\u0027t call destructors and really shouldn\u0027t be used much in C++ code.",
+      "revId": "ab6dbe0688df1f319fe5ed34228917ac00214ffa",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cdbebb2_1f49bd94",
+        "filename": "add_led_action.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-25T15:49:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ebfb2210_e056d237",
       "revId": "ab6dbe0688df1f319fe5ed34228917ac00214ffa",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
