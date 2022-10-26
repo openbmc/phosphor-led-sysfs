@@ -46,6 +46,30 @@
       },
       "revId": "7ea8f29a28c2fdfa61885db15670d1102bbb6175",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2683a955_2b7e3101",
+        "filename": "controller.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-10-26T13:48:43Z",
+      "side": 1,
+      "message": "\u003e LED methods are declared in InternalInterface class and it will be defined in the Controller Class.\n\nThis doesn\u0027t answer the question of _why_?  Why bother with inheritance for a single instance?  It seems like extra clutter.",
+      "parentUuid": "fbd6ce61_099ad1f6",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 59
+      },
+      "revId": "7ea8f29a28c2fdfa61885db15670d1102bbb6175",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
