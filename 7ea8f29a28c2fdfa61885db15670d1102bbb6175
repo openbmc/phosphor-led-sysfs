@@ -70,6 +70,30 @@
       },
       "revId": "7ea8f29a28c2fdfa61885db15670d1102bbb6175",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b8c0a99_424b3863",
+        "filename": "controller.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-10-31T13:50:32Z",
+      "side": 1,
+      "message": "This approach is based on the reference from the phosphor-power repository. Abstract method is used to declare the method name in the interface class and therefore, it is override in the another class to define the method.\n\nhttps://github.com/openbmc/phosphor-power/blob/master/phosphor-regulators/src/manager.hpp#L42\nhttps://github.com/openbmc/phosphor-power/blob/master/phosphor-regulators/src/interfaces/manager_interface.cpp",
+      "parentUuid": "2683a955_2b7e3101",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 59
+      },
+      "revId": "7ea8f29a28c2fdfa61885db15670d1102bbb6175",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
