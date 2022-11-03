@@ -118,6 +118,30 @@
       },
       "revId": "7ea8f29a28c2fdfa61885db15670d1102bbb6175",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "856058a4_8be5a987",
+        "filename": "controller.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-11-03T23:30:15Z",
+      "side": 1,
+      "message": "I don\u0027t think it quite makes sense either. We should implement things in terms of what our immediate requirements are. We don\u0027t have a requirement to extend this behaviour through inheritance and virtual methods, so I\u0027m with Patrick here: we should just implement it in a single class regardless of what phosphor-power are doing (who might have different requirements).\n\nThe key point of the phosphor-power example was that they implemented DBus behaviour for an internal interface without relying on sdbusplus code generation.",
+      "parentUuid": "940dd699_76e9785f",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 59
+      },
+      "revId": "7ea8f29a28c2fdfa61885db15670d1102bbb6175",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
