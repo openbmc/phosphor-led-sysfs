@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a917ca8e_9fd738e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-11-09T15:05:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93be4290_76d294fa",
+      "revId": "901c0e49c8f69adcf16b3d1d8256ebb846b56a4e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19d1c207_bdf956ed",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-11-07T14:37:38Z",
       "side": 1,
       "message": "nit: prefer `sdbusplus::server::interface_t` on this.",
+      "range": {
+        "startLine": 87,
+        "startChar": 4,
+        "endLine": 87,
+        "endChar": 43
+      },
+      "revId": "901c0e49c8f69adcf16b3d1d8256ebb846b56a4e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69eaaccc_8c0a0566",
+        "filename": "interfaces/internal_interface.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-11-09T15:05:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19d1c207_bdf956ed",
       "range": {
         "startLine": 87,
         "startChar": 4,
