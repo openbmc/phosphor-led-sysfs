@@ -98,6 +98,24 @@
       "parentUuid": "560ccb1c_375a77c4",
       "revId": "c2baa28fbc83c34a18fb1e36af7f89662b081061",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84176193_b31c2def",
+        "filename": "controller.cpp",
+        "patchSetId": 20
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-11-14T23:27:02Z",
+      "side": 1,
+      "message": "Right, but there\u0027s no reason to add this code unless it exposes the LED on DBus. \n\nBroadly, and within a codebase, patches should be created in terms of vertical feature slices. If the patch becomes complex using that approach, the problem should be decomposed into a tree of subproblems that need to be solved, and the patches should be ordered such that the leaf problems are solved first: Specifically, a post-order tree-traversal. Using this technique the general solution emerges from the composition of solutions to the subproblems such that the final patch glues the everything together and exposes the feature atomically.\n\nhttps://twitter.com/axboe/status/1591538174077317126\n\nThe feature in this case is the internal DBus interface for notifying the daemon of a new LED. By the ordering I\u0027ve just outlined above, the DBus interface should be added in the final patch if there is more than one patch required to do so. As it stands the patch here exposes the internal interface on DBus but invoking its methods has no useful effect. As a maintainer this leads to a poor experience for me because it is harder to reason about external callers and intent and therefore harder to delete the code in the event that the remaining required patches are never merged.\n\nIf the code is dead *internal* to the codebase then it\u0027s much easier to discover, reason about and delete.",
+      "parentUuid": "c8a8975b_09b82e93",
+      "revId": "c2baa28fbc83c34a18fb1e36af7f89662b081061",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
