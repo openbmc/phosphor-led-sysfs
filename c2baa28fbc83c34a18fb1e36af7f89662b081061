@@ -116,6 +116,24 @@
       "parentUuid": "c8a8975b_09b82e93",
       "revId": "c2baa28fbc83c34a18fb1e36af7f89662b081061",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49331d66_14e3be9b",
+        "filename": "controller.cpp",
+        "patchSetId": 20
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-11-14T23:32:58Z",
+      "side": 1,
+      "message": "\u003e If the code is dead *internal* to the codebase then it\u0027s much easier to discover, reason about and delete.\n\nI missed the final piece: The impact to you is that it\u0027s much easier for me to say yes to your patches if they\u0027re structured this way :)",
+      "parentUuid": "84176193_b31c2def",
+      "revId": "c2baa28fbc83c34a18fb1e36af7f89662b081061",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
