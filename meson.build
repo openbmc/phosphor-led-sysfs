@@ -25,7 +25,7 @@ install_data(['70-leds.rules'], install_dir : udevdir / 'rules.d')
 
 systemd = dependency('systemd')
 install_data(
-  ['xyz.openbmc_project.led.controller@.service', 'sysfs-led@.service'],
+  ['xyz.openbmc_project.led.controller.service', 'sysfs-led@.service'],
   install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir')
 )
 
