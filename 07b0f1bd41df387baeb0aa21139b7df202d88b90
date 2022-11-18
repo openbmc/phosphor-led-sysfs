@@ -16,6 +16,24 @@
       "message": "What\u0027s going on here?",
       "revId": "07b0f1bd41df387baeb0aa21139b7df202d88b90",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ae2e614_6135e287",
+        "filename": "add_led_action.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-11-18T12:31:03Z",
+      "side": 1,
+      "message": "Primary service - xyz.openbmc_project.led.controller.service\nSecond service - sysfs-led@.service\n\nSecond service is started after the primary service. Before initializing the dbus method (AddLed) for LED from primary service, second service is started based on udev events and invoking the dbus method, therefore, it fails for first 2 events.\nTherefore, it waits for sometime and invoking the dbus method (AddLed) to add the LEDs.",
+      "parentUuid": "2a805459_c0451697",
+      "revId": "07b0f1bd41df387baeb0aa21139b7df202d88b90",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
