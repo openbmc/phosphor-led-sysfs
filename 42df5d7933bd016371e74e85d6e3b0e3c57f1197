@@ -22,6 +22,30 @@
       },
       "revId": "42df5d7933bd016371e74e85d6e3b0e3c57f1197",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f80bb8ad_71c4789c",
+        "filename": "physical.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-11-18T12:31:40Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8fb8c3a7_25bcb67a",
+      "range": {
+        "startLine": 30,
+        "startChar": 38,
+        "endLine": 30,
+        "endChar": 48
+      },
+      "revId": "42df5d7933bd016371e74e85d6e3b0e3c57f1197",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
