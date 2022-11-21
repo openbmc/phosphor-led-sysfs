@@ -34,6 +34,24 @@
       "parentUuid": "2a805459_c0451697",
       "revId": "07b0f1bd41df387baeb0aa21139b7df202d88b90",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e8b2b37_ad5310c7",
+        "filename": "add_led_action.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2022-11-21T23:03:16Z",
+      "side": 1,
+      "message": "Okay. Can you please try configuring the LED controller service as a DBus-activated service to see if that improves the reliability? I\u0027d much prefer we construct it as a reliable operation if we can, not paper over the problem with retries.\n\nHere\u0027s a SO comment describing what\u0027s required for systemd DBus activation:\n\nhttps://stackoverflow.com/a/31725112",
+      "parentUuid": "1ae2e614_6135e287",
+      "revId": "07b0f1bd41df387baeb0aa21139b7df202d88b90",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
