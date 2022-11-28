@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7e01a14_46ac2ed3",
+        "filename": "controller.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:26:33Z",
+      "side": 1,
+      "message": "I\u0027ll let Andrew decide for sure, but it doesn\u0027t seem to me like this should be a free-standing commit.  It takes a working repository and turns it into a non-working one.  We now launch a daemon that does nothing.  I guess as long as we are careful to only merge the whole sequence that is fine, but it seems odd to now have a main function that effectively does nothing.",
+      "revId": "37741dbd41747b3c87ad84d8076fcc6d87533625",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d46ca3ff_4bee4570",
+        "filename": "controller.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:26:33Z",
+      "side": 1,
+      "message": "manager_t",
+      "range": {
+        "startLine": 85,
+        "startChar": 23,
+        "endLine": 85,
+        "endChar": 39
+      },
+      "revId": "37741dbd41747b3c87ad84d8076fcc6d87533625",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a7c8a71_cef5729e",
+        "filename": "physical.hpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:26:33Z",
+      "side": 1,
+      "message": "This should not be pass-by-reference.  Just pass a moved unique_ptr into this function (take a unique_ptr by value).",
+      "range": {
+        "startLine": 52,
+        "startChar": 13,
+        "endLine": 52,
+        "endChar": 55
+      },
+      "revId": "37741dbd41747b3c87ad84d8076fcc6d87533625",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
