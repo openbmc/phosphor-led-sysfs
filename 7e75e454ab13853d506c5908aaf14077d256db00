@@ -1,0 +1,209 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92915d20_37602fd8",
+        "filename": "controller.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:35:34Z",
+      "side": 1,
+      "message": "Can\u0027t you have the map hold the unique_ptr?  I don\u0027t see a strong reason to have shared_ptrs.",
+      "range": {
+        "startLine": 33,
+        "startChar": 32,
+        "endLine": 33,
+        "endChar": 72
+      },
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2bbe7b6_9f11a28d",
+        "filename": "controller.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:35:34Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be a global.  It should be a member of the InternalInterface instance, right?",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "042d08ff_1d5fd8c2",
+        "filename": "controller.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:35:34Z",
+      "side": 1,
+      "message": "Why do we have an InternalInterface function implementation in this file?  Don\u0027t spread a class implementation over multiple files.",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27d0dd7d_24161b1c",
+        "filename": "controller.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:35:34Z",
+      "side": 1,
+      "message": "What if `led.contains(objPath)` already?",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7da63593_01a4a0ee",
+        "filename": "controller.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:35:34Z",
+      "side": 1,
+      "message": "leds.emplace(objPath, make_unique...) ?\n\nI suspect this is where your shared_ptr/unique_ptr trouble is coming from because you shouldn\u0027t attempt to get a reference to a default-initialized unique_ptr, which is what you\u0027re doing with this code.",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa43dd8e_a1c955be",
+        "filename": "controller.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:35:34Z",
+      "side": 1,
+      "message": "Why are we using make_unique and then transfering it to a shared_ptr?  Something fishy is going on here.",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 55
+      },
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43d01b0c_9995f7d0",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:35:34Z",
+      "side": 1,
+      "message": "Really?  This doesn\u0027t seem right.  removeLed calls createLed?",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2794e317_c1abeeed",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:35:34Z",
+      "side": 1,
+      "message": "I would suggest AddLED and RemoveLED to better follow our dbus conventions.",
+      "range": {
+        "startLine": 101,
+        "startChar": 34,
+        "endLine": 101,
+        "endChar": 37
+      },
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "961fa136_a376e994",
+        "filename": "interfaces/internal_interface.hpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:35:34Z",
+      "side": 1,
+      "message": "const std::string\u0026",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfc5efdb_1f9e9b7b",
+        "filename": "interfaces/internal_interface.hpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:35:34Z",
+      "side": 1,
+      "message": "const std::string\u0026",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b77dc6bd_0ccb2a79",
+        "filename": "interfaces/internal_interface.hpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-11-28T20:35:34Z",
+      "side": 1,
+      "message": "Can this be shared with the client code somehow?",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
