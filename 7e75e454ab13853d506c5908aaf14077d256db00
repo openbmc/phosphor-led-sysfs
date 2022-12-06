@@ -41,6 +41,48 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "07e51a87_9bf969d0",
+        "filename": "controller.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-12-06T10:20:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92915d20_37602fd8",
+      "range": {
+        "startLine": 33,
+        "startChar": 32,
+        "endLine": 33,
+        "endChar": 72
+      },
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78fb3302_0df20e29",
+        "filename": "controller.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-12-06T10:20:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2bbe7b6_9f11a28d",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "042d08ff_1d5fd8c2",
@@ -54,6 +96,24 @@
       "writtenOn": "2022-11-28T20:35:34Z",
       "side": 1,
       "message": "Why do we have an InternalInterface function implementation in this file?  Don\u0027t spread a class implementation over multiple files.",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5f2ef42_e853646d",
+        "filename": "controller.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-12-06T10:20:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "042d08ff_1d5fd8c2",
       "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -92,6 +152,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fb61da1_8f78f325",
+        "filename": "controller.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-12-06T10:20:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7da63593_01a4a0ee",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa43dd8e_a1c955be",
@@ -105,6 +183,30 @@
       "writtenOn": "2022-11-28T20:35:34Z",
       "side": 1,
       "message": "Why are we using make_unique and then transfering it to a shared_ptr?  Something fishy is going on here.",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 55
+      },
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e94f2e88_70e89792",
+        "filename": "controller.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-12-06T10:20:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa43dd8e_a1c955be",
       "range": {
         "startLine": 106,
         "startChar": 0,
@@ -132,6 +234,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "81e7c536_464a60c1",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-12-06T10:20:38Z",
+      "side": 1,
+      "message": "Removing LED will be handled in separate patch.",
+      "parentUuid": "43d01b0c_9995f7d0",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2794e317_c1abeeed",
@@ -145,6 +265,30 @@
       "writtenOn": "2022-11-28T20:35:34Z",
       "side": 1,
       "message": "I would suggest AddLED and RemoveLED to better follow our dbus conventions.",
+      "range": {
+        "startLine": 101,
+        "startChar": 34,
+        "endLine": 101,
+        "endChar": 37
+      },
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90365f4b_ed4ab419",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-12-06T10:20:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2794e317_c1abeeed",
       "range": {
         "startLine": 101,
         "startChar": 34,
@@ -172,6 +316,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "faedfe2e_ace4bda3",
+        "filename": "interfaces/internal_interface.hpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-12-06T10:20:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "961fa136_a376e994",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dfc5efdb_1f9e9b7b",
@@ -185,6 +347,24 @@
       "writtenOn": "2022-11-28T20:35:34Z",
       "side": 1,
       "message": "const std::string\u0026",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "324ee7d6_ee5ebe95",
+        "filename": "interfaces/internal_interface.hpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-12-06T10:20:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfc5efdb_1f9e9b7b",
       "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -220,6 +400,24 @@
       "side": 1,
       "message": "This interface will be created under /xyz/openbmc_project/led dbus path, once the InternalInterface class is invoked from main().\n\nExecutable will call the method (AddLED) under the interface \"xyz.openbmc_project.Led.Sysfs.Internal\" based on udev events.",
       "parentUuid": "b77dc6bd_0ccb2a79",
+      "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f62d88b_3c6149b6",
+        "filename": "interfaces/internal_interface.hpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-12-06T10:20:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5656759e_42faafdb",
       "revId": "7e75e454ab13853d506c5908aaf14077d256db00",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
