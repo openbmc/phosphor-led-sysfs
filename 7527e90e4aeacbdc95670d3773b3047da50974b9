@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b3d05b9_dec43c17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2023-01-10T09:51:29Z",
+      "side": 1,
+      "message": "Hi Andrew,\n\nCould you please provide your suggestions / approval for this patch.\n\nThanks",
+      "revId": "7527e90e4aeacbdc95670d3773b3047da50974b9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
