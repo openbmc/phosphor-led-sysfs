@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a581ca3f_9e5e0454",
+        "filename": "controller.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-01-12T06:33:43Z",
+      "side": 1,
+      "message": "Agree with Patrick here. I\u0027ve tried to outline in the past how I expect the series to be structured. Each change must stand on its own. A patch may make incremental progress towards a larger goal but not at the expense of existing functionality. With this in mind, you may need to re-order the prior patches changing the service and udev files around so they\u0027re later in the series, as they refer to things that don\u0027t yet exist at the time.",
+      "parentUuid": "02feec8f_481d9f3e",
+      "revId": "37741dbd41747b3c87ad84d8076fcc6d87533625",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d46ca3ff_4bee4570",
         "filename": "controller.cpp",
         "patchSetId": 11
