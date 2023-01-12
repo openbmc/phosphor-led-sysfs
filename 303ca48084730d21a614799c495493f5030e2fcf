@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bb3598e_fed1da88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-01-12T06:41:42Z",
+      "side": 1,
+      "message": "Th",
+      "revId": "303ca48084730d21a614799c495493f5030e2fcf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52e943ac_e476f6c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-01-12T06:41:42Z",
+      "side": 1,
+      "message": "This change stands on its own, but the executable it generates is required by the first two patches. The first two patches need to come some time after this one, and I think this one needs to go before the previous two patches. The with the udev rule change probably needs to be squashed into the one that changes the daemon implementation.\n\nDoes that make sense?",
+      "revId": "303ca48084730d21a614799c495493f5030e2fcf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
