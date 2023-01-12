@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ac4ce7c_b9837d2a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 32
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-01-12T06:36:57Z",
+      "side": 1,
+      "message": "The daemon functionality you removed in the previous patch should instead be removed in this one, right? That way the change stands on its own.",
+      "revId": "309b4ba7f77a332ba9fb38d1a8748d083e73e92b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
