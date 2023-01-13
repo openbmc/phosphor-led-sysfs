@@ -33,6 +33,24 @@
       "message": "This change stands on its own, but the executable it generates is required by the first two patches. The first two patches need to come some time after this one, and I think this one needs to go before the previous two patches. The with the udev rule change probably needs to be squashed into the one that changes the daemon implementation.\n\nDoes that make sense?",
       "revId": "303ca48084730d21a614799c495493f5030e2fcf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6266e7fa_e05057f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2023-01-13T08:15:54Z",
+      "side": 1,
+      "message": "Each patch is independent of others and the order of the patches has been changed.",
+      "parentUuid": "52e943ac_e476f6c9",
+      "revId": "303ca48084730d21a614799c495493f5030e2fcf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
