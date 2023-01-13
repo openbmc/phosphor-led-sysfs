@@ -54,6 +54,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7085025_ff040df4",
+        "filename": "controller.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2023-01-13T08:16:46Z",
+      "side": 1,
+      "message": "I have submitted patches by reordering to maintain the existing functionality.",
+      "parentUuid": "a581ca3f_9e5e0454",
+      "revId": "37741dbd41747b3c87ad84d8076fcc6d87533625",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d46ca3ff_4bee4570",
