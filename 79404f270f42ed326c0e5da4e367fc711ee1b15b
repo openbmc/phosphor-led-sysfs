@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8597bd4_34c6ad9d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-01-17T04:11:48Z",
+      "side": 1,
+      "message": "Okay, I\u0027ve reworded the commit message on this one. The current commit message wasn\u0027t really aligned with what the patch was doing. Let me know what you think",
+      "revId": "79404f270f42ed326c0e5da4e367fc711ee1b15b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
