@@ -33,6 +33,24 @@
       "message": "Actually, why don\u0027t we run this service directly from the udev rule? Is it because we need the dependency metadata above? Perhaps we should add DBus activation for the daemon instead?\n\nI feel like we discussed that previously.",
       "revId": "fe5c8fd1f67c88d6c6c0284cbcbbd2520a0b4e47",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4bece31_78174a2c",
+        "filename": "sysfs-led@.service",
+        "patchSetId": 16
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2023-01-23T06:57:54Z",
+      "side": 1,
+      "message": "udev rule service will be started, when the LEDs are initialized. phosphor-led-sysfs application (xyz.openbmc_project.LED.Controller.service) will be started after udev service, therefore, dependency is needed to run the executable.\n\nhttps://gerrit.openbmc.org/c/openbmc/phosphor-led-sysfs/+/57455/34/xyz.openbmc_project.LED.Controller.service",
+      "parentUuid": "1c72752b_d67dea2f",
+      "revId": "fe5c8fd1f67c88d6c6c0284cbcbbd2520a0b4e47",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
