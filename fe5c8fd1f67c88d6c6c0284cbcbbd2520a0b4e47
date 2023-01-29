@@ -87,6 +87,24 @@
       "parentUuid": "98ea2e0d_011ed2a0",
       "revId": "fe5c8fd1f67c88d6c6c0284cbcbbd2520a0b4e47",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0f8d706_76df6c54",
+        "filename": "sysfs-led@.service",
+        "patchSetId": 16
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-01-29T23:25:17Z",
+      "side": 1,
+      "message": "\u003e  I don\u0027t see an advantage in running it direct from the udev rules.\n\nReduced log verbosity in systems with large numbers of LEDs is my motivation.\n\n\u003e dbus activation could be used to reduce the Wants/After, but that can also be done in a follow up commit, right?\n\nOkay, sure. Let\u0027s go that path. This series has already been dragging out far too long.",
+      "parentUuid": "d9c8a05d_c2f773b6",
+      "revId": "fe5c8fd1f67c88d6c6c0284cbcbbd2520a0b4e47",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
