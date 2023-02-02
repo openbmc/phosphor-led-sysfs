@@ -18,6 +18,23 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9891759d_dfae1fd2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 34
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-02-02T05:45:45Z",
+      "side": 1,
+      "message": "So with some minor changes I\u0027m getting this:\n\n```\nFeb 01 23:34:25 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/bmcx2dingraham0\nFeb 01 23:34:26 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/cffps2x2d68\nFeb 01 23:34:26 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/cffps2x2d69\nFeb 01 23:34:26 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:basex2dblyth\nFeb 01 23:34:26 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:cpu0x2dvrm0\nFeb 01 23:34:26 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:cpux2dvrm1\nFeb 01 23:34:26 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:dasdx2dpyramid0\nFeb 01 23:34:26 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:dasdx2dpyramid1\nFeb 01 23:34:26 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:dasdx2dpyramid2\nFeb 01 23:34:28 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:frontx2dcheckx2dlog0\nFeb 01 23:34:28 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:frontx2dencx2dfault1\nFeb 01 23:34:28 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:frontx2dsysx2did0\nFeb 01 23:34:28 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:frontx2dsysx2dpwron0\nFeb 01 23:34:28 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:lcdx2drussel\nFeb 01 23:34:29 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:rtcx2dbattery\nFeb 01 23:34:29 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pca955x:tpmx2dwilson\nFeb 01 23:34:29 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/pcieslotx2dpower\nFeb 01 23:34:29 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/rearx2dencx2dfault0\nFeb 01 23:34:30 bmc phosphor-ledcontroller[414]: No such directory /sys/class/leds/rearx2dencx2did0\n```\n\nSo I\u0027ll need to keep poking at it.",
+      "revId": "04a39b6dd387e7dd95c3ab96d068c84aa3b5ff7d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4113a9a_9233ba61",
