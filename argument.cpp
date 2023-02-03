@@ -60,6 +60,7 @@ const std::string& ArgumentParser::operator[](const std::string& opt)
 
 void ArgumentParser::usage(char** argv)
 {
+    // NOLINTNEXTLINE
     std::cerr << "Usage: " << argv[0] << " [options]" << std::endl;
     std::cerr << "Options:" << std::endl;
     std::cerr << "    --help               Print this menu" << std::endl;
