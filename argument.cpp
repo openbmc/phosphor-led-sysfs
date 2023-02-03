@@ -28,7 +28,6 @@ namespace led
 
 const std::string ArgumentParser::true_string = "true";
 
-const char* ArgumentParser::optionstr = "p:?h";
 const option ArgumentParser::options[] = {
     {"path", required_argument, nullptr, 'p'},
     {"help", no_argument, nullptr, 'h'},

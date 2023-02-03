@@ -47,7 +47,7 @@ class ArgumentParser
     static const option options[];
 
     /** @brief optstring as needed by getopt_long */
-    static const char* optionstr;
+    static inline const char* optionstr = "p:?h";
 };
 
 } // namespace led
