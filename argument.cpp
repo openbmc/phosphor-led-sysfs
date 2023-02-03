@@ -54,10 +54,8 @@ const std::string& ArgumentParser::operator[](const std::string& opt)
     {
         return emptyString;
     }
-    else
-    {
-        return i->second;
-    }
+
+    return i->second;
 }
 
 void ArgumentParser::usage(char** argv)
