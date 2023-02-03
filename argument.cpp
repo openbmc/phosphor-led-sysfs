@@ -32,7 +32,7 @@ ArgumentParser::ArgumentParser(int argc, char** argv)
 {
     int option = 0;
     while (-1 !=
-           (option = getopt_long(argc, argv, optionstr, options, nullptr)))
+           (option = getopt_long(argc, argv, optionstr, &options[0], nullptr)))
     {
         if ((option == '?') || (option == 'h'))
         {
