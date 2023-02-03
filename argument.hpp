@@ -44,7 +44,11 @@ class ArgumentParser
     std::map<const std::string, std::string> arguments;
 
     /** @brief Array of struct options as needed by getopt_long */
-    static const option options[];
+    static inline const option options[] = {
+        {"path", required_argument, nullptr, 'p'},
+        {"help", no_argument, nullptr, 'h'},
+        {nullptr, 0, nullptr, 0},
+    };
 
     /** @brief optstring as needed by getopt_long */
     static inline const char* optionstr = "p:?h";

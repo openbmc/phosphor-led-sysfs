@@ -28,12 +28,6 @@ namespace led
 
 const std::string ArgumentParser::true_string = "true";
 
-const option ArgumentParser::options[] = {
-    {"path", required_argument, nullptr, 'p'},
-    {"help", no_argument, nullptr, 'h'},
-    {0, 0, 0, 0},
-};
-
 ArgumentParser::ArgumentParser(int argc, char** argv)
 {
     int option = 0;
@@ -46,7 +40,7 @@ ArgumentParser::ArgumentParser(int argc, char** argv)
             exit(-1);
         }
 
-        auto i = &options[0];
+        const auto* i = &options[0];
         while ((i->val != option) && (i->val != 0))
             ++i;
 
