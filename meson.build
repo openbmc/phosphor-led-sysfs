@@ -20,7 +20,7 @@ deps = [
 ]
 
 udevdir = dependency('udev').get_variable(pkgconfig: 'udevdir')
-install_data(['70-leds.rules'], install_dir : udevdir / 'rules.d')
+install_data(['udev' / 'rules.d' / '70-leds.rules'], install_dir : udevdir / 'rules.d')
 
 systemd = dependency('systemd')
 install_data(
