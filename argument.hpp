@@ -39,9 +39,6 @@ class ArgumentParser
     /** @brief Set to 'true' when an option is passed */
     static const std::string true_string;
 
-    /** @brief Set to '' when an option is not passed */
-    static const std::string empty_string;
-
   private:
     /** @brief Option to argument mapping */
     std::map<const std::string, std::string> arguments;

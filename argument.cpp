@@ -27,7 +27,6 @@ namespace led
 {
 
 const std::string ArgumentParser::true_string = "true";
-const std::string ArgumentParser::empty_string = "";
 
 const char* ArgumentParser::optionstr = "p:?h";
 const option ArgumentParser::options[] = {
@@ -59,10 +58,12 @@ ArgumentParser::ArgumentParser(int argc, char** argv)
 
 const std::string& ArgumentParser::operator[](const std::string& opt)
 {
+    static const std::string emptyString{};
+
     auto i = arguments.find(opt);
     if (i == arguments.end())
     {
-        return empty_string;
+        return emptyString;
     }
     else
     {

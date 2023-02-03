@@ -91,7 +91,7 @@ int main(int argc, char** argv)
 
     // Parse out Path argument.
     auto path = std::move((options)["path"]);
-    if (path == phosphor::led::ArgumentParser::empty_string)
+    if (path.empty())
     {
         ExitWithError("Path not specified.", argv);
     }
