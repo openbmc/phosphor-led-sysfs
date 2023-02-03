@@ -37,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b9aadf4c_dd6ce68c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 34
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-02-03T05:05:13Z",
+      "side": 1,
+      "message": "I\u0027ve got DBus-activation going for this series now and it helps a bit, however we need to fix up some name mangling that\u0027s occurring, e.g:\n\n```\nroot@p10bmc:~# busctl tree xyz.openbmc_project.LED.Controller | grep -F \u0027/_\u0027\n        |-/xyz/openbmc_project/led/physical/_62mc_2dingraham0\n        |-/xyz/openbmc_project/led/physical/_70ca955x_5fcablecard10_2dcxp_2dbot\n        |-/xyz/openbmc_project/led/physical/_70ca955x_5fcablecard10_2dcxp_2dtop\n        |-/xyz/openbmc_project/led/physical/_70cieslot_2dpower\n        |-/xyz/openbmc_project/led/physical/_72ear_2denc_2dfault0\n        |-/xyz/openbmc_project/led/physical/_72ear_2denc_2did0\n```\n\nIn the process of testing this series I also discovered the existence of \"virtual LEDs\". They are implemented by passing non-existent paths in sysfs as a commandline argument to phosphor-ledcontroller, which hosts DBus objects whose operations cannot possibly work. This approach, quite frankly, is entirely unjustifiable, however we will need to unwind it to maintain the necessary behaviour.\n\n```\n2 15:06:54 andrew@mistburn:~/src/openbmc/openbmc/build/p10bmc  $ git grep sys-class-leds-virtual ../..\n../../meta-ibm/recipes-phosphor/leds/phosphor-led-manager_%.bbappend:    LINK_FAULT\u003d\"$D$systemd_system_unitdir/multi-user.target.wants/obmc-led-create-virtual-leds@sys-class-leds-virtual-enc-fault.service\"\n../../meta-ibm/recipes-phosphor/leds/phosphor-led-manager_%.bbappend:    LINK_ID\u003d\"$D$systemd_system_unitdir/multi-user.target.wants/obmc-led-create-virtual-leds@sys-class-leds-virtual-enc-id.service\"\n../../meta-ibm/recipes-phosphor/leds/phosphor-led-manager_%.bbappend:    LINK_FAULT\u003d\"$D$systemd_system_unitdir/multi-user.target.wants/obmc-led-create-virtual-leds@sys-class-leds-virtual-enc-fault.service\"\n../../meta-ibm/recipes-phosphor/leds/phosphor-led-manager_%.bbappend:    LINK_ID\u003d\"$D$systemd_system_unitdir/multi-user.target.wants/obmc-led-create-virtual-leds@sys-class-leds-virtual-enc-id.service\"\n2 15:26:23 andrew@mistburn:~/src/openbmc/openbmc/build/p10bmc $ git ls-files ../.. | grep obmc-led-create-virtual-leds\n../../meta-ibm/recipes-phosphor/leds/phosphor-led-manager/obmc-led-create-virtual-leds@.service\n2 15:26:40 andrew@mistburn:~/src/openbmc/openbmc/build/p10bmc $ cat ../../meta-ibm/recipes-phosphor/leds/phosphor-led-manager/obmc-led-create-virtual-leds@.service\n[Unit]\nDescription\u003dCreate the virtual physical LEDs\n\n[Service]\nRestart\u003dalways\nExecStart\u003d/usr/libexec/phosphor-led-sysfs/phosphor-ledcontroller -p %f\nSyslogIdentifier\u003dobmc-led-create-virtual-leds\n```",
+      "revId": "04a39b6dd387e7dd95c3ab96d068c84aa3b5ff7d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d4113a9a_9233ba61",
         "filename": "interfaces/internal_interface.cpp",
         "patchSetId": 34
