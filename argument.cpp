@@ -42,10 +42,14 @@ ArgumentParser::ArgumentParser(int argc, char** argv)
 
         const auto* i = &options[0];
         while ((i->val != option) && (i->val != 0))
+        {
             ++i;
+        }
 
         if (i->val)
+        {
             arguments[i->name] = (i->has_arg ? optarg : true_string);
+        }
     }
 }
 
