@@ -25,30 +25,22 @@ namespace phosphor
 {
 namespace led
 {
-
-const std::string ArgumentParser::true_string = "true";
-
 ArgumentParser::ArgumentParser(int argc, char** argv)
 {
     int option = 0;
     while (-1 !=
            (option = getopt_long(argc, argv, optionstr, &options[0], nullptr)))
     {
-        if ((option == '?') || (option == 'h'))
+        switch (option)
         {
-            usage(argv);
-            exit(-1);
-        }
-
-        const auto* i = &options[0];
-        while ((i->val != option) && (i->val != 0))
-        {
-            ++i;
-        }
-
-        if (i->val)
-        {
-            arguments[i->name] = (i->has_arg ? optarg : true_string);
+            case '?':
+            case 'h':
+                usage(argv);
+                exit(-1);
+                break;
+            case 'p':
+                arguments["path"] = optarg;
+                break;
         }
     }
 }

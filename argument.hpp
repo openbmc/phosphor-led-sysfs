@@ -36,9 +36,6 @@ class ArgumentParser
     /** @brief Displays usage */
     static void usage(char** argv);
 
-    /** @brief Set to 'true' when an option is passed */
-    static const std::string true_string;
-
   private:
     /** @brief Option to argument mapping */
     std::map<const std::string, std::string> arguments;
