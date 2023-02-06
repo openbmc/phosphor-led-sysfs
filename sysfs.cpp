@@ -41,7 +41,7 @@ std::string getSysfsAttr(const fs::path& path)
 template <>
 unsigned long getSysfsAttr(const fs::path& path)
 {
-    std::string content = getSysfsAttr<std::string>(std::move(path));
+    std::string content = getSysfsAttr<std::string>(path);
     return std::strtoul(content.c_str(), nullptr, 0);
 }
 
