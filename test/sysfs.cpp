@@ -39,11 +39,11 @@ class FakeSysfsLed : public phosphor::led::SysfsLed
     static FakeSysfsLed create()
     {
         static constexpr auto tmplt = "/tmp/FakeSysfsLed.XXXXXX";
-        char buffer[MAXPATHLEN] = {0};
+        std::array<char, MAXPATHLEN> buffer = {0};
 
-        strncpy(buffer, tmplt, sizeof(buffer) - 1);
-        char* dir = mkdtemp(buffer);
-        if (!dir)
+        strncpy(buffer.data(), tmplt, buffer.size() - 1);
+        char* dir = mkdtemp(buffer.data());
+        if (dir == nullptr)
             throw std::system_error(errno, std::system_category());
 
         return FakeSysfsLed(fs::path(dir));
