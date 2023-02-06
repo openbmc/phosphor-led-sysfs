@@ -12,10 +12,11 @@ project(
 
 sdbusplus_dep = dependency('sdbusplus')
 phosphor_dbus_interfaces_dep = dependency('phosphor-dbus-interfaces')
-
+boost = dependency('boost', include_type: 'system')
 deps = [
     sdbusplus_dep,
     phosphor_dbus_interfaces_dep,
+    boost,
 ]
 
 udevdir = dependency('udev').get_variable(pkgconfig: 'udevdir')
