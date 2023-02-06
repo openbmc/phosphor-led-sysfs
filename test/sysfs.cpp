@@ -51,7 +51,7 @@ class FakeSysfsLed : public phosphor::led::SysfsLed
         return FakeSysfsLed(fs::path(dir));
     }
 
-    ~FakeSysfsLed()
+    ~FakeSysfsLed() override
     {
         fs::remove_all(root);
     }
