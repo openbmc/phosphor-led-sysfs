@@ -135,7 +135,7 @@ void Physical::setLedColor(const std::string& color)
     }
 
     std::string tmp = color;
-    tmp[0] = toupper(tmp[0]);
+    tmp[0] = static_cast<char>(toupper(tmp[0]));
     try
     {
         auto palette = convertPaletteFromString(prefix + tmp);
