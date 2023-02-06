@@ -12,7 +12,7 @@ constexpr auto ledObj = "/foo/bar/led";
 using Action = sdbusplus::xyz::openbmc_project::Led::server::Physical::Action;
 namespace fs = std::filesystem;
 
-fs::path create_sandbox()
+fs::path createSandbox()
 {
     /* If your tests need to touch the filesystem, always use mkdtemp() or
      * mkstemp() for creating directories and files. Tests can be run in
@@ -45,7 +45,7 @@ class MockLed : public phosphor::led::SysfsLed
 {
   public:
     /* Use a no-args ctor here to avoid headaches with {Nice,Strict}Mock */
-    MockLed() : SysfsLed(create_sandbox())
+    MockLed() : SysfsLed(createSandbox())
     {}
 
     virtual ~MockLed()
