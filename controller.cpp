@@ -86,9 +86,9 @@ std::string getDbusName(const LedDescr& ledDescr)
 int main(int argc, char** argv)
 {
     namespace fs = std::filesystem;
-    static constexpr auto BUSNAME = "xyz.openbmc_project.LED.Controller";
-    static constexpr auto OBJPATH = "/xyz/openbmc_project/led/physical";
-    static constexpr auto DEVPATH = "/sys/class/leds/";
+    static constexpr auto busParent = "xyz.openbmc_project.LED.Controller";
+    static constexpr auto objParent = "/xyz/openbmc_project/led/physical";
+    static constexpr auto devParent = "/sys/class/leds/";
 
     // Read arguments.
     auto options = phosphor::led::ArgumentParser(argc, argv);
@@ -111,12 +111,12 @@ int main(int argc, char** argv)
     // Refer: systemd/systemd#5072
 
     // On an error, this throws an exception and terminates.
-    auto name = path.substr(strlen(DEVPATH));
+    auto name = path.substr(strlen(devParent));
 
     // LED names may have a hyphen and that would be an issue for
     // dbus paths and hence need to convert them to underscores.
     std::replace(name.begin(), name.end(), '/', '-');
-    path = DEVPATH + name;
+    path = devParent + name;
 
     // Convert to lowercase just in case some are not and that
     // we follow lowercase all over
@@ -132,8 +132,8 @@ int main(int argc, char** argv)
     name = getDbusName(ledDescr);
 
     // Unique bus name representing a single LED.
-    auto busName = std::string(BUSNAME) + '.' + name;
-    auto objPath = std::string(OBJPATH) + '/' + name;
+    auto busName = std::string(busParent) + '.' + name;
+    auto objPath = std::string(objParent) + '/' + name;
 
     // Get a handle to system dbus.
     auto bus = sdbusplus::bus::new_default();
