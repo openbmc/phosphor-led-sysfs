@@ -93,6 +93,9 @@ int main(int argc, char** argv)
     // Read arguments.
     auto options = phosphor::led::ArgumentParser(argc, argv);
 
+    // FIXME: https://bugs.llvm.org/show_bug.cgi?id=41141
+    // NOLINTBEGIN(clang-analyzer-cplusplus.NewDeleteLeaks)
+
     // Parse out Path argument.
     if (options["path"].empty())
     {
@@ -130,6 +133,7 @@ int main(int argc, char** argv)
     // Convert LED name in sysfs into DBus name
     LedDescr ledDescr;
     getLedDescr(name, ledDescr);
+    // NOLINTEND(clang-analyzer-cplusplus.NewDeleteLeaks)
     name = getDbusName(ledDescr);
 
     // Unique bus name representing a single LED.
