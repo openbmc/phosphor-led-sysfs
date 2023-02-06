@@ -32,7 +32,7 @@ class SysfsLed
     virtual ~SysfsLed() = default;
 
     virtual unsigned long getBrightness();
-    virtual void setBrightness(unsigned long value);
+    virtual void setBrightness(unsigned long brightness);
     virtual unsigned long getMaxBrightness();
     virtual std::string getTrigger();
     virtual void setTrigger(const std::string& trigger);
