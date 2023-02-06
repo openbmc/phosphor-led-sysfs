@@ -54,7 +54,6 @@ void Physical::setInitialState()
                 Action::Off);
         }
     }
-    return;
 }
 
 auto Physical::state() const -> Action
@@ -97,7 +96,6 @@ void Physical::stableStateOperation(Action action)
 
     led.setTrigger("none");
     led.setBrightness(value);
-    return;
 }
 
 void Physical::blinkOperation()
@@ -119,8 +117,6 @@ void Physical::blinkOperation()
     auto factor = this->period() / 100.0;
     led.setDelayOn(dutyOn * factor);
     led.setDelayOff((100 - dutyOn) * factor);
-
-    return;
 }
 
 /** @brief set led color property in DBus*/
