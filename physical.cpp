@@ -43,7 +43,7 @@ void Physical::setInitialState()
     {
         // Cache current LED state
         auto brightness = led.getBrightness();
-        if (brightness && assert)
+        if (brightness != 0U && assert != 0U)
         {
             sdbusplus::xyz::openbmc_project::Led::server::Physical::state(
                 Action::On);
