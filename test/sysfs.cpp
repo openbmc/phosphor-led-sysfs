@@ -26,7 +26,7 @@
 
 namespace fs = std::filesystem;
 
-constexpr unsigned long MAX_BRIGHTNESS_VAL = 128;
+constexpr unsigned long maxBrightnessVal = 128;
 
 class FakeSysfsLed : public phosphor::led::SysfsLed
 {
@@ -64,7 +64,7 @@ class FakeSysfsLed : public phosphor::led::SysfsLed
         fs::path p = root / attrMaxBrightness;
         std::ofstream f(p, std::ios::out);
         f.exceptions(f.failbit);
-        f << MAX_BRIGHTNESS_VAL;
+        f << maxBrightnessVal;
     }
 };
 
@@ -81,7 +81,7 @@ TEST(Sysfs, getMaxBrightness)
 {
     FakeSysfsLed fsl = FakeSysfsLed::create();
 
-    ASSERT_EQ(MAX_BRIGHTNESS_VAL, fsl.getMaxBrightness());
+    ASSERT_EQ(maxBrightnessVal, fsl.getMaxBrightness());
 }
 
 TEST(Sysfs, getTrigger)
