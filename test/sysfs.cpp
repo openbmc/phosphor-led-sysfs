@@ -65,12 +65,12 @@ class FakeSysfsLed : public phosphor::led::SysfsLed
         {
             fs::path p = root / attr;
             std::ofstream f(p, std::ios::out);
-            f.exceptions(f.failbit);
+            f.exceptions(std::ofstream::failbit);
         }
 
         fs::path p = root / attrMaxBrightness;
         std::ofstream f(p, std::ios::out);
-        f.exceptions(f.failbit);
+        f.exceptions(std::ofstream::failbit);
         f << maxBrightnessVal;
     }
 };
