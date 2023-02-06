@@ -54,47 +54,47 @@ void setSysfsAttr(const fs::path& path, const T& value)
 
 unsigned long SysfsLed::getBrightness()
 {
-    return getSysfsAttr<unsigned long>(root / BRIGHTNESS);
+    return getSysfsAttr<unsigned long>(root / attrBrightness);
 }
 
 void SysfsLed::setBrightness(unsigned long brightness)
 {
-    setSysfsAttr<unsigned long>(root / BRIGHTNESS, brightness);
+    setSysfsAttr<unsigned long>(root / attrBrightness, brightness);
 }
 
 unsigned long SysfsLed::getMaxBrightness()
 {
-    return getSysfsAttr<unsigned long>(root / MAX_BRIGHTNESS);
+    return getSysfsAttr<unsigned long>(root / attrMaxBrightness);
 }
 
 std::string SysfsLed::getTrigger()
 {
-    return getSysfsAttr<std::string>(root / TRIGGER);
+    return getSysfsAttr<std::string>(root / attrTrigger);
 }
 
 void SysfsLed::setTrigger(const std::string& trigger)
 {
-    setSysfsAttr<std::string>(root / TRIGGER, trigger);
+    setSysfsAttr<std::string>(root / attrTrigger, trigger);
 }
 
 unsigned long SysfsLed::getDelayOn()
 {
-    return getSysfsAttr<unsigned long>(root / DELAY_ON);
+    return getSysfsAttr<unsigned long>(root / attrDelayOn);
 }
 
 void SysfsLed::setDelayOn(unsigned long ms)
 {
-    setSysfsAttr<unsigned long>(root / DELAY_ON, ms);
+    setSysfsAttr<unsigned long>(root / attrDelayOn, ms);
 }
 
 unsigned long SysfsLed::getDelayOff()
 {
-    return getSysfsAttr<unsigned long>(root / DELAY_OFF);
+    return getSysfsAttr<unsigned long>(root / attrDelayOff);
 }
 
 void SysfsLed::setDelayOff(unsigned long ms)
 {
-    setSysfsAttr<unsigned long>(root / DELAY_OFF, ms);
+    setSysfsAttr<unsigned long>(root / attrDelayOff, ms);
 }
 } // namespace led
 } // namespace phosphor

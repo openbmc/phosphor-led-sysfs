@@ -14,7 +14,7 @@ namespace phosphor
 namespace led
 {
 /** @brief De-assert value */
-constexpr unsigned long DEASSERT = 0;
+constexpr unsigned long deassert = 0;
 
 using PhysicalIfaces = sdbusplus::server::object_t<
     sdbusplus::xyz::openbmc_project::Led::server::Physical>;

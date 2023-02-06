@@ -145,8 +145,8 @@ TEST(Physical, off)
     NiceMock<MockLed> led;
     ON_CALL(led, getMaxBrightness()).WillByDefault(Return(127));
     EXPECT_CALL(led, getTrigger()).WillOnce(Return("none"));
-    EXPECT_CALL(led, getBrightness()).WillOnce(Return(phosphor::led::DEASSERT));
-    EXPECT_CALL(led, setBrightness(phosphor::led::DEASSERT)).Times(0);
+    EXPECT_CALL(led, getBrightness()).WillOnce(Return(phosphor::led::deassert));
+    EXPECT_CALL(led, setBrightness(phosphor::led::deassert)).Times(0);
     phosphor::led::Physical phy(bus, LED_OBJ, led);
     phy.state(Action::Off);
     EXPECT_EQ(phy.state(), Action::Off);
@@ -199,7 +199,7 @@ TEST(Physical, on_to_off)
     NiceMock<MockLed> led;
     ON_CALL(led, getMaxBrightness()).WillByDefault(Return(asserted));
     EXPECT_CALL(led, getTrigger()).Times(1).WillOnce(Return("none"));
-    constexpr auto deasserted = phosphor::led::DEASSERT;
+    constexpr auto deasserted = phosphor::led::deassert;
     EXPECT_CALL(led, getBrightness()).WillOnce(Return(deasserted));
     EXPECT_CALL(led, setBrightness(asserted));
     EXPECT_CALL(led, setBrightness(deasserted));
