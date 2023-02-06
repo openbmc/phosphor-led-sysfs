@@ -139,8 +139,7 @@ int main(int argc, char** argv)
     // Get a handle to system dbus.
     auto bus = sdbusplus::bus::new_default();
 
-    // Add systemd object manager.
-    sdbusplus::server::manager_t(bus, objPath.c_str());
+    sdbusplus::server::manager_t manager{bus, objPath.c_str()};
 
     // Create the Physical LED objects for directing actions.
     // Need to save this else sdbusplus destructor will wipe this off.
