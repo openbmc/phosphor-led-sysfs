@@ -72,7 +72,6 @@ class MockLed : public phosphor::led::SysfsLed
 using ::testing::InSequence;
 using ::testing::NiceMock;
 using ::testing::Return;
-using ::testing::Throw;
 
 TEST(Physical, ctor_none_trigger)
 {
