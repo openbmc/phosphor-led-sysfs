@@ -20,11 +20,11 @@ fs::path createSandbox()
      * will stomp on eachother and likely fail.
      */
     static constexpr auto tmplt = "/tmp/MockLed.XXXXXX";
-    char buffer[MAXPATHLEN] = {0};
+    std::array<char, MAXPATHLEN> buffer = {0};
 
-    strncpy(buffer, tmplt, sizeof(buffer) - 1);
-    auto dir = mkdtemp(buffer);
-    if (!dir)
+    strncpy(buffer.data(), tmplt, sizeof(buffer) - 1);
+    auto* dir = mkdtemp(buffer.data());
+    if (dir == nullptr)
     {
         throw std::system_error(errno, std::system_category());
     }
