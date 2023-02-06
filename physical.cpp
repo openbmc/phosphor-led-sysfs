@@ -92,7 +92,7 @@ void Physical::driveLED(Action current, Action request)
 
 void Physical::stableStateOperation(Action action)
 {
-    auto value = (action == Action::On) ? assert : DEASSERT;
+    auto value = (action == Action::On) ? assert : deassert;
 
     led.setTrigger("none");
     led.setBrightness(value);

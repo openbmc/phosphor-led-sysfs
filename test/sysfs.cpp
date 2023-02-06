@@ -52,7 +52,8 @@ class FakeSysfsLed : public phosphor::led::SysfsLed
   private:
     explicit FakeSysfsLed(fs::path&& path) : SysfsLed(std::move(path))
     {
-        std::string attrs[4] = {BRIGHTNESS, TRIGGER, DELAY_ON, DELAY_OFF};
+        std::array<const char*, 4> attrs = {attrBrightness, attrTrigger,
+                                            attrDelayOn, attrDelayOff};
         for (const auto& attr : attrs)
         {
             fs::path p = root / attr;
@@ -60,7 +61,7 @@ class FakeSysfsLed : public phosphor::led::SysfsLed
             f.exceptions(f.failbit);
         }
 
-        fs::path p = root / MAX_BRIGHTNESS;
+        fs::path p = root / attrMaxBrightness;
         std::ofstream f(p, std::ios::out);
         f.exceptions(f.failbit);
         f << MAX_BRIGHTNESS_VAL;
