@@ -31,6 +31,11 @@ constexpr unsigned long maxBrightnessVal = 128;
 class FakeSysfsLed : public phosphor::led::SysfsLed
 {
   public:
+    FakeSysfsLed(FakeSysfsLed& other) = delete;
+    FakeSysfsLed(FakeSysfsLed&& other) = delete;
+    FakeSysfsLed& operator=(FakeSysfsLed& other) = delete;
+    FakeSysfsLed&& operator=(FakeSysfsLed&& other) = delete;
+
     static FakeSysfsLed create()
     {
         static constexpr auto tmplt = "/tmp/FakeSysfsLed.XXXXXX";
