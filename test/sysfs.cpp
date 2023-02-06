@@ -44,7 +44,9 @@ class FakeSysfsLed : public phosphor::led::SysfsLed
         strncpy(buffer.data(), tmplt, sizeof(buffer) - 1);
         char* dir = mkdtemp(buffer.data());
         if (dir == nullptr)
+        {
             throw std::system_error(errno, std::system_category());
+        }
 
         return FakeSysfsLed(fs::path(dir));
     }
