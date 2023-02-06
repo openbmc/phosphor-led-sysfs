@@ -26,13 +26,6 @@ namespace phosphor
 {
 namespace led
 {
-
-constexpr char SysfsLed::BRIGHTNESS[];
-constexpr char SysfsLed::MAX_BRIGHTNESS[];
-constexpr char SysfsLed::TRIGGER[];
-constexpr char SysfsLed::DELAY_ON[];
-constexpr char SysfsLed::DELAY_OFF[];
-
 template <typename T>
 T get_sysfs_attr(const fs::path& path);
 
