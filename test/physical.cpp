@@ -52,7 +52,7 @@ class MockLed : public phosphor::led::SysfsLed
     MockLed& operator=(MockLed& other) = delete;
     MockLed&& operator=(MockLed&& other) = delete;
 
-    virtual ~MockLed()
+    ~MockLed() override
     {
         chmod(root.c_str(), S_IRUSR | S_IWUSR | S_IXUSR);
         fs::remove_all(root);
