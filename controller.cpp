@@ -94,11 +94,12 @@ int main(int argc, char** argv)
     auto options = phosphor::led::ArgumentParser(argc, argv);
 
     // Parse out Path argument.
-    auto path = std::move((options)["path"]);
-    if (path.empty())
+    if (options["path"].empty())
     {
         exitWithError("Path not specified.", argv);
     }
+
+    auto path = options["path"];
 
     // If the LED has a hyphen in the name like: "one-two", then it gets passed
     // as /one/two/ as opposed to /one-two to the service file. There is a
