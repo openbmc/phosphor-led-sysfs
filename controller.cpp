@@ -73,9 +73,13 @@ std::string getDbusName(const LedDescr& ledDescr)
     std::vector<std::string> words;
     words.emplace_back(ledDescr.devicename);
     if (!ledDescr.function.empty())
+    {
         words.emplace_back(ledDescr.function);
+    }
     if (!ledDescr.color.empty())
+    {
         words.emplace_back(ledDescr.color);
+    }
     return boost::join(words, "_");
 }
 
