@@ -128,8 +128,12 @@ void Physical::setLedColor(const std::string& color)
 {
     static const std::string prefix =
         "xyz.openbmc_project.Led.Physical.Palette.";
+
     if (color.empty())
+    {
         return;
+    }
+
     std::string tmp = color;
     tmp[0] = toupper(tmp[0]);
     try
