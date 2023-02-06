@@ -38,7 +38,7 @@ fs::path createSandbox()
         throw std::system_error(errno, std::system_category());
     }
 
-    return fs::path(dir);
+    return {dir};
 }
 
 class MockLed : public phosphor::led::SysfsLed
