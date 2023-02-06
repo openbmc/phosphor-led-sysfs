@@ -24,7 +24,7 @@
 #include <iostream>
 #include <string>
 
-static void ExitWithError(const char* err, char** argv)
+static void exitWithError(const char* err, char** argv)
 {
     phosphor::led::ArgumentParser::usage(argv);
     std::cerr << std::endl;
@@ -93,7 +93,7 @@ int main(int argc, char** argv)
     auto path = std::move((options)["path"]);
     if (path.empty())
     {
-        ExitWithError("Path not specified.", argv);
+        exitWithError("Path not specified.", argv);
     }
 
     // If the LED has a hyphen in the name like: "one-two", then it gets passed
