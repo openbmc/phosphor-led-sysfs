@@ -100,8 +100,6 @@ void Physical::stableStateOperation(Action action)
 
 void Physical::blinkOperation()
 {
-    auto dutyOn = this->dutyOn();
-
     /*
       The configuration of the trigger type must precede the configuration of
       the trigger type properties. From the kernel documentation:
@@ -112,11 +110,17 @@ void Physical::blinkOperation()
       Refer:
       https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/leds/leds-class.txt?h=v5.2#n26
     */
+    auto d = static_cast<unsigned long>(dutyOn());
+    if (d > 100)
+    {
+        d = 100;
+    }
+
+    auto p = static_cast<unsigned long>(period());
+
     led.setTrigger("timer");
-    // Convert percent duty to milliseconds for sysfs interface
-    auto factor = this->period() / 100.0;
-    led.setDelayOn(dutyOn * factor);
-    led.setDelayOff((100 - dutyOn) * factor);
+    led.setDelayOn(p * d / 100UL);
+    led.setDelayOff(p * (100UL - d) / 100UL);
 }
 
 /** @brief set led color property in DBus*/
