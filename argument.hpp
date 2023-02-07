@@ -1,5 +1,5 @@
-#ifndef __ARGUMENT_H
-#define __ARGUMENT_H
+#ifndef ARGUMENT_H
+#define ARGUMENT_H
 #include <getopt.h>
 
 #include <map>
