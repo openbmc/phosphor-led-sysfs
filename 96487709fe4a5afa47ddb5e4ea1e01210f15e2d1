@@ -16,6 +16,24 @@
       "message": "These Argument classes that are around predated the use of CLI11.  It may be the time to just convert to that?",
       "revId": "96487709fe4a5afa47ddb5e4ea1e01210f15e2d1",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5b68a92_cf0a58e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-02-07T23:03:53Z",
+      "side": 1,
+      "message": "Yeah, I\u0027ve noted that in a later patch. Maintaining the current semantics was easier to reason about which is enough to get a clean clang-tidy run going. We can remove this custom argument parsing later.",
+      "parentUuid": "a455ddda_8f71ff25",
+      "revId": "96487709fe4a5afa47ddb5e4ea1e01210f15e2d1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
