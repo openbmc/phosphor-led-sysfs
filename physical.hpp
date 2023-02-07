@@ -81,7 +81,7 @@ class Physical : public PhysicalIfaces
     SysfsLed& led;
 
     /** @brief The value that will assert the LED */
-    unsigned long assert;
+    unsigned long assert{};
 
     /** @brief reads sysfs and then setsup the parameteres accordingly
      *
