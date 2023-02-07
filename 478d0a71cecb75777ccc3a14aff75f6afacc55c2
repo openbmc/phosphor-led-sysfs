@@ -16,6 +16,24 @@
       "message": "I think the intention would have been `namespace details` but since you\u0027re not really shipping this header file (or any header file) it is probably not worth the electrons it would be stored with.",
       "revId": "478d0a71cecb75777ccc3a14aff75f6afacc55c2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d7c6fa5_f2fcb7c7",
+        "filename": "physical.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-02-07T23:08:54Z",
+      "side": 0,
+      "message": "Ack",
+      "parentUuid": "18c29e20_68fdb548",
+      "revId": "478d0a71cecb75777ccc3a14aff75f6afacc55c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
