@@ -16,11 +16,8 @@ namespace led
 /** @brief De-assert value */
 constexpr unsigned long DEASSERT = 0;
 
-namespace
-{
 using PhysicalIfaces = sdbusplus::server::object_t<
     sdbusplus::xyz::openbmc_project::Led::server::Physical>;
-}
 
 /** @class Physical
  *  @brief Responsible for applying actions on a particular physical LED
