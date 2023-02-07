@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbdb3697_cacba08a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 35
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-02-07T04:20:34Z",
+      "side": 1,
+      "message": "Still need to resolve the issues with use in meta-ibm",
+      "revId": "e8fa51a31245ca3d64eeff58b36dcb8cf9025b25",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
