@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e0809d3_68e032bb",
+        "filename": ".clang-format",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-02-07T18:56:25Z",
+      "side": 1,
+      "message": "Not sure why we should be changing this.  Shouldn\u0027t we propose this in docs first and get project-wide consensus?  Especially since it doesn\u0027t seem to do anything in this repo.\n\n[Personally I think the example for the default (SignatureScope) looks more readable better.]",
+      "revId": "0c3bcbf3d4736a77c361674adeb656b2eb9d4cff",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
