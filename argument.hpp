@@ -49,7 +49,7 @@ class ArgumentParser
     };
 
     /** @brief optstring as needed by getopt_long */
-    static inline const char* optionstr = "p:?h";
+    static inline const char* const optionstr = "p:?h";
 };
 
 } // namespace led
