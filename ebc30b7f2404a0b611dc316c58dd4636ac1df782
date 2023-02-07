@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23a75ac5_62bb8e86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-02-07T18:58:21Z",
+      "side": 1,
+      "message": "This is a lot of work for boost::split and boost::join. 😄\n\nIn theory these exist in std::ranges but from what I\u0027ve seen they\u0027re super cumbersome syntactically.",
+      "revId": "ebc30b7f2404a0b611dc316c58dd4636ac1df782",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
