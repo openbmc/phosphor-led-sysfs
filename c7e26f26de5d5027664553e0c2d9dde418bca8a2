@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ebcf3f2_e18c9c8f",
+        "filename": "add_led_action.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-02-07T18:12:30Z",
+      "side": 1,
+      "message": "Why not \u0027auto\u0027 or \u0027size_t\u0027?  ulong is usually wrong for 64-bit architectures.",
+      "range": {
+        "startLine": 15,
+        "startChar": 4,
+        "endLine": 15,
+        "endChar": 17
+      },
+      "revId": "c7e26f26de5d5027664553e0c2d9dde418bca8a2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05b17139_e2aaf794",
+        "filename": "add_led_action.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-02-07T18:12:30Z",
+      "side": 1,
+      "message": "Isn\u0027t this just:\n\n```\nif (!path.starts_with(devPath)) \n{\n    throw std::invalid_argument(...);\n}\n```",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 5
+      },
+      "revId": "c7e26f26de5d5027664553e0c2d9dde418bca8a2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b46d5c44_1fad5922",
+        "filename": "argument.hpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-02-07T18:12:30Z",
+      "side": 1,
+      "message": "FWIW:\n\n```\ncpp-style-and-conventions.md:Prefer \u0027#pragma once\u0027 header guard over \u0027#ifndef\u0027-style.\n```",
+      "revId": "c7e26f26de5d5027664553e0c2d9dde418bca8a2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
