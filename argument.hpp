@@ -41,6 +41,7 @@ class ArgumentParser
     std::map<const std::string, std::string> arguments;
 
     /** @brief Array of struct options as needed by getopt_long */
+    // NOLINTNEXTLINE(cppcoreguidelines-avoid-c-arrays)
     static inline const option options[] = {
         {"path", required_argument, nullptr, 'p'},
         {"help", no_argument, nullptr, 'h'},
