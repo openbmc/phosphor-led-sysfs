@@ -22,6 +22,30 @@
       },
       "revId": "499cb16790e59f9debd82309885a293751a43598",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a395f133_c94cdcf1",
+        "filename": "test/physical.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-02-07T23:17:34Z",
+      "side": 1,
+      "message": "good point.",
+      "parentUuid": "15914ae6_eb1e0d3f",
+      "range": {
+        "startLine": 25,
+        "startChar": 34,
+        "endLine": 25,
+        "endChar": 52
+      },
+      "revId": "499cb16790e59f9debd82309885a293751a43598",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
