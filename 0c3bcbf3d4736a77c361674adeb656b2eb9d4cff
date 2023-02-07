@@ -16,6 +16,24 @@
       "message": "Not sure why we should be changing this.  Shouldn\u0027t we propose this in docs first and get project-wide consensus?  Especially since it doesn\u0027t seem to do anything in this repo.\n\n[Personally I think the example for the default (SignatureScope) looks more readable better.]",
       "revId": "0c3bcbf3d4736a77c361674adeb656b2eb9d4cff",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "126aae26_83636ef9",
+        "filename": ".clang-format",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-02-07T22:55:02Z",
+      "side": 1,
+      "message": "So the background is I didn\u0027t notice we already had a `.clang-tidy` and I reflexively copied the one from bmcweb into the tree. The only change was the specification of this behaviour.\n\nGiven the grief I\u0027ve seen in bmcweb and dbus-sensors around this, I prefer that it\u0027s specified to stop formatting flapping in the breeze if we ever do have lambdas. I don\u0027t particularly care what it\u0027s set to, but as above, this was set based on existing practice in the OpenBMC community.\n\nI think the discussion should be proportional to the impact here, which as you\u0027ve stated is practically zero. I don\u0027t see a need to delay this change with the expectation of a lack of community interest in the discussion.\n\nIf we do start discussion and we choose to go a different direction then it is trivial to change this and accept any impact.",
+      "parentUuid": "0e0809d3_68e032bb",
+      "revId": "0c3bcbf3d4736a77c361674adeb656b2eb9d4cff",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
