@@ -28,6 +28,9 @@ class SysfsLed
     {}
     SysfsLed() = delete;
     SysfsLed(const SysfsLed& other) = delete;
+    SysfsLed(const SysfsLed&& other) = delete;
+    SysfsLed& operator=(const SysfsLed& other) = delete;
+    SysfsLed&& operator=(const SysfsLed&& other) = delete;
 
     virtual ~SysfsLed() = default;
 
