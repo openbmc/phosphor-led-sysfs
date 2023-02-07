@@ -33,7 +33,6 @@
 
 owners:
 - andrew@aj.id.au
-- vishwa@linux.vnet.ibm.com
 
 reviewers:
 - bradleyb@fuzziesquirrel.com
@@ -51,6 +50,3 @@ openbmc:
 - name: Matt Spinler
   email: spinler@us.ibm.com
   discord: mspinler
-- name: Vishwanatha Subbanna
-  email: vishwa@linux.vnet.ibm.com
-  discord: vishwa
