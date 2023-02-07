@@ -23,9 +23,8 @@ udevdir = dependency('udev').get_variable(pkgconfig: 'udevdir')
 install_data(['udev' / 'rules.d' / '70-leds.rules'], install_dir : udevdir / 'rules.d')
 
 systemd = dependency('systemd')
-install_data(
-  ['xyz.openbmc_project.led.controller@.service'],
-  install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir')
+install_data(['systemd' / 'system' / 'xyz.openbmc_project.led.controller@.service'],
+             install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir')
 )
 
 sources = [
