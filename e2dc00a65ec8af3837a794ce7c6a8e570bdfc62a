@@ -16,6 +16,24 @@
       "message": "Why wasn\u0027t this:\n\n    const auto\u0026 path \u003d options[\"path\"]\n    \nIt probably isn\u0027t meaningful either way but now you\u0027re doing two map lookups on line 97 and 102.",
       "revId": "e2dc00a65ec8af3837a794ce7c6a8e570bdfc62a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78094c36_038fae4f",
+        "filename": "controller.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-02-07T23:07:10Z",
+      "side": 0,
+      "message": "Yeah, understood. If we have a performance problem with this we can fix it up when it surfaces :)",
+      "parentUuid": "4660b0ee_db80a425",
+      "revId": "e2dc00a65ec8af3837a794ce7c6a8e570bdfc62a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
