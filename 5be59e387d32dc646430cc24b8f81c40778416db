@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82a75d7e_e12ee143",
+        "filename": "test/physical.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-02-07T18:24:59Z",
+      "side": 1,
+      "message": "I\u0027m partially surprised by clang-tidy recommending this particular syntax, but I guess if it works go with it.\n\nfs::path(foo) and fs::path({foo}) are potentially two different constructors.  The second one takes an initializer_list.\n\nTelling developers to prefer {} seems to be, as a habit, inhibiting them from thinking about which constructor they are intending to call and sometimes inadvertently shooting themselves in the foot.\n\nstd::vector\u003csize_t\u003e is the prototypical case where `std::vector({len, val})` and `std::vector(len, val)` have drastically different meanings and using `return {len, val}` leads to the first and not the second.\n\nI\u0027m probably not smarter than the authors of clang-tidy though...",
+      "revId": "5be59e387d32dc646430cc24b8f81c40778416db",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
