@@ -29,7 +29,7 @@ class Physical : public PhysicalIfaces
 {
   public:
     Physical() = delete;
-    ~Physical() = default;
+    ~Physical() override = default;
     Physical(const Physical&) = delete;
     Physical& operator=(const Physical&) = delete;
     Physical(Physical&&) = delete;
