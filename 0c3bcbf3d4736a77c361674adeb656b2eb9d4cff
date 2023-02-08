@@ -52,6 +52,24 @@
       "parentUuid": "126aae26_83636ef9",
       "revId": "0c3bcbf3d4736a77c361674adeb656b2eb9d4cff",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4449358d_ac2179f6",
+        "filename": ".clang-format",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-02-08T00:33:58Z",
+      "side": 1,
+      "message": "https://gerrit.openbmc.org/c/openbmc/docs/+/60738",
+      "parentUuid": "32f43e82_f782af73",
+      "revId": "0c3bcbf3d4736a77c361674adeb656b2eb9d4cff",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ],
   "submitRequirementResults": []
