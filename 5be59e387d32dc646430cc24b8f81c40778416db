@@ -34,6 +34,24 @@
       "parentUuid": "82a75d7e_e12ee143",
       "revId": "5be59e387d32dc646430cc24b8f81c40778416db",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3b11ec9_df39a8bd",
+        "filename": "test/physical.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-02-08T00:08:52Z",
+      "side": 1,
+      "message": "Personally, I\u0027d just use `return dir`.  It seems to compile.\n\nI guess I\u0027m not necessarily on the same page as whoever wrote modernize-return-brace-init-list and I\u0027d probably not enable it in clang-tidy.  I am not in favor of NOLINT lines to the extent possible to avoid them.\n\nIn this case either `return dir` or `return {dir}` do the same thing.  I think it is error prone for the linter to always suggest `{}` syntax because it can have a different meaning than the implicit type conversion and I suspect many developers would just start writing `{ return_values }` without thinking about the implications.  That seems more error inducing than an extra type specifier.",
+      "parentUuid": "20db0c78_38d279be",
+      "revId": "5be59e387d32dc646430cc24b8f81c40778416db",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
