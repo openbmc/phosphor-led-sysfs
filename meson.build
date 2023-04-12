@@ -1,7 +1,7 @@
 project(
     'phosphor-ledcontroller', 'cpp',
     version : '1.0.0',
-    meson_version: '>=0.57.0',
+    meson_version: '>=0.58.0',
     default_options: [
         'warning_level=3',
         'werror=true',
@@ -19,12 +19,12 @@ deps = [
     boost,
 ]
 
-udevdir = dependency('udev').get_variable(pkgconfig: 'udevdir')
+udevdir = dependency('udev').get_variable('udevdir')
 install_data(['udev' / 'rules.d' / '70-leds.rules'], install_dir : udevdir / 'rules.d')
 
 systemd = dependency('systemd')
 install_data(['systemd' / 'system' / 'xyz.openbmc_project.led.controller@.service'],
-             install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir')
+             install_dir: systemd.get_variable('systemdsystemunitdir')
 )
 
 sources = [
