@@ -45,8 +45,7 @@ class MockLed : public phosphor::led::SysfsLed
 {
   public:
     /* Use a no-args ctor here to avoid headaches with {Nice,Strict}Mock */
-    MockLed() : SysfsLed(createSandbox())
-    {}
+    MockLed() : SysfsLed(createSandbox()) {}
     MockLed(MockLed& other) = delete;
     MockLed(MockLed&& other) = delete;
     MockLed& operator=(MockLed& other) = delete;
