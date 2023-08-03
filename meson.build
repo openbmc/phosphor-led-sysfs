@@ -13,7 +13,16 @@ project(
 sdbusplus_dep = dependency('sdbusplus')
 phosphor_dbus_interfaces_dep = dependency('phosphor-dbus-interfaces')
 boost = dependency('boost', include_type: 'system')
+
+cxx = meson.get_compiler('cpp')
+if cxx.has_header('CLI/CLI.hpp')
+    cli11_dep = declare_dependency()
+else
+    cli11_dep = dependency('CLI11')
+endif
+
 deps = [
+    cli11_dep,
     sdbusplus_dep,
     phosphor_dbus_interfaces_dep,
     boost,
@@ -28,7 +37,6 @@ install_data(['systemd' / 'system' / 'xyz.openbmc_project.led.controller@.servic
 )
 
 sources = [
-    'argument.cpp',
     'controller.cpp',
     'physical.cpp',
     'sysfs.cpp',
