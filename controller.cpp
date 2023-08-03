@@ -14,23 +14,15 @@
  * limitations under the License.
  */
 
-#include "argument.hpp"
 #include "physical.hpp"
 #include "sysfs.hpp"
 
+#include <CLI/CLI.hpp>
 #include <boost/algorithm/string.hpp>
 
 #include <algorithm>
 #include <iostream>
 #include <string>
-
-static void exitWithError(const char* err, char** argv)
-{
-    phosphor::led::ArgumentParser::usage(argv);
-    std::cerr << std::endl;
-    std::cerr << "ERROR: " << err << std::endl;
-    exit(-1);
-}
 
 struct LedDescr
 {
@@ -50,7 +42,10 @@ struct LedDescr
 void getLedDescr(const std::string& name, LedDescr& ledDescr)
 {
     std::vector<std::string> words;
+    // FIXME: https://bugs.llvm.org/show_bug.cgi?id=41141
+    // NOLINTBEGIN(clang-analyzer-cplusplus.NewDeleteLeaks)
     boost::split(words, name, boost::is_any_of(":"));
+    // NOLINTEND(clang-analyzer-cplusplus.NewDeleteLeaks)
     try
     {
         ledDescr.devicename = words.at(0);
@@ -90,19 +85,23 @@ int main(int argc, char** argv)
     static constexpr auto objParent = "/xyz/openbmc_project/led/physical";
     static constexpr auto devParent = "/sys/class/leds/";
 
-    // Read arguments.
-    auto options = phosphor::led::ArgumentParser(argc, argv);
+    CLI::App app{"Control and Drive the physical LEDs"};
 
-    // FIXME: https://bugs.llvm.org/show_bug.cgi?id=41141
-    // NOLINTBEGIN(clang-analyzer-cplusplus.NewDeleteLeaks)
+    // Read arguments.
+    std::string path{};
+    app.add_option("-p,--path", path,
+                   "absolute path of LED in sysfs; like /sys/class/leds/<name>")
+        ->required();
 
     // Parse out Path argument.
-    if (options["path"].empty())
+    try
     {
-        exitWithError("Path not specified.", argv);
+        app.parse(argc, argv);
     }
-
-    auto path = options["path"];
+    catch (const CLI::Error& e)
+    {
+        return app.exit(e);
+    }
 
     // If the LED has a hyphen in the name like: "one-two", then it gets passed
     // as /one/two/ as opposed to /one-two to the service file. There is a
@@ -133,7 +132,7 @@ int main(int argc, char** argv)
     // Convert LED name in sysfs into DBus name
     LedDescr ledDescr;
     getLedDescr(name, ledDescr);
-    // NOLINTEND(clang-analyzer-cplusplus.NewDeleteLeaks)
+
     name = getDbusName(ledDescr);
 
     // Unique bus name representing a single LED.
