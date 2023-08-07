@@ -51,7 +51,6 @@ executable(
     install_dir: '/usr/libexec/phosphor-led-sysfs'
 )
 
-build_tests = get_option('tests')
-if build_tests.enabled()
+if get_option('tests').allowed()
   subdir('test')
 endif
