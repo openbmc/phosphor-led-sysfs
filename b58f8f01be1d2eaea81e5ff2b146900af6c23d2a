@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bebf351_ffb0641b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-08-08T06:04:22Z",
+      "side": 1,
+      "message": "Can you please either make this one paragraph or three? The formatting as it stands makes it jarring to read.",
+      "revId": "b58f8f01be1d2eaea81e5ff2b146900af6c23d2a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45964b14_3b8e1efc",
+        "filename": "meson_options.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-08-08T06:04:22Z",
+      "side": 1,
+      "message": "Honestly I\u0027d prefer we don\u0027t split it across multiple lines like this. I don\u0027t think we actually even need this hunk?",
+      "revId": "b58f8f01be1d2eaea81e5ff2b146900af6c23d2a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
