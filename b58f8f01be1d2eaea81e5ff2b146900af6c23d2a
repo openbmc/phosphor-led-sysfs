@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3e540c73_ce0fb5b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-08-09T01:22:02Z",
+      "side": 1,
+      "message": "I think Ed\u0027s point on another patch is this doesn\u0027t really talk about the impacts (why we might care). That would be good to add here also.",
+      "parentUuid": "47be873d_781bed9c",
+      "revId": "b58f8f01be1d2eaea81e5ff2b146900af6c23d2a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "45964b14_3b8e1efc",
         "filename": "meson_options.txt",
         "patchSetId": 1
