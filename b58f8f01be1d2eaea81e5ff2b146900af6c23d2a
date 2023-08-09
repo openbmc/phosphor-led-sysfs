@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "050ee8a4_b1e39b7a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-08-09T12:09:22Z",
+      "side": 1,
+      "message": "For the current logic, I admit that it is possible to use enabled or allowed, but as I said, after meson1.1.0, methods such as disable_if are supported, and I believe we will also support auto types in the future, so I think using allowed is right direction.",
+      "parentUuid": "3e540c73_ce0fb5b2",
+      "revId": "b58f8f01be1d2eaea81e5ff2b146900af6c23d2a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "45964b14_3b8e1efc",
         "filename": "meson_options.txt",
         "patchSetId": 1
