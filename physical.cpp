@@ -38,6 +38,8 @@ void Physical::setInitialState()
         auto percentScale = periodMs / 100;
         this->dutyOn(delayOn / percentScale);
         this->period(periodMs);
+        sdbusplus::xyz::openbmc_project::Led::server::Physical::state(
+            Action::Blink);
     }
     else
     {
