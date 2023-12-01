@@ -138,7 +138,7 @@ TEST(Physical, ctor_timer_trigger)
     EXPECT_CALL(led, getDelayOn()).WillOnce(Return(500));
     EXPECT_CALL(led, getDelayOff()).WillOnce(Return(500));
     phosphor::led::Physical phy(bus, ledObj, led);
-    EXPECT_EQ(phy.state(), Action::Off);
+    EXPECT_EQ(phy.state(), Action::Blink);
 }
 
 TEST(Physical, off)

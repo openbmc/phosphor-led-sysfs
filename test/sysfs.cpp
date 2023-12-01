@@ -96,7 +96,9 @@ TEST(Sysfs, getTrigger)
     constexpr auto trigger = "none";
     FakeSysfsLed fsl = FakeSysfsLed::create();
 
-    fsl.setTrigger(trigger);
+    // We need to set the complete attribute value in UT, Because the LED driver
+    // is not called in UT to automatically set `none` to `[none] xxx yyy`
+    fsl.setTrigger("[none] timer heartbeat default-on");
     ASSERT_EQ(trigger, fsl.getTrigger());
 }
 
@@ -116,4 +118,14 @@ TEST(Sysfs, getDelayOff)
 
     fsl.setDelayOff(delayOff);
     ASSERT_EQ(delayOff, fsl.getDelayOff());
+}
+
+TEST(Sysfs, getTriggerBlink)
+{
+    FakeSysfsLed fsl = FakeSysfsLed::create();
+
+    // We need to set the complete attribute value in UT, Because the LED driver
+    // is not called in UT to automatically set `timer` to `xxx [timer] yyy`
+    fsl.setTrigger("none [timer] heartbeat default-on");
+    ASSERT_EQ("timer", fsl.getTrigger());
 }
