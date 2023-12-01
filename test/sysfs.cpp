@@ -93,11 +93,19 @@ TEST(Sysfs, getMaxBrightness)
 
 TEST(Sysfs, getTrigger)
 {
-    constexpr auto trigger = "none";
     FakeSysfsLed fsl = FakeSysfsLed::create();
 
-    fsl.setTrigger(trigger);
-    ASSERT_EQ(trigger, fsl.getTrigger());
+    // We need to set the complete attribute value in UT, Because the LED driver
+    // is not called in UT to automatically set `none` to `[none] xxx yyy`
+    fsl.setTrigger("[none] timer heartbeat default-on");
+    ASSERT_EQ("none", fsl.getTrigger());
+}
+
+TEST(Sysfs, getTriggerBlink)
+{
+    FakeSysfsLed fsl = FakeSysfsLed::create();
+    fsl.setTrigger("none [timer] heartbeat default-on");
+    ASSERT_EQ("timer", fsl.getTrigger());
 }
 
 TEST(Sysfs, getDelayOn)

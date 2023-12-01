@@ -34,7 +34,7 @@ std::string getSysfsAttr(const fs::path& path)
 {
     std::string content;
     std::ifstream file(path);
-    file >> content;
+    std::getline(file, content);
     return content;
 }
 
@@ -69,7 +69,30 @@ unsigned long SysfsLed::getMaxBrightness()
 
 std::string SysfsLed::getTrigger()
 {
-    return getSysfsAttr<std::string>(root / attrTrigger);
+    // Example content for `/sys/class/leds/<led_name>/trigger`:
+    //
+    // * `[none] timer heartbeat default-on`
+    // * `none [timer] heartbeat default-on`
+    //
+    // Refer to:
+    //
+    // * https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/testing/sysfs-class-led?h=v6.6#n71
+    // * https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/stable/sysfs-block?h=v6.6#n558
+    std::string triggerLine = getSysfsAttr<std::string>(root / attrTrigger);
+    size_t start = triggerLine.find_first_of('[');
+    size_t end = triggerLine.find_first_of(']');
+    if (start >= end || start == std::string::npos || end == std::string::npos)
+    {
+        return "none";
+    }
+
+    std::string rc = triggerLine.substr(start + 1, end - start - 1);
+    if (rc.empty())
+    {
+        return "none";
+    }
+
+    return rc;
 }
 
 void SysfsLed::setTrigger(const std::string& trigger)
