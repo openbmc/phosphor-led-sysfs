@@ -34,7 +34,7 @@ std::string getSysfsAttr(const fs::path& path)
 {
     std::string content;
     std::ifstream file(path);
-    file >> content;
+    std::getline(file, content);
     return content;
 }
 
@@ -69,7 +69,22 @@ unsigned long SysfsLed::getMaxBrightness()
 
 std::string SysfsLed::getTrigger()
 {
-    return getSysfsAttr<std::string>(root / attrTrigger);
+    std::string triggerLine = getSysfsAttr<std::string>(root / attrTrigger);
+
+    size_t start = triggerLine.find_first_of('[');
+    size_t end = triggerLine.find_first_of(']');
+    if (start >= end || start == std::string::npos || end == std::string::npos)
+    {
+        return "none";
+    }
+
+    std::string rc = triggerLine.substr(start + 1, end - start - 1);
+    if (rc == "")
+    {
+        return "none";
+    }
+
+    return rc;
 }
 
 void SysfsLed::setTrigger(const std::string& trigger)
