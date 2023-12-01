@@ -96,7 +96,7 @@ TEST(Sysfs, getTrigger)
     constexpr auto trigger = "none";
     FakeSysfsLed fsl = FakeSysfsLed::create();
 
-    fsl.setTrigger(trigger);
+    fsl.setTrigger("[none] timer heartbeat default-on");
     ASSERT_EQ(trigger, fsl.getTrigger());
 }
 
@@ -116,4 +116,13 @@ TEST(Sysfs, getDelayOff)
 
     fsl.setDelayOff(delayOff);
     ASSERT_EQ(delayOff, fsl.getDelayOff());
+}
+
+TEST(Sysfs, getTriggerBlink)
+{
+    constexpr auto trigger = "timer";
+    FakeSysfsLed fsl = FakeSysfsLed::create();
+
+    fsl.setTrigger("none [timer] heartbeat default-on");
+    ASSERT_EQ(trigger, fsl.getTrigger());
 }
