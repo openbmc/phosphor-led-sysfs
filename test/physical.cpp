@@ -138,7 +138,7 @@ TEST(Physical, ctor_timer_trigger)
     EXPECT_CALL(led, getDelayOn()).WillOnce(Return(500));
     EXPECT_CALL(led, getDelayOff()).WillOnce(Return(500));
     phosphor::led::Physical phy(bus, ledObj, led);
-    EXPECT_EQ(phy.state(), Action::Off);
+    EXPECT_EQ(phy.state(), Action::Blink);
 }
 
 TEST(Physical, off)
@@ -163,7 +163,9 @@ TEST(Physical, on)
     NiceMock<MockLed> led;
     ON_CALL(led, getMaxBrightness()).WillByDefault(Return(asserted));
     EXPECT_CALL(led, getTrigger()).WillOnce(Return("none"));
-    EXPECT_CALL(led, setTrigger("none"));
+    // We need to set the complete attribute value in UT, Because the LED driver
+    // is not called in UT to automatically set `none` to `[none] xxx yyy`
+    EXPECT_CALL(led, setTrigger("[none] timer heartbeat default-on"));
     EXPECT_CALL(led, setBrightness(asserted));
     phosphor::led::Physical phy(bus, ledObj, led);
     phy.state(Action::On);
@@ -175,7 +177,9 @@ TEST(Physical, blink)
     sdbusplus::bus_t bus = sdbusplus::bus::new_default();
     NiceMock<MockLed> led;
     EXPECT_CALL(led, getTrigger()).WillOnce(Return("none"));
-    EXPECT_CALL(led, setTrigger("timer"));
+    // We need to set the complete attribute value in UT, Because the LED driver
+    // is not called in UT to automatically set `timer` to `xxx [timer] yyy`
+    EXPECT_CALL(led, setTrigger("none [timer] heartbeat default-on"));
     EXPECT_CALL(led, setDelayOn(500));
     EXPECT_CALL(led, setDelayOff(500));
     phosphor::led::Physical phy(bus, ledObj, led);
