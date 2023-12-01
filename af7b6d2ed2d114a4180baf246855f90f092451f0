@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a117822_e6e9b75b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000021
+      },
+      "writtenOn": "2023-12-01T18:14:06Z",
+      "side": 1,
+      "message": "Unfortunately reading the trigger is relatively expensive (executed once for buffer length then again to get the value) but we are not increasing the amount of calls.",
+      "revId": "af7b6d2ed2d114a4180baf246855f90f092451f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "947d64dc_476fe143",
+        "filename": "physical.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000021
+      },
+      "writtenOn": "2023-12-01T18:14:06Z",
+      "side": 1,
+      "message": "This covers the periodic blink (timer) trigger but will show the instantaneous state if there are other triggers that caused the led to blink (eg power_supply_charging_blink_full_on or the netfilter driven activity trigger).\n\nSince the kernel doesn\u0027t have a common way to export that the led is blinking, and timer is the only trigger set by this interface, I\u0027m happy for it to be merged as coded.\n\nI originally researched the kernel triggers to ensure that hardware blink would be shown correctly; and I am confident that it will for this common case.",
+      "revId": "af7b6d2ed2d114a4180baf246855f90f092451f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
