@@ -117,3 +117,12 @@ TEST(Sysfs, getDelayOff)
     fsl.setDelayOff(delayOff);
     ASSERT_EQ(delayOff, fsl.getDelayOff());
 }
+
+TEST(Sysfs, getTriggerBlink)
+{
+    constexpr auto trigger = "timer";
+    FakeSysfsLed fsl = FakeSysfsLed::create();
+
+    fsl.setTrigger(trigger);
+    ASSERT_EQ(trigger, fsl.getTrigger());
+}
