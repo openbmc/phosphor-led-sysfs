@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "dae95a3f_ace6b84d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-12-04T00:27:08Z",
+      "side": 1,
+      "message": "Can you please add another line break between the code block and this paragraph?\n\nAlso, I think we should substantiate this statement with a link to Linux\u0027s sysfs ABI documentation for LEDs:\n\nhttps://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/testing/sysfs-class-led?h\u003dv6.6#n71\n\nThat says:\n\n```\n\nWhat:\t\t/sys/class/leds/\u003cled\u003e/trigger\nDate:\t\tMarch 2006\nKernelVersion:\t2.6.17\nContact:\tRichard Purdie \u003crpurdie@rpsys.net\u003e\nDescription:\n\t\tSet the trigger for this LED. A trigger is a kernel based source\n\t\tof LED events.\n\n\t\tYou can change triggers in a similar manner to the way an IO\n\t\tscheduler is chosen. Trigger specific parameters can appear in\n\t\t/sys/class/leds/\u003cled\u003e once a given trigger is selected. For\n\t\ttheir documentation see `sysfs-class-led-trigger-*`.\n```\n\nThat\u0027s unfortunately a little vague, as it just refers to \"the way an IO scheduler is chosen\" off-hand without substantiating what that means. However, it\u0027s referring to this:\n\nhttps://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/ABI/stable/sysfs-block?h\u003dv6.6#n558\n\nWhich says:\n\n```\nWhat:\t\t/sys/block/\u003cdisk\u003e/queue/scheduler\nDate:\t\tOctober 2004\nContact:\tlinux-block@vger.kernel.org\nDescription:\n\t\t[RW] When read, this file will display the current and available\n\t\tIO schedulers for this block device. The currently active IO\n\t\tscheduler will be enclosed in [] brackets. Writing an IO\n\t\tscheduler name to this file will switch control of this block\n\t\tdevice to that new IO scheduler. Note that writing an IO\n\t\tscheduler name to this file will attempt to load that IO\n\t\tscheduler module, if it isn\u0027t already present in the system.\n```\n\nCan you please include both links and quotes in the commit message so this change is properly anchored?",
+      "revId": "af7b6d2ed2d114a4180baf246855f90f092451f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "6a117822_e6e9b75b",
@@ -20,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "07fe68ca_aae0234c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-12-04T00:27:08Z",
+      "side": 1,
+      "message": "Hi George, thanks for the fix. I don\u0027t want to get too onerous here as you\u0027re addressing a long-standing bug, but can you please add necessary test cases for parsing the `trigger` attribute content?",
+      "revId": "af7b6d2ed2d114a4180baf246855f90f092451f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "947d64dc_476fe143",
         "filename": "physical.cpp",
         "patchSetId": 4
@@ -31,6 +65,23 @@
       "writtenOn": "2023-12-01T18:14:06Z",
       "side": 1,
       "message": "This covers the periodic blink (timer) trigger but will show the instantaneous state if there are other triggers that caused the led to blink (eg power_supply_charging_blink_full_on or the netfilter driven activity trigger).\n\nSince the kernel doesn\u0027t have a common way to export that the led is blinking, and timer is the only trigger set by this interface, I\u0027m happy for it to be merged as coded.\n\nI originally researched the kernel triggers to ensure that hardware blink would be shown correctly; and I am confident that it will for this common case.",
+      "revId": "af7b6d2ed2d114a4180baf246855f90f092451f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd3b85a8_1a7b59d0",
+        "filename": "sysfs.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-12-04T00:27:08Z",
+      "side": 1,
+      "message": "Can you please add links to the sysfs ABI documentation and provide an example of the attribute content in comments in the code? That way it\u0027s easy to see at a glance what we expect to be parsing here.",
       "revId": "af7b6d2ed2d114a4180baf246855f90f092451f0",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
