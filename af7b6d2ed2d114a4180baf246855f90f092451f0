@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "07cdbd51_21c8c2b4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-12-04T03:11:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dae95a3f_ace6b84d",
+      "revId": "af7b6d2ed2d114a4180baf246855f90f092451f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "6a117822_e6e9b75b",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
@@ -52,6 +70,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b0ecaf4_965333b0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-12-04T03:11:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07fe68ca_aae0234c",
+      "revId": "af7b6d2ed2d114a4180baf246855f90f092451f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "947d64dc_476fe143",
@@ -69,6 +105,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "435c67df_a9c2caca",
+        "filename": "physical.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-12-04T03:11:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "947d64dc_476fe143",
+      "revId": "af7b6d2ed2d114a4180baf246855f90f092451f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd3b85a8_1a7b59d0",
@@ -82,6 +136,24 @@
       "writtenOn": "2023-12-04T00:27:08Z",
       "side": 1,
       "message": "Can you please add links to the sysfs ABI documentation and provide an example of the attribute content in comments in the code? That way it\u0027s easy to see at a glance what we expect to be parsing here.",
+      "revId": "af7b6d2ed2d114a4180baf246855f90f092451f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffd2d59a_344344a5",
+        "filename": "sysfs.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-12-04T03:11:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd3b85a8_1a7b59d0",
       "revId": "af7b6d2ed2d114a4180baf246855f90f092451f0",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
