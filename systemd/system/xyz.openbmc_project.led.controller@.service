@@ -4,3 +4,4 @@ Description=Phosphor sysfs LED controller
 [Service]
 Restart=always
 ExecStart=/usr/libexec/phosphor-led-sysfs/phosphor-ledcontroller -p %f
+ExecStopPost=/bin/sh -c "echo 0 > /sys/class/leds/$(echo %i | sed s/'sys-class-leds-'//)/brightness"
