@@ -50,6 +50,41 @@
       "message": "I\u0027ve asked for more feedback here:\n\nhttps://discord.com/channels/775381525260664832/867820390406422538/1215438041208979456",
       "revId": "d95525c0ee701a67203d4a6b272d09f1778dd75d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f819afcc_f1728dc5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2024-03-08T00:50:37Z",
+      "side": 1,
+      "message": "Looks good to me",
+      "revId": "d95525c0ee701a67203d4a6b272d09f1778dd75d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "118acc66_bb7f1ea0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2024-03-08T00:50:37Z",
+      "side": 1,
+      "message": "Personally, I agree with @ThangTran , because for our FP5280G3 machine, bmc needs to turn off all LEDs after reboot, and then update all LEDs again in the fault dimension. but we used cpld-\u003eLED instead of gpio-\u003eLED 😊\n\nOtherwise, A fault occurred before bmc reboot -\u003e trigger LED, and then bmc reboot completes and the fault has been de-asserted, at this time, the physical LED status has not changed.",
+      "parentUuid": "30bd596d_fa015e24",
+      "revId": "d95525c0ee701a67203d4a6b272d09f1778dd75d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
