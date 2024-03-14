@@ -85,6 +85,24 @@
       "parentUuid": "30bd596d_fa015e24",
       "revId": "d95525c0ee701a67203d4a6b272d09f1778dd75d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d53180c_c0e920be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-03-14T01:18:21Z",
+      "side": 1,
+      "message": "As my own input, I mentioned this in the discord conversation linked above:\n\n\u003e My perspective is the patch is not valid, as any given LED could have one of several policies, let alone a policy at a platform level, and this is encoding one specific policy that impacts all platforms and LEDs in the implementation.",
+      "parentUuid": "118acc66_bb7f1ea0",
+      "revId": "d95525c0ee701a67203d4a6b272d09f1778dd75d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
