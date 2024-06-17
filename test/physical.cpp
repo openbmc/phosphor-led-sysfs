@@ -17,7 +17,7 @@ fs::path createSandbox()
     /* If your tests need to touch the filesystem, always use mkdtemp() or
      * mkstemp() for creating directories and files. Tests can be run in
      * parallel with `make -j`, and if use the same path in multiple tests they
-     * will stomp on eachother and likely fail.
+     * will stomp on each other and likely fail.
      */
     static constexpr auto tmplt = "/tmp/MockLed.XXXXXX";
     std::array<char, MAXPATHLEN> buffer = {0};
