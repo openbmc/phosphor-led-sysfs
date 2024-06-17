@@ -52,7 +52,7 @@ class Physical : public PhysicalIfaces
         // need to save what the micro-controller currently has.
         setInitialState();
 
-        // Read led color from enviroment and set it in DBus.
+        // Read led color from environment and set it in DBus.
         setLedColor(color);
 
         // We are now ready.
@@ -66,7 +66,7 @@ class Physical : public PhysicalIfaces
      */
     Action state(Action value) override;
 
-    /** @brief Overriden State Property Getter function
+    /** @brief Overridden State Property Getter function
      *
      *  @return  -  One of OFF / ON / BLINK
      */
@@ -80,7 +80,7 @@ class Physical : public PhysicalIfaces
     /** @brief The value that will assert the LED */
     unsigned long assert{};
 
-    /** @brief reads sysfs and then setsup the parameteres accordingly
+    /** @brief reads sysfs and then setup the parameters accordingly
      *
      *  @return None
      */
