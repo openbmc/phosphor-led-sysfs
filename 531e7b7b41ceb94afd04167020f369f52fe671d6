@@ -16,6 +16,24 @@
       "message": "From the current udev rule I don\u0027t think this is a regression as we don\u0027t cater to the remove action.",
       "revId": "531e7b7b41ceb94afd04167020f369f52fe671d6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56592fcf_77d25b8c",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 33
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-11T16:10:37Z",
+      "side": 1,
+      "message": "changed it to ```lg2::debug``` since i\u0027m just getting to know these patches.\nLet me know if that\u0027s ok here.",
+      "parentUuid": "b40cea7a_b7b0dc3b",
+      "revId": "531e7b7b41ceb94afd04167020f369f52fe671d6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
