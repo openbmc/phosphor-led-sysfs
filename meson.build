@@ -13,6 +13,7 @@ project(
 sdbusplus_dep = dependency('sdbusplus')
 phosphor_dbus_interfaces_dep = dependency('phosphor-dbus-interfaces')
 boost = dependency('boost', include_type: 'system')
+phosphor_logging_dep = dependency('phosphor-logging')
 
 cxx = meson.get_compiler('cpp')
 if cxx.has_header('CLI/CLI.hpp')
@@ -26,6 +27,7 @@ deps = [
     sdbusplus_dep,
     phosphor_dbus_interfaces_dep,
     boost,
+    phosphor_logging_dep,
 ]
 
 udevdir = dependency('udev').get_variable('udevdir')
