@@ -52,6 +52,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d8a6750_5a4cc08e",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-12T11:02:18Z",
+      "side": 1,
+      "message": "i think this was added some time ago https://github.com/openbmc/phosphor-led-sysfs/blob/master/subprojects/CLI11.wrap",
+      "parentUuid": "5dbedc2f_5ecdf09f",
+      "revId": "22cda23459d08a012a380eaa9b0f4793f497f9dc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5771f88_f64cbd50",
@@ -65,6 +83,30 @@
       "writtenOn": "2024-07-12T04:53:20Z",
       "side": 1,
       "message": "why re-order these? the were alphabetically ordered before, which is at least sensible.",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 25
+      },
+      "revId": "22cda23459d08a012a380eaa9b0f4793f497f9dc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16e1aa66_ccab5184",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-12T11:02:18Z",
+      "side": 1,
+      "message": "i don\u0027t think i did any reordering here, maybe there\u0027s a problem with my vision. The diff Base vs Patchset 24 shows no changes.\n\nTaking into acount squashing the previous commit, i added the new dependency at the end of the array.\n\nMhm, looking at Patchset 23 vs Patchset 24 shows that there is a change and re-ordering.\n\nWhich does not need to be there since this patch is not about re-ordering things.\n\nLet\u0027s look at the diff vs Base and discuss that.",
+      "parentUuid": "d5771f88_f64cbd50",
       "range": {
         "startLine": 28,
         "startChar": 4,
