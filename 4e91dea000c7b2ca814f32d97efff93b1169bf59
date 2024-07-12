@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "370f4f4f_3c3f6f00",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-12T04:44:38Z",
+      "side": 1,
+      "message": "Hi Alexander, can you please squash this into the patch that actually requires phosphor-logging in the code?",
+      "revId": "4e91dea000c7b2ca814f32d97efff93b1169bf59",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8fda643_82699c1d",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-12T04:44:38Z",
+      "side": 1,
+      "message": "Please also add a wrap for it so we can build it easily outside of bitbake?\n\n```\n[wrap-git]\nurl \u003d https://github.com/openbmc/phosphor-logging.git\nrevision \u003d HEAD\n\n[provide]\nphosphor-logging \u003d phosphor_logging_dep\n```",
+      "revId": "4e91dea000c7b2ca814f32d97efff93b1169bf59",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
