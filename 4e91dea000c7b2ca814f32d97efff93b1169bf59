@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4098c091_d77e3601",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-12T11:03:00Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "370f4f4f_3c3f6f00",
+      "revId": "4e91dea000c7b2ca814f32d97efff93b1169bf59",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c8fda643_82699c1d",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-07-12T04:44:38Z",
       "side": 1,
       "message": "Please also add a wrap for it so we can build it easily outside of bitbake?\n\n```\n[wrap-git]\nurl \u003d https://github.com/openbmc/phosphor-logging.git\nrevision \u003d HEAD\n\n[provide]\nphosphor-logging \u003d phosphor_logging_dep\n```",
+      "revId": "4e91dea000c7b2ca814f32d97efff93b1169bf59",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2de301b8_6b407a54",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-12T11:03:00Z",
+      "side": 1,
+      "message": "i believe you already added this in https://github.com/openbmc/phosphor-led-sysfs/commit/22f7ece823e8e8fc24edb431633190359d9f9a37",
+      "parentUuid": "c8fda643_82699c1d",
       "revId": "4e91dea000c7b2ca814f32d97efff93b1169bf59",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
