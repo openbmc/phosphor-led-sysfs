@@ -41,11 +41,6 @@ install_data(['systemd' / 'system' / 'sysfs-led@.service'],
              install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir')
 )
 
-dbus = dependency('dbus-1')
-install_data(['dbus-1' / 'system-services' / 'xyz.openbmc_project.LED.Controller.service'],
-             install_dir: dbus.get_variable(pkgconfig: 'system_bus_services_dir')
-)
-
 sources = [
     'interfaces/internal_interface.cpp',
     'controller.cpp',
