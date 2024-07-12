@@ -34,6 +34,24 @@
       "parentUuid": "ffb7362b_1de26075",
       "revId": "86b38e1b9671a447d6a322c4721d4b34d6428660",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7e37b11_243dd809",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-12T15:12:34Z",
+      "side": 1,
+      "message": "Changed my mind, we can squash the 2. Less patches makes it easier for me.",
+      "parentUuid": "e6fcbe18_d30bbaa3",
+      "revId": "86b38e1b9671a447d6a322c4721d4b34d6428660",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
