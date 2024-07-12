@@ -72,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a3af0add_488e072c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 34
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-12T15:21:05Z",
+      "side": 1,
+      "message": "What were the original LED names to cause the name mangling?\n\nMaybe we can add some replacements for commonly used characters.\nIn latest revision i added something to replace ```-``` with ```_``` since the former seems to be escaped on dbus.",
+      "parentUuid": "e7cc09c0_5809a67a",
+      "revId": "04a39b6dd387e7dd95c3ab96d068c84aa3b5ff7d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d4113a9a_9233ba61",
         "filename": "interfaces/internal_interface.cpp",
         "patchSetId": 34
