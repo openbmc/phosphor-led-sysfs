@@ -16,6 +16,24 @@
       "message": "Can we re-order this before [Support a executable for LED DBUS API method](https://gerrit.openbmc.org/c/openbmc/phosphor-led-sysfs/+/57746) and then squash [Support a executable for LED DBUS API method](https://gerrit.openbmc.org/c/openbmc/phosphor-led-sysfs/+/57746) into [Create a new Dbus interface for LED](https://gerrit.openbmc.org/c/openbmc/phosphor-led-sysfs/+/57455)?",
       "revId": "86b38e1b9671a447d6a322c4721d4b34d6428660",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6fcbe18_d30bbaa3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-12T11:02:12Z",
+      "side": 1,
+      "message": "Almost did not see it since you already marked it as resolved.\n\nI can re-order this to be first but i think separating the other 2 will be a good idea. It\u0027s nice to have the separate executable be in a separate commit.",
+      "parentUuid": "ffb7362b_1de26075",
+      "revId": "86b38e1b9671a447d6a322c4721d4b34d6428660",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
