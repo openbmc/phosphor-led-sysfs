@@ -38,6 +38,7 @@ install_data(['systemd' / 'system' / 'xyz.openbmc_project.led.controller@.servic
 
 sources = [
     'controller.cpp',
+    'led_description.cpp',
     'physical.cpp',
     'sysfs.cpp',
 ]

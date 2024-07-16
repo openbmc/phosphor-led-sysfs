@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+#include "led_description.hpp"
 #include "physical.hpp"
 #include "sysfs.hpp"
 
@@ -23,40 +24,6 @@
 #include <algorithm>
 #include <iostream>
 #include <string>
-
-struct LedDescr
-{
-    std::string devicename;
-    std::string color;
-    std::string function;
-};
-
-/** @brief parse LED name in sysfs
- *  Parse sysfs LED name in format "devicename:colour:function"
- *  or "devicename:colour" or "devicename" and sets corresponding
- *  fields in LedDescr struct.
- *
- *  @param[in] name      - LED name in sysfs
- *  @param[out] ledDescr - LED description
- */
-void getLedDescr(const std::string& name, LedDescr& ledDescr)
-{
-    std::vector<std::string> words;
-    // FIXME: https://bugs.llvm.org/show_bug.cgi?id=41141
-    // NOLINTBEGIN(clang-analyzer-cplusplus.NewDeleteLeaks)
-    boost::split(words, name, boost::is_any_of(":"));
-    // NOLINTEND(clang-analyzer-cplusplus.NewDeleteLeaks)
-    try
-    {
-        ledDescr.devicename = words.at(0);
-        ledDescr.color = words.at(1);
-        ledDescr.function = words.at(2);
-    }
-    catch (const std::out_of_range&)
-    {
-        return;
-    }
-}
 
 /** @brief generates LED DBus name from LED description
  *
