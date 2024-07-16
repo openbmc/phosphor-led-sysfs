@@ -73,17 +73,6 @@ class InternalInterface
         leds;
 
     /**
-     *  @brief Structure to define the LED sysfs name
-     */
-
-    struct LedDescr
-    {
-        std::string devicename;
-        std::string color;
-        std::string function;
-    };
-
-    /**
      *  @brief sdbusplus D-Bus connection.
      */
 
@@ -124,18 +113,6 @@ class InternalInterface
      */
 
     void createLEDPath(const std::string& ledName);
-
-    /** @brief Parse LED name in sysfs
-     *
-     *  Parse sysfs LED name in format "devicename:colour:function"
-     *  or "devicename:colour" or "devicename" and sets corresponding
-     *  fields in LedDescr struct.
-     *
-     *  @param[in] name      - LED name in sysfs
-     *  @param[out] ledDescr - LED description
-     */
-
-    static void getLedDescr(const std::string& name, LedDescr& ledDescr);
 
     /** @brief Generates LED DBus name from LED description
      *

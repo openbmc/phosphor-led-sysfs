@@ -27,6 +27,7 @@ test_sources = [
 tests = [
   'physical.cpp',
   'sysfs.cpp',
+  'test_led_description.cpp',
 ]
 
 foreach t : tests

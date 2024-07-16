@@ -16,9 +16,16 @@
 
 #include "sysfs.hpp"
 
+#include "phosphor-logging/lg2.hpp"
+
+#include <boost/algorithm/string.hpp>
+
 #include <fstream>
-#include <iostream>
+#include <optional>
 #include <string>
+#include <vector>
+
+static constexpr auto devParent = "/sys/class/leds/";
 
 namespace fs = std::filesystem;
 
@@ -118,6 +125,85 @@ unsigned long SysfsLed::getDelayOff()
 void SysfsLed::setDelayOff(unsigned long ms)
 {
     setSysfsAttr<unsigned long>(root / attrDelayOff, ms);
+}
+static std::optional<std::string> emptyStringNullopt(std::string& str)
+{
+    if (str.empty())
+    {
+        return std::nullopt;
+    }
+    return str;
+}
+
+/* LED sysfs name can be any of
+ *
+ * - devicename:color:function
+ * - devicename::function
+ * - color:function (e.g. "red:fault")
+ * - label (e.g. "identify")
+ * - :function (e.g. ":boot")
+ * - color: (e.g. "green:")
+ *
+ * but no one prevents us from making all of this up and creating
+ * a label with colons inside, e.g. "mylabel:mynoncolorstring:lala".
+ *
+ * Reference: https://www.kernel.org/doc/html/latest/leds/leds-class.html
+ *
+ * Summary: It's bonkers (not my words, but describes it well)
+ */
+LedDescr SysfsLed::getLedDescr()
+{
+    std::string name = std::string(root).substr(strlen(devParent));
+    LedDescr ledDescr;
+
+    std::vector<std::string> words;
+    std::stringstream ss(name);
+    std::string item;
+
+    while (std::getline(ss, item, ':'))
+    {
+        words.push_back(item);
+    }
+
+    if (name.ends_with(":"))
+    {
+        words.emplace_back("");
+    }
+
+    if (name.empty())
+    {
+        lg2::warning("LED description '{DESC}' was empty", "DESC", name);
+        throw std::out_of_range("expected non-empty LED name");
+    }
+
+    if (words.size() != 3)
+    {
+        lg2::warning(
+            "LED description '{DESC}' not well formed, expected 3 parts but got {NPARTS}",
+            "DESC", name, "NPARTS", words.size());
+    }
+
+    switch (words.size())
+    {
+        default:
+        case 3:
+            ledDescr.function = emptyStringNullopt(words.at(2));
+            ledDescr.color = emptyStringNullopt(words.at(1));
+            ledDescr.devicename = emptyStringNullopt(words.at(0));
+            break;
+        case 2:
+            ledDescr.color = emptyStringNullopt(words.at(0));
+            ledDescr.function = emptyStringNullopt(words.at(1));
+            break;
+        case 1:
+            ledDescr.devicename = emptyStringNullopt(words.at(0));
+            break;
+        case 0:
+            throw std::out_of_range("expected non-empty LED name");
+    }
+
+    // if there is more than 3 parts we ignore the rest
+    return ledDescr;
 }
 } // namespace led
 } // namespace phosphor
