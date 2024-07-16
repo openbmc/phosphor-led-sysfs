@@ -31,36 +31,21 @@ InternalInterface::InternalInterface(sdbusplus::bus_t& bus, const char* path) :
     bus(bus), serverInterface(bus, path, internalInterface, vtable.data(), this)
 {}
 
-void InternalInterface::getLedDescr(const std::string& name, LedDescr& ledDescr)
-{
-    std::vector<std::string> words;
-    boost::split(words, name, boost::is_any_of(":"));
-    try
-    {
-        ledDescr.devicename = words.at(0);
-        ledDescr.color = words.at(1);
-        ledDescr.function = words.at(2);
-    }
-    catch (const std::out_of_range& e)
-    {
-        lg2::warning("LED description {DESC} not well formed, error {ERR}",
-                     "DESC", name, "ERR", e.what());
-        throw e;
-    }
-}
-
 std::string InternalInterface::getDbusName(const LedDescr& ledDescr)
 {
     std::vector<std::string> words;
-    words.emplace_back(ledDescr.devicename);
-    if (!ledDescr.function.empty())
+    if (ledDescr.devicename.has_value())
     {
-        words.emplace_back(ledDescr.function);
+        words.emplace_back(ledDescr.devicename.value());
+    }
+    if (ledDescr.function.has_value())
+    {
+        words.emplace_back(ledDescr.function.value());
     }
 
-    if (!ledDescr.color.empty())
+    if (ledDescr.color.has_value())
     {
-        words.emplace_back(ledDescr.color);
+        words.emplace_back(ledDescr.color.value());
     }
 
     std::string s = boost::join(words, "_");
@@ -81,17 +66,11 @@ void InternalInterface::createLEDPath(const std::string& ledName)
         return;
     }
 
+    auto sled = std::make_unique<phosphor::led::SysfsLed>(fs::path(path));
+
     // Convert LED name in sysfs into DBus name
-    LedDescr ledDescr;
-    try
-    {
-        getLedDescr(ledName, ledDescr);
-    }
-    catch (...)
-    {
-        // Ignore the error, for simple LED which was not added in 3-part form.
-        // The simple LED can appear with it's plain name
-    }
+    const LedDescr ledDescr = sled->getLedDescr();
+
     name = getDbusName(ledDescr);
 
     lg2::debug("LED {NAME} receives dbus name {DBUSNAME}", "NAME", ledName,
@@ -106,10 +85,9 @@ void InternalInterface::createLEDPath(const std::string& ledName)
         return;
     }
 
-    auto sled = std::make_unique<phosphor::led::SysfsLed>(fs::path(path));
-
     leds.emplace(objPath, std::make_unique<phosphor::led::Physical>(
-                              bus, objPath, std::move(sled), ledDescr.color));
+                              bus, objPath, std::move(sled),
+                              ledDescr.color.value_or("")));
 }
 
 void InternalInterface::addLED(const std::string& name)
