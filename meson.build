@@ -49,6 +49,7 @@ install_data(['dbus-1' / 'system-services' / 'xyz.openbmc_project.LED.Controller
 sources = [
     'interfaces/internal_interface.cpp',
     'controller.cpp',
+    'led_description.cpp',
     'physical.cpp',
     'sysfs.cpp',
 ]

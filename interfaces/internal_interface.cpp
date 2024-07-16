@@ -16,6 +16,8 @@
 
 #include "internal_interface.hpp"
 
+#include "led_description.hpp"
+
 #include <sdbusplus/message.hpp>
 
 namespace phosphor
@@ -30,24 +32,6 @@ namespace interface
 InternalInterface::InternalInterface(sdbusplus::bus_t& bus, const char* path) :
     bus(bus), serverInterface(bus, path, internalInterface, vtable.data(), this)
 {}
-
-void InternalInterface::getLedDescr(const std::string& name, LedDescr& ledDescr)
-{
-    std::vector<std::string> words;
-    boost::split(words, name, boost::is_any_of(":"));
-    try
-    {
-        ledDescr.devicename = words.at(0);
-        ledDescr.color = words.at(1);
-        ledDescr.function = words.at(2);
-    }
-    catch (const std::out_of_range& e)
-    {
-        lg2::warning("LED description {DESC} not well formed, error {ERR}",
-                     "DESC", name, "ERR", e.what());
-        throw e;
-    }
-}
 
 std::string InternalInterface::getDbusName(const LedDescr& ledDescr)
 {
