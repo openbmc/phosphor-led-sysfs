@@ -16,11 +16,25 @@
 
 #pragma once
 #include <filesystem>
+#include <optional>
+
+static constexpr auto devParent = "/sys/class/leds/";
 
 namespace phosphor
 {
 namespace led
 {
+
+struct LedDescr
+{
+    // at least one of the members shall be non-empty
+    // after initialization
+
+    std::optional<std::string> devicename = std::nullopt;
+    std::optional<std::string> color = std::nullopt;
+    std::optional<std::string> function = std::nullopt;
+};
+
 class SysfsLed
 {
   public:
@@ -42,6 +56,12 @@ class SysfsLed
     virtual void setDelayOn(unsigned long ms);
     virtual unsigned long getDelayOff();
     virtual void setDelayOff(unsigned long ms);
+
+    /** @brief parse LED name in sysfs
+     *  Parse sysfs LED name and sets corresponding
+     *  fields in LedDescr struct.
+     */
+    LedDescr getLedDescr();
 
   protected:
     static constexpr const char* attrBrightness = "brightness";
