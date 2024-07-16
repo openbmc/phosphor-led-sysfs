@@ -16,23 +16,25 @@ leds {
 };
 ```
 
-We can start the program
+We can add an LED via the helper program. The main service is then started via
+dbus-activation.
 
 ```
-./phosphor-ledcontroller --path /sys/class/leds/identify
+./phosphor-ledcontroller
+./add-led-action --path /sys/class/leds/identify
 ```
 
 which will expose following dbus objects:
 
 ```
-busctl tree xyz.openbmc_project.LED.Controller.identify
+busctl tree xyz.openbmc_project.LED.Controller
 `- /xyz
   `- /xyz/openbmc_project
     `- /xyz/openbmc_project/led
       `- /xyz/openbmc_project/led/physical
         `- /xyz/openbmc_project/led/physical/identify
 
-busctl introspect  xyz.openbmc_project.LED.Controller.identify /xyz/openbmc_project/led/physical/identify
+busctl introspect  xyz.openbmc_project.LED.Controller /xyz/openbmc_project/led/physical/identify
 NAME                                TYPE      SIGNATURE  RESULT/VALUE                             FLAGS
 ...
 xyz.openbmc_project.Led.Physical    interface -          -                                        -
@@ -50,7 +52,7 @@ to keep it readable.
 Query the LED State
 
 ```
-busctl get-property  xyz.openbmc_project.LED.Controller.identify \
+busctl get-property  xyz.openbmc_project.LED.Controller \
 /xyz/openbmc_project/led/physical/identify \
 xyz.openbmc_project.Led.Physical State \
 s "xyz.openbmc_project.Led.Physical.Action.Off"
@@ -59,7 +61,7 @@ s "xyz.openbmc_project.Led.Physical.Action.Off"
 Set the LED State
 
 ```
-busctl set-property  xyz.openbmc_project.LED.Controller.identify \
+busctl set-property  xyz.openbmc_project.LED.Controller \
 /xyz/openbmc_project/led/physical/identify \
 xyz.openbmc_project.Led.Physical State s \
 "xyz.openbmc_project.Led.Physical.Action.Off"
