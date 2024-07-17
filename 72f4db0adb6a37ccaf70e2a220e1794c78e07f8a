@@ -16,6 +16,24 @@
       "message": "How do you conclude this? It is for dbus-activation, so there\u0027s no explicit dependency from the udev application.",
       "revId": "72f4db0adb6a37ccaf70e2a220e1794c78e07f8a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a4701f0_3b2872cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-17T12:58:58Z",
+      "side": 1,
+      "message": "Ok, i just thought it was weird because of the ```Exec\u003d/bin/false```.\nDidn\u0027t do anything with dbus-activation before. I can abandon this change.",
+      "parentUuid": "dece013b_1a6f95e4",
+      "revId": "72f4db0adb6a37ccaf70e2a220e1794c78e07f8a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
