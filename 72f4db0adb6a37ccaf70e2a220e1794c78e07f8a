@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dece013b_1a6f95e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-17T03:18:36Z",
+      "side": 1,
+      "message": "How do you conclude this? It is for dbus-activation, so there\u0027s no explicit dependency from the udev application.",
+      "revId": "72f4db0adb6a37ccaf70e2a220e1794c78e07f8a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
