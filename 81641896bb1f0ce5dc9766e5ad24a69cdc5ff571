@@ -1,0 +1,163 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efde7e3e_9cf36dfe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-25T02:41:29Z",
+      "side": 1,
+      "message": "Hi Alexander, I have a few thoughts inline.",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee480196_f04f1249",
+        "filename": "led_description.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-25T02:41:29Z",
+      "side": 1,
+      "message": "Please link to the ABI documentation in the kernel.",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0c15412_f01f26ba",
+        "filename": "led_description.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-25T02:41:29Z",
+      "side": 1,
+      "message": "maybe just `NOLINTNEXTLINE()` considering the code, but also, is there a reference for needing this with `boost::split()`? Can you provide a link?",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc6c5ca6_8901a36f",
+        "filename": "led_description.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-25T02:41:29Z",
+      "side": 1,
+      "message": "I don\u0027t like that we have the information about exactly how the LED name is malformed, but each error case emits the same log message. Can we please try to provide the distinguishing information about the error in the log messages?",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e0be466_89027850",
+        "filename": "led_description.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-25T02:41:29Z",
+      "side": 1,
+      "message": "Maybe we can instead do:\n\n```\nswitch(words.size()) {\ndefault:\ncase 3:\n    ledDescr.function \u003d words.at(2);\ncase 2:\n    ledDescr.color \u003d words.at(1);\ncase 1:\n    ledDescr.color \u003d words.at(0);\n    break;\ncase 0:\n    throw std::out_of_range(...);\n}\n```\n\nTo be clear: I really do not want to be both providing an output _and_ throwing an exception as you\u0027ve done in some cases above. That\u0027s a wildly confusing API design.",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4805fba_a917b5b5",
+        "filename": "led_description.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-25T02:41:29Z",
+      "side": 1,
+      "message": "Should this not be part of `SysfsLed` given it\u0027s tied to ... sysfs?",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e25d4222_9fea6dbe",
+        "filename": "led_description.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-25T02:41:29Z",
+      "side": 1,
+      "message": "Use `std::optional\u003cstd::string\u003e`?\n\nhttps://en.cppreference.com/w/cpp/utility/optional",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5844c405_2b76f1c5",
+        "filename": "led_description.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-25T02:41:29Z",
+      "side": 1,
+      "message": "This could be a (static?) method on `SysfsLed`?",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cac33e16_3512b575",
+        "filename": "test/test_led_description.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-25T02:41:29Z",
+      "side": 1,
+      "message": "This is the unreasonable API behaviour that I was talking about.",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 33,
+        "endChar": 13
+      },
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
