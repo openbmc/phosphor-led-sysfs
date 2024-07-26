@@ -35,6 +35,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b422e75_04d60e4a",
+        "filename": "led_description.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-26T12:50:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee480196_f04f1249",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c0c15412_f01f26ba",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-07-25T02:41:29Z",
       "side": 1,
       "message": "maybe just `NOLINTNEXTLINE()` considering the code, but also, is there a reference for needing this with `boost::split()`? Can you provide a link?",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e91264a_7ba3cb9f",
+        "filename": "led_description.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-26T12:50:24Z",
+      "side": 1,
+      "message": "clang-tidy detects a potential memory leak with this call site. I can replace it with an equivalent implementation that does not have this issue.",
+      "parentUuid": "c0c15412_f01f26ba",
       "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -69,6 +105,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9d5b4e1_5837e26c",
+        "filename": "led_description.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-26T12:50:24Z",
+      "side": 1,
+      "message": "Ok, reworked it to have 2 different messages for empty case and case with !\u003d 3 parts.",
+      "parentUuid": "cc6c5ca6_8901a36f",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e0be466_89027850",
@@ -82,6 +136,24 @@
       "writtenOn": "2024-07-25T02:41:29Z",
       "side": 1,
       "message": "Maybe we can instead do:\n\n```\nswitch(words.size()) {\ndefault:\ncase 3:\n    ledDescr.function \u003d words.at(2);\ncase 2:\n    ledDescr.color \u003d words.at(1);\ncase 1:\n    ledDescr.color \u003d words.at(0);\n    break;\ncase 0:\n    throw std::out_of_range(...);\n}\n```\n\nTo be clear: I really do not want to be both providing an output _and_ throwing an exception as you\u0027ve done in some cases above. That\u0027s a wildly confusing API design.",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "294b9b55_861d2919",
+        "filename": "led_description.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-26T12:50:24Z",
+      "side": 1,
+      "message": "Yes. i reworked it to use a switch statement similar to yours.",
+      "parentUuid": "9e0be466_89027850",
       "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -103,6 +175,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "531b42a0_8a586de3",
+        "filename": "led_description.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-26T12:50:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4805fba_a917b5b5",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e25d4222_9fea6dbe",
@@ -116,6 +206,24 @@
       "writtenOn": "2024-07-25T02:41:29Z",
       "side": 1,
       "message": "Use `std::optional\u003cstd::string\u003e`?\n\nhttps://en.cppreference.com/w/cpp/utility/optional",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db627360_ee508e2e",
+        "filename": "led_description.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-26T12:50:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e25d4222_9fea6dbe",
       "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -137,6 +245,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed667d9b_0cd6ad1f",
+        "filename": "led_description.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-26T12:50:24Z",
+      "side": 1,
+      "message": "Made it a member function so it can benefit from ```root``` member. That way we do not have to provide the name again that was already provided to SysfsLed constructor.\n\nThe logic for initialization in ```InternalInterface::createLEDPath``` can be re-ordered so ```SysfsLed``` is constructed earlier.",
+      "parentUuid": "5844c405_2b76f1c5",
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cac33e16_3512b575",
@@ -150,6 +276,30 @@
       "writtenOn": "2024-07-25T02:41:29Z",
       "side": 1,
       "message": "This is the unreasonable API behaviour that I was talking about.",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 33,
+        "endChar": 13
+      },
+      "revId": "81641896bb1f0ce5dc9766e5ad24a69cdc5ff571",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ab240f2_0b401fda",
+        "filename": "test/test_led_description.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-26T12:50:24Z",
+      "side": 1,
+      "message": "Yes, it should either throw an exception or not have any side effect.\nReworked it in that aspect.",
+      "parentUuid": "cac33e16_3512b575",
       "range": {
         "startLine": 28,
         "startChar": 1,
