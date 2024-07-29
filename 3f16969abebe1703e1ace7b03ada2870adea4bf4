@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4911f4ea_44da1436",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-29T01:38:26Z",
+      "side": 1,
+      "message": "Hi Alexander, I think this looks like a good cleanup. I have a few small suggestions inline.",
+      "revId": "3f16969abebe1703e1ace7b03ada2870adea4bf4",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8724a59_da889efc",
+        "filename": "sysfs.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-29T01:38:26Z",
+      "side": 1,
+      "message": "We could make this `std::vector\u003cstd::optional\u003cstd::string\u003e\u003e`...",
+      "revId": "3f16969abebe1703e1ace7b03ada2870adea4bf4",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b66f9008_0888f753",
+        "filename": "sysfs.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-29T01:38:26Z",
+      "side": 1,
+      "message": "... and do the empty/nullopt conversion here, which would tidy up the code below.",
+      "revId": "3f16969abebe1703e1ace7b03ada2870adea4bf4",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "018779db_1f133ad2",
+        "filename": "sysfs.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-29T01:38:26Z",
+      "side": 1,
+      "message": "(and this would become `words.emplace_back(std::nullopt);`",
+      "revId": "3f16969abebe1703e1ace7b03ada2870adea4bf4",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8696b54e_b255b154",
+        "filename": "sysfs.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-29T01:38:26Z",
+      "side": 1,
+      "message": "I think `std::optional\u003c\u003e` provides enough information 😊 Can you remove these comments?",
+      "revId": "3f16969abebe1703e1ace7b03ada2870adea4bf4",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
