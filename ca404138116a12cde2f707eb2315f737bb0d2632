@@ -39,6 +39,30 @@
       },
       "revId": "ca404138116a12cde2f707eb2315f737bb0d2632",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50ce3881_462431f3",
+        "filename": "sysfs.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-30T07:52:27Z",
+      "side": 1,
+      "message": "Should not be necessary as you said, the default constructor can make it std::nullopt.",
+      "parentUuid": "05b3105f_b5985ff6",
+      "range": {
+        "startLine": 33,
+        "startChar": 41,
+        "endLine": 33,
+        "endChar": 56
+      },
+      "revId": "ca404138116a12cde2f707eb2315f737bb0d2632",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
