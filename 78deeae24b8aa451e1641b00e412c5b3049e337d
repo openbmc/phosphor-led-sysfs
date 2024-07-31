@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb71554c_7b982926",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-31T05:37:03Z",
+      "side": 1,
+      "message": "I think this subject is focused on the wrong thing. I\u0027d rephrase it as:\n\n```\nsysfs: Refactor LED property parsing\n```",
+      "revId": "78deeae24b8aa451e1641b00e412c5b3049e337d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2a1b3bf_4cab1911",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-31T05:37:03Z",
+      "side": 1,
+      "message": "Hi Alexander. This looks good, though I have a couple of (hopefully final) minor comments.",
+      "revId": "78deeae24b8aa451e1641b00e412c5b3049e337d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "897f0340_efcca9b6",
+        "filename": "sysfs.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2024-07-31T05:37:03Z",
+      "side": 1,
+      "message": "Why does this need to be exposed in the header?",
+      "revId": "78deeae24b8aa451e1641b00e412c5b3049e337d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
