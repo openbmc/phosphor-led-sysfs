@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "9de41021_94e28c0c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-31T07:25:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb71554c_7b982926",
+      "revId": "78deeae24b8aa451e1641b00e412c5b3049e337d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "c2a1b3bf_4cab1911",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 6
@@ -48,6 +66,24 @@
       "writtenOn": "2024-07-31T05:37:03Z",
       "side": 1,
       "message": "Why does this need to be exposed in the header?",
+      "revId": "78deeae24b8aa451e1641b00e412c5b3049e337d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0078b86e_65e2390c",
+        "filename": "sysfs.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-31T07:25:23Z",
+      "side": 1,
+      "message": "It\u0027s used in ```interfaces/internal_interface.cpp```\nand ```test/test_led_description.cpp```\n\nand i did not want to duplicate it.",
+      "parentUuid": "897f0340_efcca9b6",
       "revId": "78deeae24b8aa451e1641b00e412c5b3049e337d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
