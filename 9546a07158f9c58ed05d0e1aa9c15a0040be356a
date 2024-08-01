@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7b5301e_8f8da130",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-01T17:09:23Z",
+      "side": 1,
+      "message": "sstreams are fairly expensive operations.  Suggest using std::ranges::fold_left (or std::accumulate):\n```\n    auto s \u003d std::ranges::fold_left(words, std::string{}, [](auto l, auto r) {\n        if (l.empty())\n            return r;\n        return l + \u0027_\u0027 + r;\n    });\n```\n\nThere might be a way to do it with std::views::join, but it isn\u0027t very obvious to me from the cppreference docs.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 30
+      },
+      "revId": "9546a07158f9c58ed05d0e1aa9c15a0040be356a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
