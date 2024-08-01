@@ -34,6 +34,24 @@
       "parentUuid": "609e39e4_0f5344d0",
       "revId": "88f18dc3b8b322922821b6a792a5fd73ccadb763",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89953fad_18869a30",
+        "filename": "interfaces/internal_interface.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-01T16:49:45Z",
+      "side": 1,
+      "message": "I\u0027m partially confused.  Why did you chose `std::replace` instead of `std::ranges::replace` that I gave you?\n\n```diff\n-    std::replace(s.begin(), s.end(), \u0027-\u0027, \u0027_\u0027);\n+    std::ranges::replace(s, \u0027-\u0027, \u0027_\u0027);\n```\n\nBoth of these compile, but ranges is more succinct and modern.",
+      "parentUuid": "3f5cf612_6df25eb8",
+      "revId": "88f18dc3b8b322922821b6a792a5fd73ccadb763",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
