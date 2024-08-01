@@ -19,6 +19,8 @@
 #include <sdbusplus/message.hpp>
 
 #include <algorithm>
+#include <iterator>
+#include <numeric>
 
 namespace phosphor
 {
@@ -50,7 +52,11 @@ std::string InternalInterface::getDbusName(const LedDescr& ledDescr)
         words.emplace_back(ledDescr.color.value());
     }
 
-    std::string s = boost::join(words, "_");
+    std::string s = std::accumulate(std::next(words.begin()), words.end(),
+                                    words[0],
+                                    [](std::string a, const std::string& b) {
+        return std::move(a) + "_" + b;
+    });
 
     // we assume the string to be a correct dbus name besides
     // this detail

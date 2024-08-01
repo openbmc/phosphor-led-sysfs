@@ -18,8 +18,7 @@
 
 #include "phosphor-logging/lg2.hpp"
 
-#include <boost/algorithm/string.hpp>
-
+#include <cstring>
 #include <fstream>
 #include <optional>
 #include <string>
