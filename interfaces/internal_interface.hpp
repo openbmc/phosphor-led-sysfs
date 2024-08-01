@@ -63,6 +63,14 @@ class InternalInterface
 
     void removeLED(const std::string& name);
 
+    /** @brief Generates LED DBus name from LED description
+     *
+     *  @param[in] name      - LED description
+     *  @return              - DBus LED name
+     */
+
+    static std::string getDbusName(const LedDescr& ledDescr);
+
   private:
     /**
      *  @brief  Unordered map to declare the sysfs LEDs
@@ -112,14 +120,6 @@ class InternalInterface
      */
 
     void createLEDPath(const std::string& ledName);
-
-    /** @brief Generates LED DBus name from LED description
-     *
-     *  @param[in] name      - LED description
-     *  @return              - DBus LED name
-     */
-
-    static std::string getDbusName(const LedDescr& ledDescr);
 };
 
 } // namespace interface

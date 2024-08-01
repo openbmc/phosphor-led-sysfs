@@ -50,9 +50,11 @@ std::string InternalInterface::getDbusName(const LedDescr& ledDescr)
 
     std::string s = boost::join(words, "_");
 
-    sdbusplus::message::object_path path(s);
+    // we assume the string to be a correct dbus name besides
+    // this detail
+    boost::replace_all(s, "-", "_");
 
-    return path.str;
+    return s;
 }
 
 void InternalInterface::createLEDPath(const std::string& ledName)
@@ -77,8 +79,7 @@ void InternalInterface::createLEDPath(const std::string& ledName)
                "DBUSNAME", name);
 
     // Unique path name representing a single LED.
-    sdbusplus::message::object_path objPath = std::string(physParent);
-    objPath /= name;
+    std::string objPath = std::string(physParent) + "/" + name;
 
     if (leds.contains(objPath))
     {

@@ -22,12 +22,14 @@ endif
 test_sources = [
   '../physical.cpp',
   '../sysfs.cpp',
+  '../interfaces/internal_interface.cpp',
 ]
 
 tests = [
   'physical.cpp',
   'sysfs.cpp',
   'test_led_description.cpp',
+  'test_dbus_name.cpp',
 ]
 
 foreach t : tests
