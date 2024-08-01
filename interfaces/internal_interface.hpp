@@ -2,7 +2,6 @@
 
 #include "physical.hpp"
 
-#include <boost/algorithm/string.hpp>
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/interface.hpp>

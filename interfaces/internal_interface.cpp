@@ -19,6 +19,8 @@
 #include <sdbusplus/message.hpp>
 
 #include <algorithm>
+#include <iterator>
+#include <sstream>
 
 namespace phosphor
 {
@@ -50,7 +52,12 @@ std::string InternalInterface::getDbusName(const LedDescr& ledDescr)
         words.emplace_back(ledDescr.color.value());
     }
 
-    std::string s = boost::join(words, "_");
+    std::ostringstream oss;
+    std::copy(words.begin(), words.end() - 1,
+              std::ostream_iterator<std::string>(oss, "_"));
+    oss << words.back();
+
+    std::string s = oss.str();
 
     // we assume the string to be a correct dbus name besides
     // this detail

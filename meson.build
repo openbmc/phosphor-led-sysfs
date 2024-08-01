@@ -12,7 +12,6 @@ project(
 
 sdbusplus_dep = dependency('sdbusplus')
 phosphor_dbus_interfaces_dep = dependency('phosphor-dbus-interfaces')
-boost = dependency('boost', include_type: 'system')
 phosphor_logging_dep = dependency('phosphor-logging')
 
 cxx = meson.get_compiler('cpp')
@@ -26,7 +25,6 @@ deps = [
     cli11_dep,
     sdbusplus_dep,
     phosphor_dbus_interfaces_dep,
-    boost,
     phosphor_logging_dep,
 ]
 
