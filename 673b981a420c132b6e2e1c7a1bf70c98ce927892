@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08104c45_b96fc210",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2024-08-02T02:55:35Z",
+      "side": 1,
+      "message": "I saw issue on Mt.Mitchell platform with problem on encoding the led name. And the issue is fixed with this patch.",
+      "revId": "673b981a420c132b6e2e1c7a1bf70c98ce927892",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
