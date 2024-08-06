@@ -6,7 +6,7 @@ This project exposes physical LEDs on dbus.
 
 Say we have 'identify' LED in our system, which may be declared in devicetree.
 
-```
+```text
 leds {
     compatible = "gpio-leds";
 
@@ -19,13 +19,13 @@ leds {
 We can add an LED via the helper program. The main service is then started via
 dbus-activation.
 
-```
+```sh
 ./add-led-action --path /sys/class/leds/identify
 ```
 
 which will expose following dbus objects:
 
-```
+```text
 busctl tree xyz.openbmc_project.LED.Controller
 `- /xyz
   `- /xyz/openbmc_project
@@ -50,7 +50,7 @@ to keep it readable.
 
 Query the LED State
 
-```
+```text
 busctl get-property  xyz.openbmc_project.LED.Controller \
 /xyz/openbmc_project/led/physical/identify \
 xyz.openbmc_project.Led.Physical State \
@@ -59,7 +59,7 @@ s "xyz.openbmc_project.Led.Physical.Action.Off"
 
 Set the LED State
 
-```
+```text
 busctl set-property  xyz.openbmc_project.LED.Controller \
 /xyz/openbmc_project/led/physical/identify \
 xyz.openbmc_project.Led.Physical State s \
@@ -68,7 +68,7 @@ xyz.openbmc_project.Led.Physical State s \
 
 ## How to Build
 
-```
+```sh
 meson setup build
 cd build
 ninja
