@@ -62,6 +62,8 @@ std::string InternalInterface::getDbusName(const LedDescr& ledDescr)
     // this detail
     std::replace(s.begin(), s.end(), '-', '_');
 
+    std::transform(s.begin(), s.end(), s.begin(), ::tolower);
+
     return s;
 }
 
