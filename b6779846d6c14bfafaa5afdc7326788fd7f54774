@@ -1,4 +1,22 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3327528_005dec78",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 44
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001422
+      },
+      "writtenOn": "2025-01-14T09:49:36Z",
+      "side": 1,
+      "message": "This drops `std::transform(name.begin(), name.end(), name.begin(), ::tolower);` which is also called within phosphor-ledmanager. Previously this causes all LEDs to have the same case, but now the name on DBus is different.\nThus it breaks using any LED on my system as the LEDs on DBus have now upper case names. How to fix this issue?",
+      "revId": "b6779846d6c14bfafaa5afdc7326788fd7f54774",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ],
   "submitRequirementResults": []
 }
