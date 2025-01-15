@@ -34,6 +34,24 @@
       "parentUuid": "10a32a32_678edf0c",
       "revId": "4697cbce33e80da7ce98aff64a2a84711012842a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66d38816_607472f2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-01-15T19:49:01Z",
+      "side": 1,
+      "message": "\u003e phosphor-led-manager is out of scope as this repository is about phosphor-led-sysfs.\n\nJust copy-paste the code from led-sysfs into led-manager. It does not make sense to have 2 repos here.\n\nThen the other code will be in scope.\n\n\u003e Changing the behaviour in phosphor-led-manager might break existing upstream systems. Thus it cannot be touched.\n\nThere is a tradeoff. Keeping weird and useless quirks (like making dbus names lowercase for no reason) is also bad.\n\nThere is a discord channel (leds-and-indicators) to communicate breaking changes like that. It may be good to also have a combined channel for all subprojects just to communicate changes which may need some action to be taken.\n\nJust so that people do not have to keep tabs on all channels.\n\n\u003e https://gerrit.openbmc.org/plugins/gitiles/openbmc/phosphor-led-manager/+/a9400dd8062387c4a4569c9ad42169cb549bf27d/scripts/parse_led.py#76\n\nYou are not referencing the latest code. The latest code is\nhttps://github.com/openbmc/phosphor-led-manager/blob/6fd9eea5fdb3fe8c1aea2d549af553b11dd2be4f/scripts/parse_led.py#L135\n\nand it does print a warning if there is any change done to the led name from what was configured.\n\nThe function which is currently used for the conversion (inflection.underscore) has been in there for some time, but that\u0027s what would need to be changed.\n\nhttps://inflection.readthedocs.io/en/latest/#inflection.underscore\n\ninflection.underscore does some useless stuff which is not needed for dbus, like making the name lower-cased.",
+      "parentUuid": "0e3841c2_a7de0fd8",
+      "revId": "4697cbce33e80da7ce98aff64a2a84711012842a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
