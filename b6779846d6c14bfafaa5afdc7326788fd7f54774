@@ -16,6 +16,24 @@
       "message": "This drops `std::transform(name.begin(), name.end(), name.begin(), ::tolower);` which is also called within phosphor-ledmanager. Previously this causes all LEDs to have the same case, but now the name on DBus is different.\nThus it breaks using any LED on my system as the LEDs on DBus have now upper case names. How to fix this issue?",
       "revId": "b6779846d6c14bfafaa5afdc7326788fd7f54774",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1aac4d72_0f93d6ee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 44
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-15T16:12:58Z",
+      "side": 1,
+      "message": "I think the intent is that this service (led-sysfs) is using the same names as the kernel presents, which come from the device tree, right?  I guess you can either fix the device tree or fix the led-manager config to match?  Is there any issue with that?\n\nWhat is \"my system\"?  Is the code for it upstream?",
+      "parentUuid": "b3327528_005dec78",
+      "revId": "b6779846d6c14bfafaa5afdc7326788fd7f54774",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ],
   "submitRequirementResults": []
