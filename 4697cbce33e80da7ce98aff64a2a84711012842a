@@ -16,6 +16,24 @@
       "message": "\u003e phosphor-led-manager expects dbus names to be all lower case.\n\nwhere is it expected?\nCan you link to code?\n\nWhy would it expect that? dbus does not require lower case.\n\n\nif led manager requires it somewhere, the correct fix would be to remove that requirement?",
       "revId": "4697cbce33e80da7ce98aff64a2a84711012842a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e3841c2_a7de0fd8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1001422
+      },
+      "writtenOn": "2025-01-15T18:52:23Z",
+      "side": 1,
+      "message": "phosphor-led-manager is out of scope as this repository is about phosphor-led-sysfs.\n\nThe offending code is here:\nhttps://gerrit.openbmc.org/plugins/gitiles/openbmc/phosphor-led-manager/+/a9400dd8062387c4a4569c9ad42169cb549bf27d/scripts/parse_led.py#76\n\nI don\u0027t know why it would convert all characters to lower case.\nChanging the behaviour in phosphor-led-manager might break existing upstream systems. Thus it cannot be touched.",
+      "parentUuid": "10a32a32_678edf0c",
+      "revId": "4697cbce33e80da7ce98aff64a2a84711012842a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
