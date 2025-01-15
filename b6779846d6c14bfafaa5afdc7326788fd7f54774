@@ -52,6 +52,24 @@
       "parentUuid": "1aac4d72_0f93d6ee",
       "revId": "b6779846d6c14bfafaa5afdc7326788fd7f54774",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a03b1f2_7ce32aed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 44
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-15T19:53:12Z",
+      "side": 1,
+      "message": "\u003e It breaks existing upstream platforms since it previously converted upper case characters to lower case characters.\n\nWhich ones?  Or did you mean downstream platforms?\n\n\u003e The intent doesn\u0027t matter. It changes the behaviour without mentioning in the commit message.\n\u003e Why do I have to change multiple other components (devicetree, led-manager code, led-manager config) just to fix this regression?\n\nKeep in mind we\u0027re going off what was done almost 2 years ago at this point (and yes Alexander just cleaned it up 6 months ago and it was merged, but this has been around for a while now).  My recollection is that that \"intent\" was something that the maintainer (Andrew J.) asked for in one of the earlier revisions of this code; unfortunately that didn\u0027t get into the commit message.\n\nChanges of behavior aren\u0027t always \"regressions\".  We regularly make cross-repository changes and usually we try to make sure all the upstream platforms are fixed up appropriately.  Maybe this one got missed.\n\nAndrew J should weigh in on if this is a \"regression\" or \"desired behavior\".  We can go from there on next steps.",
+      "parentUuid": "c5cd6ab7_3d67e69e",
+      "revId": "b6779846d6c14bfafaa5afdc7326788fd7f54774",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ],
   "submitRequirementResults": []
