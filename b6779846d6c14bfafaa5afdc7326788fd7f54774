@@ -34,6 +34,24 @@
       "parentUuid": "b3327528_005dec78",
       "revId": "b6779846d6c14bfafaa5afdc7326788fd7f54774",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5cd6ab7_3d67e69e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 44
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001422
+      },
+      "writtenOn": "2025-01-15T18:36:46Z",
+      "side": 1,
+      "message": "The intent doesn\u0027t matter. It changes the behaviour without mentioning in the commit message. It breaks existing upstream platforms since it previously converted upper case characters to lower case characters.\nphosphor-led-manager also automatically converts dbus names to lower case.\nWith this commit applied phosphor-led-manager won\u0027t find the LEDs any more since they now also have upper case letters.\n\nWhy do I have to change multiple other components (devicetree, led-manager code, led-manager config) just to fix this regression?\nThe fix is here: https://gerrit.openbmc.org/c/openbmc/phosphor-led-sysfs/+/77238",
+      "parentUuid": "1aac4d72_0f93d6ee",
+      "revId": "b6779846d6c14bfafaa5afdc7326788fd7f54774",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ],
   "submitRequirementResults": []
