@@ -71,6 +71,6 @@ executable(
 )
 
 build_tests = get_option('tests')
-if build_tests.enabled()
+if build_tests.allowed()
   subdir('test')
 endif
