@@ -69,6 +69,24 @@
       "message": "I think it\u0027s reasonable to fix the regression while we debate what a useful behaviour might be, if not the original behaviour.\n\nBut I\u0027d prefer Alexander be convinced to remove his CR-1 before we merge this.",
       "revId": "4697cbce33e80da7ce98aff64a2a84711012842a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9306dba_33d6d521",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-30T21:57:41Z",
+      "side": 1,
+      "message": "FWIW, since this code has been around for 6+ months it\u0027s possible that _this_ code causes a regression with systems developed/tested since that time.  I left a similar remark in https://gerrit.openbmc.org/c/openbmc/phosphor-led-sysfs/+/57455 .\n\nIt seems like the \"regression\" is only affecting a downstream system.  Why should we potentially break upstream systems at the expense of one downstream?  If the author has an upstream system that is broken, can they point to it?  I\u0027d almost rather fix the upstream JSON for the LED config myself if that\u0027s all that needs to be done.",
+      "parentUuid": "0bfc8b5a_2b5a781a",
+      "revId": "4697cbce33e80da7ce98aff64a2a84711012842a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
