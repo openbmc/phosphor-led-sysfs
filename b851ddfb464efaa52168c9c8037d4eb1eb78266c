@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f87302a_b35f9e48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2025-01-31T04:50:44Z",
+      "side": 1,
+      "message": "I\u0027d prefer we change it to boolean at some point, but this is fine for now.",
+      "revId": "b851ddfb464efaa52168c9c8037d4eb1eb78266c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
