@@ -38,11 +38,11 @@ install_data(
 systemd = dependency('systemd')
 install_data(
     ['systemd' / 'system' / 'phosphor-ledcontroller.service'],
-    install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir'),
+    install_dir: systemd.get_variable(pkgconfig: 'systemd_system_unit_dir'),
 )
 install_data(
     ['systemd' / 'system' / 'sysfs-led@.service'],
-    install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir'),
+    install_dir: systemd.get_variable(pkgconfig: 'systemd_system_unit_dir'),
 )
 
 dbus = dependency('dbus-1')
