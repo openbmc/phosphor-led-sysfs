@@ -71,7 +71,6 @@ executable(
 
 executable(
     'add-led-action',
-    'argument.cpp',
     'add_led_action.cpp',
     implicit_include_directories: true,
     dependencies: deps,

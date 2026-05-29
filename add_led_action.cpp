@@ -1,6 +1,6 @@
-#include "argument.hpp"
 #include "interfaces/internal_interface.hpp"
 
+#include <CLI/CLI.hpp>
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/bus.hpp>
 
@@ -67,19 +67,12 @@ void addLed(std::string ledName)
 
 int main(int argc, char* argv[])
 {
-    // Read arguments.
-    auto options = phosphor::led::ArgumentParser(argc, argv);
+    CLI::App app{"Add LED action"};
 
-    // Parse out Path argument.
-    const auto& path = options["path"];
+    std::string path;
+    app.add_option("--path", path, "absolute path of LED in sysfs")->required();
 
-    if (path.empty())
-    {
-        phosphor::led::ArgumentParser::usage(argv);
-
-        lg2::error("Argument parser error : Path not specified");
-        throw std::invalid_argument("Invalid argument");
-    }
+    CLI11_PARSE(app, argc, argv);
 
     std::string name = rootPathVerify(path);
 
