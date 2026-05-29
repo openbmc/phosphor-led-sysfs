@@ -19,7 +19,11 @@ cxx = meson.get_compiler('cpp')
 if cxx.has_header('CLI/CLI.hpp')
     cli11_dep = declare_dependency()
 else
-    cli11_dep = dependency('CLI11')
+    cli11_dep = dependency(
+        'CLI11',
+        include_type: 'system',
+        default_options: ['tests=disabled'],
+    )
 endif
 
 deps = [
