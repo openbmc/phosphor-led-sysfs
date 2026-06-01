@@ -70,7 +70,8 @@ int main(int argc, char* argv[])
     CLI::App app{"Add LED action"};
 
     std::string path;
-    app.add_option("--path", path, "absolute path of LED in sysfs")->required();
+    app.add_option("-p,--path", path, "absolute path of LED in sysfs")
+        ->required();
 
     CLI11_PARSE(app, argc, argv);
 
